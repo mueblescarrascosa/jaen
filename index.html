@@ -1,0 +1,2175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jaén · sierra y Renacimiento</title>
+<meta name="theme-color" content="#2F3B1E">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Jaén">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Public+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#EEEDE3;--paper:#FAF9F2;--ink:#26281F;--ink-soft:#585C4B;--line:#D6D6C4;
+    --green:#4E6B2E;--cobalt:#2E5E4E;--ochre:#B5651D;--ochre-soft:#F3E2CF;
+    --wood:#7A4E2D;--indigo:#2F3B1E;
+    --shadow:0 1px 2px rgba(42,38,33,.06), 0 8px 24px rgba(42,38,33,.07);--r:14px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Public Sans",system-ui,sans-serif;line-height:1.5;font-size:16px;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 18px}
+  a{color:var(--cobalt)}
+
+  /* HERO */
+  .hero{background:var(--indigo);color:#F4F2E8;padding:38px 0 30px;position:relative;overflow:hidden;}
+  .hero .wrap{position:relative;z-index:2}
+  .hero .eyebrow{font-family:"DM Mono",monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#CDBB86;margin:0 0 12px;}
+  .hero h1{font-family:"Lora",serif;font-weight:600;font-size:clamp(34px,8vw,60px);line-height:1.02;letter-spacing:-.01em;margin:0 0 14px;}
+  .hero h1 em{font-style:italic;color:#E6B07A;font-weight:500}
+  .hero p.lede{max-width:58ch;margin:0;color:#DCDAC6;font-size:clamp(15px,2.4vw,18px);}
+  .hero .band{position:absolute;inset:auto 0 0 0;height:10px;z-index:1;background:repeating-linear-gradient(135deg,#E6B07A 0 10px,transparent 10px 20px);opacity:.5;}
+  .starwatermark{position:absolute;top:-40px;right:-50px;width:230px;height:230px;color:#3D4A27;opacity:.5;z-index:1;}
+
+  .kicker{font-family:"DM Mono",monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ochre);margin:0 0 14px;display:flex;align-items:center;gap:9px;}
+  .kicker svg{width:15px;height:15px;color:var(--green);flex:none}
+
+  /* STRATEGY */
+  .strategy{padding:26px 0 6px}
+  .tips{display:grid;gap:12px;grid-template-columns:1fr;}
+  @media(min-width:620px){.tips{grid-template-columns:1fr 1fr}}
+  .tip{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:15px 16px;box-shadow:var(--shadow);}
+  .tip h3{margin:0 0 5px;font-family:"Lora",serif;font-size:18px;font-weight:600;display:flex;align-items:baseline;gap:8px;}
+  .tip h3 .dot{font-family:"DM Mono",monospace;font-size:12px;color:var(--ochre);border:1px solid var(--ochre);border-radius:20px;padding:1px 7px;flex:none;transform:translateY(-1px);}
+  .tip p{margin:0;font-size:14.5px;color:var(--ink-soft)}
+  .tip p b{color:var(--ink);font-weight:600}
+  .caveat{margin:16px 0 0;font-size:13px;color:var(--ink-soft);border-left:3px solid var(--line);padding:2px 0 2px 12px;}
+
+  /* ROUTES */
+  .routes{padding:28px 0 4px}
+  .rgrid{display:grid;gap:14px;grid-template-columns:1fr}
+  @media(min-width:640px){.rgrid{grid-template-columns:1fr 1fr}}
+  .route{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--green);border-radius:var(--r);padding:15px 16px;box-shadow:var(--shadow);}
+  .route h3{margin:0 0 3px;font-family:"Lora",serif;font-size:19px;font-weight:600;letter-spacing:-.01em}
+  .route-meta{margin:0 0 3px;font-family:"DM Mono",monospace;font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--ochre)}
+  .route-price{margin:0 0 11px;font-family:"DM Mono",monospace;font-size:12.5px;font-weight:700;color:var(--green)}
+  .route-bono{margin:0 0 11px;font-size:12.5px;color:var(--ink-soft)}
+  .route-bono b{color:var(--cobalt)}
+  .passes{padding:26px 0 4px}
+  .pgrid{display:grid;gap:14px;grid-template-columns:1fr}
+  @media(min-width:640px){.pgrid{grid-template-columns:1fr 1fr}}
+  .pass{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--ochre);border-radius:var(--r);padding:15px 16px;box-shadow:var(--shadow)}
+  .pass h3{margin:0 0 8px;font-family:"Lora",serif;font-size:19px;font-weight:600;letter-spacing:-.01em}
+  .pass h3 .ptag{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:.03em;text-transform:uppercase;color:var(--ochre);border:1px solid var(--ochre);border-radius:20px;padding:2px 7px;margin-left:6px;white-space:nowrap;vertical-align:middle}
+  .pass p{margin:0 0 8px;font-size:14px;color:var(--ink-soft)}
+  .pass p b{color:var(--ink);font-weight:600}
+  .pass .pmeta{font-size:13.5px;color:var(--ink)}
+  .pass .pnote{font-size:13px;color:var(--ink-soft);border-left:3px solid var(--line);padding-left:10px;margin-bottom:0}
+  .info{padding:24px 0 2px}
+  .igrid{display:grid;gap:14px;grid-template-columns:1fr}
+  @media(min-width:640px){.igrid{grid-template-columns:1fr 1fr}}
+  .ibox{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--cobalt);border-radius:var(--r);padding:15px 16px;box-shadow:var(--shadow)}
+  .ibox h3{margin:0 0 8px;font-family:"Lora",serif;font-size:18px;font-weight:600}
+  .ibox p{margin:0 0 8px;font-size:14px;color:var(--ink-soft)}
+  .ibox p b{color:var(--ink);font-weight:600}
+  .ibox .imeta{font-family:"DM Mono",monospace;font-size:12px;color:var(--ink)}
+  .ibox .inote{font-size:13px;color:var(--ink-soft);border-left:3px solid var(--line);padding-left:10px;margin-bottom:0}
+  .walk{margin:0 0 8px;padding-left:18px;font-size:14px;color:var(--ink)}
+  .walk li{margin:2px 0}
+  .planbtn{width:100%;margin-bottom:8px;border:1px dashed var(--line);background:transparent;color:var(--ink-soft);font-family:"Public Sans",sans-serif;font-weight:600;font-size:13.5px;border-radius:10px;padding:9px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;min-height:40px}
+  .planbtn svg{width:15px;height:15px}
+  .planbtn .pon{display:none;align-items:center;gap:7px}
+  .planbtn .padd{display:inline-flex;align-items:center;gap:7px}
+  .planbtn:hover{border-color:var(--ochre);color:var(--ochre)}
+  .planbtn:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}
+  .card.inplan .planbtn{background:#F6ECD6;border-style:solid;border-color:var(--ochre);color:#8a5d10}
+  .card.inplan .planbtn .pon{display:inline-flex}
+  .card.inplan .planbtn .padd{display:none}
+  .planbar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--indigo);color:#F4F2E8;box-shadow:0 -6px 22px rgba(0,0,0,.18)}
+  .planbar[hidden]{display:none}
+  .planbar-main{max-width:1000px;margin:0 auto;display:flex;align-items:center;gap:10px;padding:10px 18px}
+  .planbar-toggle{flex:1;text-align:left;background:transparent;border:0;color:#F4F2E8;font-family:"Public Sans",sans-serif;font-weight:600;font-size:14px;cursor:pointer;display:flex;align-items:center;gap:8px}
+  .planbar-toggle .chev{transition:transform .2s;color:#E6B07A}
+  .planbar[data-open="true"] .planbar-toggle .chev{transform:rotate(180deg)}
+  .planbar-sum b{color:#E6B07A}
+  .planbar-clear{background:transparent;border:1px solid rgba(255,255,255,.4);color:#F4F2E8;font-family:"DM Mono",monospace;font-size:12px;padding:7px 11px;border-radius:8px;cursor:pointer;white-space:nowrap}
+  .planbar-clear:hover{border-color:#E6B07A;color:#E6B07A}
+  .planbar-list[hidden]{display:none}
+  .planbar-list{max-width:1000px;margin:0 auto;max-height:38vh;overflow-y:auto;padding:2px 18px 14px}
+  .planbar-hint{font-size:12px;color:#CDBB86;margin:6px 0 4px}
+  .planrow{display:flex;align-items:center;gap:10px;padding:7px 0;border-top:1px solid rgba(255,255,255,.12);font-size:14px}
+  .planrow .pn{flex:1}
+  .planrow .pc{font-family:"DM Mono",monospace;font-size:11.5px;color:#DCDAC6;white-space:nowrap}
+  .planrow .prm{background:transparent;border:0;color:#E6B07A;font-size:16px;cursor:pointer;padding:2px 6px;line-height:1}
+  body.hasplan{padding-bottom:62px}
+  .dayplan{padding:22px 0 2px}
+  .daychips{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:10px}
+  .daychips button{font-family:"Public Sans",sans-serif;font-weight:600;font-size:13px;border:1px solid var(--line);background:var(--paper);color:var(--ink-soft);border-radius:999px;padding:7px 13px;cursor:pointer}
+  .daychips button[aria-pressed="true"]{background:var(--indigo);color:#F4F2E8;border-color:var(--indigo)}
+  .daychips button:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}
+  .dayhide{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;color:var(--ink-soft);cursor:pointer;margin:0 0 8px}
+  .daysum{font-size:14px;color:var(--ink);margin:0}
+  .daysum b{color:var(--ink)}
+  .daypill{display:inline-block;font-family:"DM Mono",monospace;font-size:11px;font-weight:700;padding:3px 9px;border-radius:6px;margin:0}
+  .daypill[hidden]{display:none}
+  .dp-free{background:#CDE9D3;color:#12633f}
+  .dp-open{background:#E6E1D2;color:#6a6444}
+  .dp-closed{background:#F1D6CE;color:#9a3f26}
+  .dp-cita{background:#E7EADB;color:#3A4A28}
+  .card.closedtoday{opacity:.6}
+  .pass details{margin-top:8px;border-top:1px dashed var(--line);padding-top:2px;margin-bottom:0}
+  .pll{margin:8px 0 0;font-size:13.5px;color:var(--ink-soft)}
+  .pll b{color:var(--ink);font-weight:600}
+  .stops{display:flex;flex-wrap:wrap;align-items:center;gap:5px 4px;margin-bottom:11px}
+  .stop{font-family:"Public Sans",sans-serif;font-size:13px;font-weight:600;color:var(--cobalt);background:#EDF0F7;border:1px solid #D6DEEE;border-radius:8px;padding:5px 9px;cursor:pointer;}
+  .stop:hover{background:#E2E9F6}
+  .stop:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}
+  .stop.done{background:#E4EFE5;border-color:#BFD6C0;color:#2f6b4f}
+  .stop.done::before{content:"✓ ";font-weight:700}
+  .sep{color:var(--ink-soft);font-size:13px;opacity:.6}
+  .route-note{margin:0;font-size:13px;color:var(--ink-soft)}
+
+  /* CONTROLS */
+  .controls{position:sticky;top:0;z-index:20;background:rgba(236,232,221,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);margin-top:26px;}
+  .controls .wrap{padding-top:12px;padding-bottom:12px;display:flex;flex-direction:column;gap:11px}
+  .row1{display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px}
+  .search{position:relative;flex:1 1 220px;min-width:180px}
+  .search input{width:100%;font-family:"Public Sans",sans-serif;font-size:15px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:9px 34px 9px 15px;}
+  .search input:focus{outline:2px solid var(--cobalt);outline-offset:1px;border-color:var(--cobalt)}
+  .search .clr{position:absolute;right:6px;top:50%;transform:translateY(-50%);border:0;background:transparent;color:var(--ink-soft);font-size:18px;line-height:1;cursor:pointer;padding:4px 8px;display:none}
+  .search.has .clr{display:block}
+  .segmented{display:inline-flex;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px}
+  .segmented button{font-family:"Public Sans",sans-serif;font-weight:600;font-size:13px;border:0;background:transparent;color:var(--ink-soft);padding:7px 13px;border-radius:999px;cursor:pointer;line-height:1;}
+  .segmented button[aria-pressed="true"]{background:var(--indigo);color:#F4F2E8}
+  .segmented button:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}
+  .progress{display:flex;align-items:center;gap:9px;margin-left:auto}
+  .progress .count{font-family:"DM Mono",monospace;font-size:12.5px;color:var(--ink);white-space:nowrap}
+  .progress .track{width:80px;height:7px;border-radius:9px;background:#DAD3C2;overflow:hidden}
+  .progress .fill{height:100%;width:0;background:var(--green);transition:width .4s ease}
+  .chips{display:flex;gap:7px;overflow-x:auto;padding-bottom:2px;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+  .chips::-webkit-scrollbar{height:5px}.chips::-webkit-scrollbar-thumb{background:var(--line);border-radius:9px}
+  .chip{flex:none;font-family:"Public Sans",sans-serif;font-weight:600;font-size:13px;white-space:nowrap;border:1px solid var(--line);background:var(--paper);color:var(--ink-soft);border-radius:999px;padding:7px 13px;cursor:pointer;}
+  .chip[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:#fff}
+  .chip:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}
+  .chip-lbl{flex:none;align-self:center;font-family:"DM Mono",monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ochre);margin-right:2px}
+  .showing{font-family:"DM Mono",monospace;font-size:11.5px;color:var(--ink-soft)}
+  .row2{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .fbtn{font-family:"Public Sans",sans-serif;font-weight:600;font-size:13px;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:7px 13px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+  .fbtn .chev{transition:transform .2s;font-size:11px;color:var(--ochre)}
+  .fbtn[aria-expanded="false"] .chev{transform:rotate(-90deg)}
+  .fbtn #fcount{color:var(--green);font-weight:700}
+  .fbtn:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}
+  .reset-f{margin-left:auto;color:var(--ink-soft)}
+  .reset-f:hover{border-color:var(--wood);color:var(--wood)}
+  #filterrows{display:flex;flex-direction:column;gap:11px}
+  #filterrows.collapsed{display:none}
+  @media(max-width:520px){
+    .controls .wrap{gap:9px}
+    .row1{gap:8px 10px}
+    .search{flex-basis:100%}
+    .progress{margin-left:0}
+    .progress .track{width:60px}
+  }
+
+  /* ZONES + CARDS */
+  main{padding:6px 0 40px}
+  .zone{margin-top:30px}
+  .zone-head{display:flex;align-items:center;gap:11px;margin:0 0 4px}
+  .zone-head svg{width:20px;height:20px;color:var(--green);flex:none}
+  .zone-head h2{font-family:"Lora",serif;font-weight:600;font-size:clamp(20px,4vw,25px);margin:0;letter-spacing:-.01em;}
+  .zone-sub{margin:0 0 16px 31px;font-size:13.5px;color:var(--ink-soft)}
+  .zcount{font-family:"DM Mono",monospace;font-size:12px;color:var(--ochre)}
+  .grid{display:grid;gap:16px;grid-template-columns:1fr}
+  @media(min-width:700px){.grid{grid-template-columns:1fr 1fr}}
+
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:18px 18px 16px;box-shadow:var(--shadow);display:flex;flex-direction:column;position:relative;transition:border-color .2s,box-shadow .2s,transform .2s;}
+  @media(hover:hover){.card:hover{transform:translateY(-2px);box-shadow:0 2px 4px rgba(42,38,33,.07),0 14px 34px rgba(42,38,33,.1)}}
+  .card.done{background:#F3F5EE;border-color:#CBD8C4}
+  .card.hide{display:none}
+  .card.flash{animation:flash 1.4s ease}
+  @keyframes flash{0%{box-shadow:0 0 0 3px var(--ochre)}70%{box-shadow:0 0 0 3px var(--ochre)}100%{box-shadow:var(--shadow)}}
+
+  .card-top{display:flex;align-items:flex-start;gap:10px;margin-bottom:9px}
+  .card h3{font-family:"Lora",serif;font-weight:600;font-size:20px;line-height:1.14;margin:0;flex:1;letter-spacing:-.01em;}
+  .stamp{flex:none;display:none;align-items:center;gap:5px;font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.04em;color:var(--wood);border:1px solid var(--wood);border-radius:20px;padding:3px 8px 3px 6px;text-transform:uppercase;}
+  .stamp svg{width:12px;height:12px}
+  .card.done .stamp{display:inline-flex}
+
+  .desc{margin:0 0 12px;font-size:14.5px;color:var(--ink-soft)}
+  .desc b{color:var(--ink);font-weight:600}.desc i{color:var(--ink-soft)}
+
+  .badges{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:11px}
+  .badge{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.02em;padding:3px 8px;border-radius:6px;line-height:1.3;white-space:nowrap;}
+  .b-free{background:#DDEBE0;color:#155c41}
+  .b-sun{background:var(--ochre-soft);color:#8a5d10}
+  .b-eu{background:#E7EADB;color:#3A4A28}
+  .b-week{background:#F3E1DA;color:#9a4a2c}
+  .b-night{background:#26305c;color:#dfe4f5}
+  .b-season{background:#EAE7D6;color:#6a6444;border:1px solid #DcD6C0}
+  .b-star{background:#E8C86A;color:#5c4718;font-weight:700}
+  .b-sec{background:#EAE7DE;color:#8a8474}
+
+  .facts{margin:0 0 12px;font-size:14px;color:var(--ink)}
+  .facts .price{font-weight:700}
+  .facts .sepd{color:var(--ink-soft);opacity:.6;padding:0 5px}
+  .facts .dur{color:var(--ink-soft)}
+  .itip{margin:0 0 12px;font-size:13.5px;color:var(--ink-soft);background:#FBF3DF;border-left:3px solid var(--ochre);border-radius:0 8px 8px 0;padding:8px 11px}
+  .itip .itip-tag{font-family:"DM Mono",monospace;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ochre);margin-right:7px}
+  .itip b{color:var(--ink);font-weight:600}
+  .notebox{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+  .notebox>summary{cursor:pointer;list-style:none;display:flex;align-items:center;font-family:"DM Mono",monospace;font-size:11.5px;letter-spacing:.03em;color:var(--ochre)}
+  .notebox>summary::-webkit-details-marker{display:none}
+  .notetext{width:100%;margin-top:8px;box-sizing:border-box;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-family:"Public Sans",system-ui,sans-serif;font-size:13.5px;line-height:1.5;color:var(--ink);background:#FCFBF7;resize:vertical;min-height:46px}
+  .notetext::placeholder{color:#9a9482}
+  .notetext:focus{outline:none;border-color:var(--cobalt);box-shadow:0 0 0 2px rgba(22,48,95,.15)}
+  .fold-head{cursor:pointer;user-select:none;transition:color .15s}
+  .fold-head:hover{color:var(--wood)}
+  .fold-arw{margin-left:auto;flex:none;font-size:12px;color:var(--ochre);transition:transform .25s}
+  section:not(.folded) .fold-arw{transform:rotate(180deg)}
+  .folded .fold-body{display:none}
+  .folded .fold-head{margin-bottom:0}
+  .today{padding:16px 0 4px}
+  .today-card{background:#fff;border:1px solid var(--line);border-left:4px solid var(--green);border-radius:12px;padding:14px 16px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+  .today-day{font-family:"DM Mono",monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 10px}
+  .today-day b{color:var(--ink);font-weight:700}
+  .today-lbl{display:flex;align-items:center;gap:7px;font-family:"DM Mono",monospace;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--green);margin:0 0 9px;font-weight:700}
+  .today-lbl svg{width:13px;height:13px}
+  .today-chips{display:flex;flex-wrap:wrap;gap:7px}
+  .today-chip{font-family:"Public Sans",sans-serif;font-size:13px;font-weight:600;color:#fff;background:var(--green);border:none;border-radius:999px;padding:7px 13px;cursor:pointer;transition:filter .15s,transform .1s}
+  .today-chip:hover{filter:brightness(1.08)}
+  .today-chip:active{transform:scale(.97)}
+  .today-none{margin:0;font-size:13.5px;color:var(--ink-soft);line-height:1.55}
+  .today-closed{margin:10px 0 0;padding-top:9px;border-top:1px dashed var(--line);font-size:12.5px;color:var(--wood)}
+  .today-closed b{color:var(--wood)}
+  .today-more{margin-top:12px;background:transparent;border:none;padding:0;font-family:"DM Mono",monospace;font-size:12px;color:var(--cobalt);cursor:pointer}
+  .today-more:hover{text-decoration:underline}
+  .today-tom{margin-top:12px;padding-top:12px;border-top:1px dashed var(--line)}
+  .today-lbl.mn{color:var(--ochre)}
+  .daysum-lbl{display:flex;align-items:center;gap:7px;font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--green);margin:0 0 8px;font-weight:700}
+  .daysum-lbl svg{width:13px;height:13px}
+  .daysum-chips{margin-bottom:10px}
+  .daysum-counts{margin:0}
+
+  details{margin:0 0 0;border-top:1px dashed var(--line);padding-top:4px;margin-bottom:13px}
+  summary{cursor:pointer;font-weight:600;font-size:13px;color:var(--cobalt);list-style:none;display:flex;align-items:center;gap:6px;padding:9px 0 4px;}
+  summary::-webkit-details-marker{display:none}
+  summary .arw{margin-left:auto;transition:transform .2s;font-size:11px}
+  details[open] summary .arw{transform:rotate(180deg)}
+  summary:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px;border-radius:4px}
+  .meta{display:grid;grid-template-columns:auto 1fr;gap:7px 12px;font-size:13.5px;margin:8px 0 11px;}
+  .meta dt{font-family:"DM Mono",monospace;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--ochre);padding-top:2px;}
+  .meta dd{margin:0;color:var(--ink)}
+  .meta dd .hint{color:var(--ink-soft)}
+  .links{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px}
+  .links a{display:inline-flex;align-items:center;gap:5px;text-decoration:none;font-weight:600;color:var(--cobalt)}
+  .links a:hover{text-decoration:underline}.links a svg{width:14px;height:14px}
+
+  .toggle{margin-top:auto;width:100%;border:1px solid var(--line);background:#fff;color:var(--ink);font-family:"Public Sans",sans-serif;font-weight:600;font-size:14px;border-radius:10px;padding:11px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:background .15s,border-color .15s,color .15s;min-height:44px;}
+  .toggle svg{width:16px;height:16px}.toggle .ck{display:none}
+  .toggle:hover{border-color:var(--green);color:var(--green)}
+  .toggle:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}
+  .card.done .toggle{background:var(--green);border-color:var(--green);color:#fff}
+  .card.done .toggle:hover{background:#175d49}
+  .card.done .toggle .ck{display:inline}.card.done .toggle .add{display:none}
+
+  .empty{text-align:center;color:var(--ink-soft);padding:40px 12px;font-size:15px;display:none;}
+  .empty.show{display:block}
+
+  footer{border-top:1px solid var(--line);padding:26px 0 46px;margin-top:10px}
+  footer p{margin:0 0 10px;font-size:14px;color:var(--ink-soft);max-width:74ch}
+  footer p b{color:var(--ink);font-weight:600}
+
+  /* datos: copia, restaurar, compartir */
+  .datatools{margin:18px 0 6px;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--paper)}
+  .datatools h3{margin:0 0 4px;font-family:"Lora",serif;font-size:17px;color:var(--indigo)}
+  .datatools p{margin:4px 0 10px;font-size:14px;color:var(--ink-soft)}
+  .dt-row{display:flex;flex-wrap:wrap;gap:8px}
+  .dt-btn{background:var(--indigo);color:#fff;border:none;border-radius:8px;padding:9px 13px;font-size:14px;cursor:pointer;font-family:inherit}
+  .dt-btn.alt{background:transparent;color:var(--indigo);border:1px solid var(--indigo)}
+  .dt-btn:focus-visible,.planbar-share:focus-visible,.wx-go:focus-visible,.inbox-btn:focus-visible{outline:2px solid var(--ochre);outline-offset:2px}
+  .dt-paste{margin-top:10px}
+  .dt-paste textarea{width:100%;min-height:90px;font-family:"DM Mono",monospace;font-size:12px;border:1px solid var(--line);border-radius:8px;padding:8px;background:#fff;box-sizing:border-box}
+  .dt-meta{font-size:13px;color:var(--ink-soft);margin-top:10px}
+  .dt-meta.warn{color:var(--wood)}
+  footer .reset.armed{border-color:var(--wood);color:var(--wood);font-weight:600}
+  .planbar-share{background:transparent;border:1px solid rgba(255,255,255,.5);color:inherit;border-radius:8px;padding:6px 10px;font-size:13px;cursor:pointer;margin-right:6px}
+  .planbar-clear.armed{font-weight:700;text-decoration:underline}
+  .today-wx{margin:0 0 12px;font-size:14px;color:var(--ink-soft)}
+  .today-wx b{color:var(--ink)}
+  .wx-go{margin-left:6px;background:transparent;border:none;padding:0;color:var(--cobalt);font-size:14px;cursor:pointer;text-decoration:underline}
+  .inbox{margin:12px 0;padding:12px 16px;border-radius:12px;background:var(--ochre-soft);border:1px solid var(--ochre);font-size:15px}
+  .inbox p{margin:0 0 8px}
+  .inbox-btn{background:var(--indigo);color:#fff;border:none;border-radius:8px;padding:8px 12px;font-size:14px;cursor:pointer;margin-right:8px;font-family:inherit}
+  .inbox-btn.alt{background:transparent;color:var(--indigo);border:1px solid var(--indigo)}
+  .netpill{position:fixed;top:10px;left:50%;transform:translateX(-50%);z-index:60;background:var(--wood);color:#fff;font-size:13px;padding:6px 12px;border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+  .toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);z-index:70;background:var(--ink);color:#fff;padding:10px 14px;border-radius:10px;font-size:14px;max-width:90vw;opacity:0;transition:opacity .2s}
+  .toast.on{opacity:1}
+  @media (prefers-reduced-motion:reduce){.toast{transition:none}}
+
+  .aviso{margin:0 0 10px;font-size:13.5px;color:#5a1d14;background:#FBE7E2;border-left:3px solid #B23A2A;border-radius:0 8px 8px 0;padding:8px 11px}
+  .aviso-tag{display:block;font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.03em;color:#B23A2A;margin-bottom:2px}
+  .fest{color:#B23A2A;font-weight:600}
+  .finde .finde-card{background:#fff;border:1px solid var(--line);border-left:4px solid var(--indigo);border-radius:12px;padding:14px 16px;box-shadow:0 2px 10px rgba(0,0,0,.04);margin-top:12px}
+  .finde h2{margin:0 0 4px;font-family:"Lora",serif;font-size:21px;color:var(--indigo)}
+  .finde .fsub{margin:0 0 6px;font-size:14px;color:var(--ink-soft)}
+  .fday{border-top:1px dashed var(--line);padding-top:10px;margin-top:10px}
+  .fday h3{margin:0 0 3px;font-size:16px;color:var(--ink)}
+  .fday p{margin:4px 0;font-size:14px;color:var(--ink-soft)}
+  .fday p b{color:var(--ink)}
+  .fextra{display:grid;gap:10px;margin-top:12px}
+  @media(min-width:640px){.fextra{grid-template-columns:1fr 1fr}}
+  .fbox{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:11px 13px;font-size:14px;color:var(--ink-soft)}
+  .fbox h4{margin:0 0 4px;font-size:13px;font-family:"DM Mono",monospace;color:var(--ochre);font-weight:400}
+  .fbox .fname{display:block;font-family:"Lora",serif;font-size:17px;color:var(--ink);margin-bottom:2px}
+  /* Botones de cada sitio y filtros del mapa: siempre en una línea (si no caben, se deslizan de lado) */
+  .fbtns{display:flex;flex-wrap:nowrap;gap:5px;margin-top:8px;overflow-x:auto;scrollbar-width:none}
+  .fbtns::-webkit-scrollbar{display:none}
+  .fbtns>.fbtn{flex:1 0 auto;white-space:nowrap;justify-content:center;text-align:center;padding:6px 6px;font-size:12.5px}
+  .fbtn{background:transparent;border:1px solid var(--indigo);color:var(--indigo);border-radius:8px;padding:6px 10px;font-size:13px;cursor:pointer;font-family:inherit}
+  .fbtn.solid{background:var(--indigo);color:#fff}
+  .fbtn:focus-visible{outline:2px solid var(--ochre);outline-offset:2px}
+  .esc-meta{font-family:"DM Mono",monospace;font-size:12px;color:var(--ochre);margin:0 0 6px}
+  .esc-comer{font-size:13.5px;color:var(--ink-soft)}
+  .esc-list{margin:0 0 8px;padding-left:18px;font-size:13.5px;color:var(--ink-soft)}
+  .esc-list li{margin:3px 0}
+  .esc-ok{font-size:11px;background:var(--green);color:#fff;border-radius:999px;padding:1px 7px}
+  .ibox.flash{outline:3px solid var(--ochre)}
+
+  /* agenda con pestañas */
+  .agenda{padding:14px 0 2px}
+  .agtabs{display:flex;gap:6px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:4px}
+  .agtabs button{flex:1;border:none;background:transparent;border-radius:9px;padding:9px 6px;font-family:inherit;font-size:14px;font-weight:600;color:var(--ink-soft);cursor:pointer}
+  .agtabs button[aria-selected="true"]{background:var(--indigo);color:#fff}
+  .agtabs button:focus-visible{outline:2px solid var(--ochre);outline-offset:2px}
+  .agenda .today{padding:8px 0 0}
+  .agenda .finde .finde-card{margin-top:8px}
+  .agpane[hidden]{display:none}
+  /* navegación inferior */
+  :root{--navh:58px}
+  .view[hidden]{display:none}
+  .vhead{background:var(--indigo);color:#F4F2E8;padding:20px 0 16px}
+  .vhead small{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#E6B07A}
+  .vhead h2{margin:2px 0 0;font-family:"Lora",serif;font-size:28px;font-weight:600;line-height:1.1}
+  .cmtabs{margin-top:14px}
+  .view[data-view="comer"] section.info,.view[data-view="escapadas"] section.info{padding-top:14px}
+  .planintro{padding:16px 0 0}
+  .planintro p{margin:0 0 10px;color:var(--ink-soft);font-size:15px;line-height:1.5}
+  .view[data-view="plan"] footer{margin-top:10px}
+  .bnav{position:fixed;left:0;right:0;bottom:0;z-index:45;background:#fff;border-top:1px solid var(--line);box-shadow:0 -4px 16px rgba(0,0,0,.06);padding-bottom:env(safe-area-inset-bottom)}
+  .bnav-in{max-width:1000px;margin:0 auto;display:flex}
+  .bnav button{flex:1;border:none;background:transparent;padding:7px 2px 6px;font-family:inherit;font-size:11px;color:var(--ink-soft);cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;position:relative}
+  .bnav button svg{width:20px;height:20px}
+  .bnav button.on{color:var(--indigo);font-weight:700}
+  .bnav button:focus-visible{outline:2px solid var(--ochre);outline-offset:-2px}
+  .bnav .bcount{position:absolute;top:3px;left:calc(50% + 6px);background:var(--ochre);color:#fff;border-radius:999px;font-size:10px;min-width:16px;height:16px;line-height:16px;padding:0 4px;font-weight:700}
+  body{padding-bottom:calc(var(--navh) + env(safe-area-inset-bottom))}
+  body.hasplan{padding-bottom:calc(var(--navh) + 62px + env(safe-area-inset-bottom))}
+  .planbar{bottom:calc(var(--navh) + env(safe-area-inset-bottom)) !important}
+  .toast{bottom:calc(var(--navh) + 80px)}
+  /* plan → mapas */
+  .planbar-route{display:block;margin:8px 0 2px;text-align:center;background:#F4F2E8;color:var(--indigo);border-radius:8px;padding:9px;font-weight:700;font-size:14px;text-decoration:none}
+  .planbar-order{font-size:12px;opacity:.8;margin:2px 0 6px}
+  /* bares */
+  .bargrid{display:grid;gap:10px;grid-template-columns:1fr}
+  @media(min-width:640px){.bargrid{grid-template-columns:1fr 1fr}}
+  .barcard{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--green);border-radius:var(--r);padding:12px 14px;box-shadow:var(--shadow)}
+  .barcard.nuevo{border-left-color:var(--ochre)}
+  .barcard .bsello{font-size:.78rem;font-weight:600;color:var(--ochre);margin:.1rem 0 .2rem}
+  .barcard h4{margin:0 0 2px;font-family:"Lora",serif;font-size:17px;color:var(--ink)}
+  .barcard .bdir{margin:0 0 6px;font-size:13px;color:var(--ink-soft)}
+  .barcard p{margin:0 0 6px;font-size:14px;color:var(--ink-soft)}
+  .barcard .bcierra{font-size:12.5px;color:var(--wood)}
+  .barcard .fbtns{margin-top:6px}
+  .bartitle{margin:14px 0 8px;font-family:"Lora",serif;font-size:18px;color:var(--indigo)}
+  .barcard.flash{outline:3px solid var(--ochre)}
+  /* mapa */
+  .mapsec{padding:6px 0 10px}
+  #map{height:62vh;min-height:320px;border-radius:12px;border:1px solid var(--line);margin-top:8px;background:#e8e4d8;z-index:1}
+  .mapchips{display:flex;flex-wrap:nowrap;gap:4px;margin-top:8px;overflow-x:auto;scrollbar-width:none}
+  .mapchips::-webkit-scrollbar{display:none}
+  .mapchips button{flex:1 0 auto;white-space:nowrap;border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 6px;font-size:12px;font-family:inherit;cursor:pointer;color:var(--ink)}
+  .mapchips button[aria-pressed="true"]{background:var(--indigo);border-color:var(--indigo);color:#fff}
+  .maplegend{font-size:12.5px;color:var(--ink-soft);margin:6px 0 0}
+  .maplegend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin:0 4px 0 8px;vertical-align:-1px}
+  .mappop b{font-family:"Lora",serif;font-size:15px}
+  .mappop .mp-b{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap}
+  .mappop button,.mappop a{font-size:12.5px;border:1px solid #2F3B1E;border-radius:6px;padding:4px 8px;background:#fff;color:#2F3B1E;cursor:pointer;text-decoration:none}
+  .mapmsg{font-size:14px;color:var(--ink-soft);padding:20px;text-align:center}
+
+  /* tiempo */
+  .wxi{display:inline-block;vertical-align:middle;flex:none}
+  .wxb{display:inline-flex;align-items:center;gap:4px;font-size:13px;color:var(--ink-soft);white-space:nowrap}
+  .wxb b{color:var(--ink);font-size:14px}
+  .wxb .lo{color:var(--ink-soft)}
+  .wxb .rn{display:inline-flex;align-items:center;gap:1px;color:#2F6DB5;margin-left:3px}
+  .wxtoday{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .wxcard{background:linear-gradient(160deg,#F4F6EC,#fff);border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:flex;gap:10px;align-items:center}
+  .wxcard .wxl{font-size:12px;color:var(--ink-soft);margin:0}
+  .wxcard .wxt{font-size:20px;font-weight:700;color:var(--ink);margin:0;line-height:1.1}
+  .wxcard .wxt span{font-size:14px;font-weight:400;color:var(--ink-soft)}
+  .wxcard .wxs{font-size:12px;color:var(--ink-soft);margin:2px 0 0;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  .wxadv{margin:8px 0 0;font-size:13.5px;color:var(--ink-soft)}
+  .wxwarn{display:inline-flex;align-items:center;gap:3px;font-size:11.5px;font-weight:600;color:#8A2E1F;background:#FBE7E2;border-radius:999px;padding:2px 8px;margin:2px 4px 0 0}
+  .fday-h{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+  .zonas{margin-top:14px;border-top:1px dashed var(--line);padding-top:10px}
+  .zonas h3{margin:0 0 6px;font-size:16px;color:var(--ink)}
+  .ztab{width:100%;border-collapse:collapse;font-size:13px}
+  .ztab th{font-weight:600;color:var(--ink-soft);font-size:12px;text-align:center;padding:4px 2px}
+  .ztab th:first-child,.ztab td:first-child{text-align:left}
+  .ztab td{padding:6px 2px;border-top:1px solid var(--line);text-align:center;vertical-align:middle}
+  .ztab td:first-child{font-weight:600;color:var(--ink);font-size:13px}
+  .zcell{display:flex;flex-direction:column;align-items:center;gap:1px;line-height:1.1}
+  .zcell small{color:var(--ink-soft);font-size:11.5px}
+  .zcell .zw{color:#8A2E1F;font-size:10.5px;font-weight:700}
+  .esc-wx{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;margin:2px 0 8px;padding:7px 9px;background:#F4F6EC;border-radius:8px}
+  .esc-wx .ed{font-size:11.5px;color:var(--ink-soft);margin-right:2px}
+
+  .evlist{list-style:none;margin:6px 0 0;padding:0}
+  .evlist li{display:flex;gap:10px;padding:7px 0;border-top:1px solid var(--line);font-size:14px;color:var(--ink-soft)}
+  .evlist li:first-child{border-top:none}
+  .evdate{flex:none;width:44px;text-align:center;background:var(--indigo);color:#fff;border-radius:8px;padding:4px 0;font-size:11px;line-height:1.15}
+  .evdate b{display:block;font-size:17px}
+  .evlist b.evn{color:var(--ink)}
+  .nearby{margin-top:10px}
+  .nearby h4{margin:8px 0 4px;font-size:14px;color:var(--indigo)}
+  .nearby button{display:flex;justify-content:space-between;gap:8px;width:100%;text-align:left;background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin:4px 0;font-family:inherit;font-size:14px;color:var(--ink);cursor:pointer}
+  .nearby button span{color:var(--ink-soft);font-size:12.5px;white-space:nowrap}
+
+  .barcard .blleno{display:inline-block;font-size:.75rem;font-weight:700;color:#fff;background:var(--wood);border-radius:999px;padding:1px 9px;margin:.1rem 0 .25rem}
+  .barcard .bnota{font-family:"DM Mono",monospace;font-size:11.5px;color:var(--ink-soft);margin:.1rem 0 .3rem}
+  .barcard .bhora{font-size:12.5px;color:var(--ink-soft);margin:.1rem 0}
+  .barcard .bhora::before{content:"Horario · ";font-weight:700}
+  .barcard .brv{font-size:12.5px;font-weight:700;color:var(--indigo);margin:.1rem 0 .3rem}
+  .barcard .fbtns{flex-wrap:nowrap}
+  .cpgrid{display:grid;gap:12px;grid-template-columns:1fr}
+  @media(min-width:760px){.cpgrid{grid-template-columns:1fr 1fr}}
+  .cpgrp{margin:6px 0 4px;font-family:"Lora",serif;font-size:20px;color:var(--ink)}
+  .cpgrp small{display:block;font-family:inherit;font-size:13px;color:var(--wood);font-weight:400}
+  .rtgrid{display:grid;gap:14px;grid-template-columns:1fr}
+  @media(min-width:760px){.rtgrid{grid-template-columns:1fr 1fr}}
+  .rtcard{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--ochre);border-radius:var(--r);padding:14px 16px;box-shadow:var(--shadow)}
+  .rtcard h3{margin:0 0 2px;font-family:"Lora",serif;font-size:19px;color:var(--ink)}
+  .rtcard .rtmeta{margin:0 0 6px;font-family:"DM Mono",monospace;font-size:12px;color:var(--ochre)}
+  .rtcard p{margin:0 0 8px;font-size:14px;color:var(--ink-soft)}
+  .rtstops{list-style:none;counter-reset:st;margin:6px 0 10px;padding:0}
+  .rtstops li{counter-increment:st;position:relative;padding:6px 0 6px 30px;border-top:1px dashed var(--line);font-size:14px;color:var(--ink-soft)}
+  .rtstops li:first-child{border-top:none}
+  .rtstops li::before{content:counter(st);position:absolute;left:0;top:7px;width:21px;height:21px;border-radius:50%;background:var(--indigo);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+  .rtstops b{color:var(--ink)}
+  .rtstops button{background:none;border:none;padding:0;font:inherit;color:var(--cobalt);text-decoration:underline;cursor:pointer}
+  .rtgo{display:inline-block;background:var(--indigo);color:#fff;border-radius:8px;padding:8px 12px;font-size:14px;text-decoration:none;font-weight:600}
+  footer .reset{margin-top:8px;background:transparent;border:1px solid var(--line);color:var(--ink-soft);font-family:"DM Mono",monospace;font-size:12px;padding:8px 12px;border-radius:8px;cursor:pointer;}
+  footer .reset:hover{border-color:var(--wood);color:var(--wood)}
+  .credits{margin:20px 0 0;padding-top:14px;border-top:1px solid var(--line);font-size:12.5px;line-height:1.6;color:var(--ink-soft)}
+  .credits b{color:var(--ink);font-weight:600}
+
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+  .reveal{opacity:0;transform:translateY(8px)}
+  .reveal.in{opacity:1;transform:none;transition:opacity .5s ease,transform .5s ease}
+</style>
+<link rel="manifest" href="manifest.webmanifest">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="star8" viewBox="0 0 100 100"><path d="M50 4C76 22 80 66 50 96C20 66 24 22 50 4Z M50 18V88" fill="currentColor"/></symbol>
+  <symbol id="check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  <symbol id="pin" viewBox="0 0 24 24"><path d="M12 21s7-6.3 7-11a7 7 0 10-14 0c0 4.7 7 11 7 11z" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="10" r="2.4" fill="currentColor"/></symbol>
+  <symbol id="web" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+</svg>
+
+<header class="hero">
+  <svg class="starwatermark" aria-hidden="true"><use href="#star8"/></svg>
+  <div class="wrap">
+    <p class="eyebrow">Guía viva · finde a finde</p>
+    <h1>Jaén<br><em>sierra y Renacimiento</em></h1>
+    <p class="lede">Cazorla, Segura y Las Villas, Úbeda y Baeza: sitios, rutas, bares y escapadas, con horarios, precios y el tiempo. Marca lo que visitas y monta tu plan: se guarda en tu móvil.</p>
+  </div>
+  <div class="band" aria-hidden="true"></div>
+</header>
+
+<div class="wrap"><div class="inbox" id="inbox" hidden></div></div>
+<section class="agenda" id="agenda">
+  <div class="wrap"><div class="agtabs" role="tablist" aria-label="Agenda">
+    <button role="tab" type="button" data-ag="hoy" aria-selected="true">Hoy y mañana</button>
+    <button role="tab" type="button" data-ag="finde" aria-selected="false">Este finde</button>
+  </div></div>
+  <div class="today agpane" id="todaybox" data-pane="hoy" aria-live="polite"></div>
+  <div class="finde agpane" id="findebox" data-pane="finde" hidden></div>
+</section>
+<div class="netpill" id="netpill" hidden>Sin conexión: la guía funciona; el tiempo y los enlaces, no</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<section class="strategy">
+  <div class="wrap">
+    <p class="kicker"><svg><use href="#star8"/></svg>Lo que conviene saber · cuándo ir</p>
+    <div class="tips">
+      <div class="tip"><h3><span class="dot">0€</span>La sierra es gratis</h3><p>El <b>nacimiento del Guadalquivir</b>, la <b>Cerrada del Utrero</b>, el <b>Borosa</b>, la Torre del Vinagre, el Collado del Almendral y todos los miradores: sin entrada. En Úbeda y Baeza, plazas, murallas y el Hospital de Santiago, también.</p></div>
+      <div class="tip"><h3><span class="dot">UE</span>Museos de la Junta</h3><p>El <b>castillo de la Yedra</b> (Cazorla) es gratis con DNI de la UE.</p></div>
+      <div class="tip"><h3><span class="dot">LUN</span>Ojo con los lunes</h3><p>Cierran el <b>castillo de la Yedra</b> y el <b>castillo de Segura</b>; el <b>Cosmolarium</b> de Hornos, lunes y martes. Jabalquinto (Baeza) solo abre por dentro de lunes a viernes.</p></div>
+      <div class="tip"><h3><span class="dot">ÚB</span>Úbeda y Baeza en un día</h3><p>Úbeda por la mañana (Salvador, Santa María y la Sinagoga del Agua, con pase), comer allí y Baeza por la tarde: están a 9 km. El atardecer, en las murallas de cualquiera de las dos.</p></div>
+      <div class="tip"><h3><span class="dot">RUTA</span>Rutas del parque</h3><p>El <b>Borosa</b> y la Cerrada del Utrero se llenan en puentes y findes de primavera: ve temprano. En verano, calor y riesgo de incendios: consulta antes si hay restricciones de acceso.</p></div>
+      <div class="tip"><h3><span class="dot">ÉP</span>Mejor época</h3><p><b>Primavera</b> y <b>otoño</b>. De mediados de septiembre a octubre, la <b>berrea</b> del ciervo; en noviembre, los colores del otoño y la campaña de la aceituna.</p></div>
+    </div>
+    <p class="caveat">Horarios y precios cambian por temporada y a veces sin avisar; varias fuentes no coinciden y está marcado con «~» o «confírmalo». Tómalo como brújula y confirma antes de ir. Los datos se revisan solos cada semana.</p>
+  </div>
+</section>
+
+<section class="info" id="s_finde">
+  <div class="wrap">
+    <p class="kicker"><svg><use href="#star8"/></svg>Si sales de finde desde Las Villas</p>
+    <div class="igrid">
+      <article class="ibox">
+        <h3>Cerca de casa</h3>
+        <p><b>Úbeda</b> está a unos 30–40 min y <b>Baeza</b> a 10 más. <b>Cazorla</b>, a unos 50 min. Iznatoraf y Villacarrillo, al lado.</p>
+      </article>
+      <article class="ibox">
+        <h3>A la sierra</h3>
+        <p>La <b>A-319</b> recorre el parque de Cazorla al Tranco: Puerto de las Palomas, Arroyo Frío, Torre del Vinagre, Coto Ríos y el embalse. Es de curvas: calcula más tiempo del que parece.</p>
+      </article>
+      <article class="ibox">
+        <h3>Si llueve</h3>
+        <p>Úbeda y Baeza (iglesias, Sinagoga, palacios), el museo del castillo de la Yedra, la Torre del Vinagre y el Cosmolarium de Hornos.</p>
+      </article>
+      <article class="ibox">
+        <h3>Para comer en la sierra</h3>
+        <p>En finde, reserva en Arroyo Frío, Cazorla y Hornos. Los platos de aquí: <b>rin-ran, andrajos, migas, ajoatao</b> y carnes de monte.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="info" id="s_mover">
+  <div class="wrap">
+    <p class="kicker"><svg><use href="#star8"/></svg>Cómo moverte · coche y aparcamiento</p>
+    <div class="igrid">
+      <article class="ibox">
+        <h3>En coche</h3>
+        <p>Para la sierra hace falta coche. En el parque hay pocas gasolineras: llena el depósito en Cazorla o Villacarrillo antes de subir.</p>
+        <p class="inote">Al Borosa, aparca en el aparcamiento del río (a veces de pago); al nacimiento del Guadalquivir, el último tramo es pista.</p>
+      </article>
+      <article class="ibox">
+        <h3>Úbeda y Baeza a pie</h3>
+        <p>Aparca fuera del casco antiguo y entra andando: todo lo importante está a menos de 15 min a pie.</p>
+        <p class="inote">En Segura de la Sierra y Cazorla, deja el coche a la entrada: las calles altas son estrechas.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="info" id="s_otras">
+  <div class="wrap">
+    <p class="kicker"><svg><use href="#star8"/></svg>Otras experiencias que merecen la pena</p>
+    <div class="igrid">
+      <article class="ibox">
+        <h3>La berrea</h3>
+        <p>De mediados de septiembre a octubre, los ciervos braman al anochecer. Hay salidas guiadas; mejor con guía y en silencio.</p>
+      </article>
+      <article class="ibox">
+        <h3>Cielo de estrellas</h3>
+        <p>La sierra tiene uno de los cielos más oscuros de España. El <b>Cosmolarium</b> de Hornos hace observaciones nocturnas con reserva.</p>
+      </article>
+      <article class="ibox">
+        <h3>El aceite</h3>
+        <p>En campaña (de noviembre a enero) se nota en todos los pueblos. Pregunta por visitas a almazaras y prueba el aceite del año.</p>
+      </article>
+      <article class="ibox">
+        <h3>GR-247 Bosques del Sur</h3>
+        <p>El gran sendero circular del parque, por etapas, con refugios. Para quien quiera algo más que una ruta de un día.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="info" id="bares">
+  <div class="wrap">
+    <p class="kicker"><svg><use href="#star8"/></svg>Bares de tapeo · tapa caliente con cada bebida</p>
+    <p class="inote">Sacados de reseñas (oct 2026) y todavía sin probar en persona. Cuando pruebes uno, márcalo: así la guía sabe cuáles recomendar.</p>
+    <div id="barlist"></div>
+    <h3 class="bartitle">Lo de aquí</h3>
+    <div class="igrid">
+      <article class="ibox">
+        <h3>Tapear en Jaén</h3>
+        <p>En casi todos los bares <b>cada bebida trae su tapa</b>. En Cazorla, la plaza de Santa María y la Corredera; en Baeza, la calle Barbacana; en Úbeda, la calle Real.</p>
+      </article>
+      <article class="ibox">
+        <h3>Platos de la sierra</h3>
+        <p><b>Rin-ran</b> (patata, bacalao y pimiento), <b>andrajos</b>, <b>migas</b>, <b>ajoatao</b>, choto al ajillo y carnes de monte: ciervo, jabalí.</p>
+      </article>
+      <article class="ibox">
+        <h3>Aceite de aquí</h3>
+        <p>Las denominaciones de origen <b>Sierra de Cazorla</b> y <b>Sierra de Segura</b>. Pide que te pongan del de la casa.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="mapsec" id="mapa">
+  <div class="wrap">
+    <p class="kicker"><svg><use href="#star8"/></svg>Mapa · sitios, bares, restaurantes y escapadas</p>
+    <div class="mapchips" id="mapchips">
+      <button type="button" data-mf="pend" aria-pressed="true" title="Pendientes de ver">Por ver</button>
+      <button type="button" data-mf="todo" aria-pressed="false">Todo</button>
+      <button type="button" data-mf="hoy" aria-pressed="false" title="Gratis hoy">Gratis</button>
+      <button type="button" data-mf="plan" aria-pressed="false">Mi plan</button>
+      <button type="button" data-mf="bares" aria-pressed="false">Bares</button>
+      <button type="button" data-mf="fuera" aria-pressed="false" title="Escapadas por la provincia">Fuera</button>
+      <button type="button" id="mapLocate" title="Cerca de mí" aria-label="Cerca de mí">📍</button>
+    </div>
+    <p class="maplegend"><i style="background:#C99A2E"></i>imprescindible<i style="background:#2E5E4E"></i>pendiente<i style="background:#9A958A"></i>visitado<i style="background:#4E6B2E"></i>bar<i style="background:#B4532A"></i>escapada<i style="background:#7B3F98"></i>qué ver fuera<i style="background:#3E7D3A"></i>naturaleza<i style="background:#2F86B5"></i>playa<i style="background:#C2416B"></i>escondido</p>
+    <div id="map"><p class="mapmsg">El mapa se carga al abrirlo (necesita conexión).</p></div>
+    <div class="nearby" id="nearby" hidden></div>
+  </div>
+</section>
+
+<section class="info" id="especial">
+  <div class="wrap">
+    <p class="kicker"><svg><use href="#star8"/></svg>Restaurantes · para comer bien</p>
+    <p class="inote">Sacados de reseñas (oct 2026). Horarios cambiantes: confírmalos y reserva en finde.</p>
+    <div id="eslist"></div>
+  </div>
+</section>
+
+<section class="info escapadas">
+  <div class="wrap">
+    <p class="kicker"><svg><use href="#star8"/></svg>Escapadas por la provincia · desde Las Villas</p>
+    <p class="inote">Tiempos en coche desde Villanueva del Arzobispo, aproximados. Los sitios para comer salen de reseñas, salvo los marcados como <b>★ recomendado</b>. En los pueblos, reserva en finde.</p>
+    <div class="igrid" id="escapgrid"></div>
+  </div>
+</section>
+
+<section class="routes">
+  <div class="wrap">
+    <p class="kicker"><svg><use href="#star8"/></svg>Rutas montadas · toca una parada para ver su ficha</p>
+    <div class="rgrid" id="routes"></div>
+  </div>
+</section>
+
+<section class="dayplan">
+  <div class="wrap">
+    <p class="kicker"><svg><use href="#star8"/></svg>¿Qué día vienes? Te marco lo que conviene</p>
+    <div class="daychips" id="daychips" role="group" aria-label="Día de la semana">
+      <button data-day="-1" aria-pressed="true">Cualquiera</button>
+      <button data-day="0" aria-pressed="false">Lun</button>
+      <button data-day="1" aria-pressed="false">Mar</button>
+      <button data-day="2" aria-pressed="false">Mié</button>
+      <button data-day="3" aria-pressed="false">Jue</button>
+      <button data-day="4" aria-pressed="false">Vie</button>
+      <button data-day="5" aria-pressed="false">Sáb</button>
+      <button data-day="6" aria-pressed="false">Dom</button>
+    </div>
+    <label class="dayhide"><input type="checkbox" id="hideClosed"> Ocultar los que cierran ese día</label>
+    <p class="daysum" id="daysum" aria-live="polite"></p>
+  </div>
+</section>
+
+<nav class="controls" aria-label="Buscar y filtrar">
+  <div class="wrap">
+    <div class="row1">
+      <div class="search" id="searchbox">
+        <input type="search" id="q" placeholder="Buscar (Borosa, castillo, Úbeda…)" aria-label="Buscar sitio" autocomplete="off">
+        <button class="clr" id="clr" type="button" aria-label="Borrar búsqueda">&times;</button>
+      </div>
+      <div class="segmented" role="group" aria-label="Estado">
+        <button data-filter="todos" aria-pressed="true">Todos</button>
+        <button data-filter="pendientes" aria-pressed="false">Pendientes</button>
+        <button data-filter="visitados" aria-pressed="false">Visitados</button>
+      </div>
+      <div class="progress" aria-hidden="true">
+        <span class="count" id="count">0 / 0</span>
+        <span class="track"><span class="fill" id="fill"></span></span>
+      </div>
+    </div>
+    <div class="row2">
+      <button class="fbtn" id="filtersToggle" type="button" aria-expanded="true"><span class="chev">▾</span> Filtros<span id="fcount"></span></button>
+      <span class="showing" id="showing" aria-live="polite"></span>
+      <button class="fbtn reset-f" id="resetFilters" type="button">Limpiar</button>
+    </div>
+    <div id="filterrows">
+    <div class="chips" id="chips" role="group" aria-label="Tipo">
+      <span class="chip-lbl">Tipo</span>
+      <button class="chip" data-cat="todo" aria-pressed="true">Todo</button>
+      <button class="chip" data-cat="renacimiento" aria-pressed="false">Renacimiento</button>
+      <button class="chip" data-cat="castillo" aria-pressed="false">Castillos</button>
+      <button class="chip" data-cat="naturaleza" aria-pressed="false">Naturaleza</button>
+      <button class="chip" data-cat="mirador" aria-pressed="false">Miradores</button>
+      <button class="chip" data-cat="museo" aria-pressed="false">Museos</button>
+      <button class="chip" data-cat="pueblo" aria-pressed="false">Pueblos</button>
+    </div>
+    <div class="chips" id="pricechips" role="group" aria-label="Precio">
+      <span class="chip-lbl">Precio</span>
+      <button class="chip" data-price="todo" aria-pressed="true">Todos</button>
+      <button class="chip" data-price="gratis" aria-pressed="false">Gratis</button>
+      <button class="chip" data-price="pago" aria-pressed="false">De pago</button>
+    </div>
+    <div class="chips" id="levelchips" role="group" aria-label="Nivel">
+      <span class="chip-lbl">Nivel</span>
+      <button class="chip" data-level="todo" aria-pressed="true">Todos</button>
+      <button class="chip" data-level="principal" aria-pressed="false">Principales</button>
+      <button class="chip" data-level="secundario" aria-pressed="false">Secundarios</button>
+    </div>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="wrap" id="board"></div>
+  <div class="wrap"><p class="empty" id="empty">Nada coincide con eso. Prueba a quitar algún filtro o a limpiar la búsqueda.</p></div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="kicker"><svg><use href="#star8"/></svg>Nota final</p>
+    <p>Lo que marcas se guarda en este dispositivo, así que puedes ir tachando finde a finde (y abajo tienes cómo hacer copia). El buscador funciona sin tildes y los filtros se combinan: por ejemplo <b>Gratis + Pendientes</b>.</p>
+    <p>Los horarios de la sierra cambian con la temporada y algunos sitios no publican horario oficial: lo que va con «~» o «confírmalo» es aproximado.</p>
+    <div class="datatools" id="datatools">
+      <h3>Tus datos</h3>
+      <p>Lo que marcas, tu plan y tus notas viven solo en este navegador. Si borras datos o cambias de móvil, se pierden. Guarda una copia de vez en cuando; también sirve para pasarlo todo a otro móvil.</p>
+      <div class="dt-row">
+        <button class="dt-btn" id="bkDownload" type="button">Descargar copia</button>
+        <button class="dt-btn alt" id="bkCopy" type="button">Copiar copia</button>
+        <button class="dt-btn alt" id="bkRestore" type="button">Restaurar copia</button>
+      </div>
+      <div class="dt-paste" id="bkPaste" hidden>
+        <p>Elige el archivo de la copia o pega su texto. Se <b>suma</b> a lo que ya tienes: no borra nada.</p>
+        <div class="dt-row">
+          <button class="dt-btn alt" id="bkPick" type="button">Elegir archivo</button>
+          <input type="file" id="bkFile" accept=".json,application/json,text/plain" hidden>
+        </div>
+        <textarea id="bkText" placeholder="…o pega aquí el texto de la copia" aria-label="Texto de la copia"></textarea>
+        <div class="dt-row"><button class="dt-btn" id="bkApply" type="button">Restaurar este texto</button></div>
+      </div>
+      <p class="dt-meta" id="bkMeta"></p>
+      <button class="reset" id="reset" type="button">Reiniciar lo marcado</button>
+    </div>
+    <p class="credits">Guía de <b>Jaén · sierra y Renacimiento</b>, hecha por Alfonso Carrascosa Martínez con la ayuda de Claude (Anthropic). Datos de webs oficiales (ayuntamientos, Junta de Andalucía y cada monumento), reseñas y OpenStreetMap; el tiempo, de Open-Meteo.</p>
+  </div>
+</footer>
+
+<nav class="bnav" id="bnav" aria-label="Secciones">
+  <div class="bnav-in">
+    <button type="button" data-nav="agenda"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 2v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2V2h-2v2H9V2zm-2 8h14v10H5z"/></svg>Hoy</button>
+    <button type="button" data-nav="sitios"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2 2 7v2h20V7zM4 11v7h3v-7zm6.5 0v7h3v-7zM17 11v7h3v-7zM2 20v2h20v-2z"/></svg>Sitios</button>
+    <button type="button" data-nav="mapa"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5"/></svg>Mapa</button>
+    <button type="button" data-nav="bares"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 3h16l-7 9v7h4v2H7v-2h4v-7z"/></svg>Comer</button>
+    <button type="button" data-nav="escapadas"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m14 6-4.2 5.6 3.2 4.3-1.6 1.2L7 11l-6 8h22z"/></svg>Escapadas</button>
+    <button type="button" data-nav="plan"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Plan<span class="bcount" id="navPlanCount" hidden></span></button>
+  </div>
+</nav>
+<div class="planbar" id="planbar" hidden>
+  <div class="planbar-main">
+    <button class="planbar-toggle" id="planbarToggle" type="button" aria-expanded="false">
+      <span class="chev">▾</span><span class="planbar-sum" id="planbarSum">Mi plan</span>
+    </button>
+    <button class="planbar-share" id="planbarShare" type="button">Compartir</button>
+    <button class="planbar-clear" id="planbarClear" type="button">Vaciar</button>
+  </div>
+  <div class="planbar-list" id="planbarList" hidden></div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var DATA = [
+    /* 1 · ÚBEDA */
+    { id:"salvador", z:"Z1", tags:["renacimiento"], name:"Sacra Capilla del Salvador",
+      desc:"Panteón de Francisco de los Cobos, secretario de Carlos V, trazado por Diego de Siloé y levantado por <b>Andrés de Vandelvira</b>. La fachada y la sacristía son <b>la joya del Renacimiento</b> en Úbeda.",
+      precio:"~7 € (antes 5 €; confírmalo)", dur:"~45 min", temp:"Todo el año",
+      horario:"L–J 9:30–14:30 y 16:30–19 · V y S 9:30–19 · D 12–14:30 y 16–19 (oct 2026; cambia por cultos)",
+      cuando:"A primera hora o a media tarde, cuando la luz da en la fachada.",
+      compra:"En taquilla.",
+      como:"En la plaza Vázquez de Molina, al fondo del casco antiguo. Aparca fuera del casco y entra andando.", web:"https://www.turismodeubeda.com/" },
+    { id:"santamaria_ub", z:"Z1", tags:["renacimiento"], name:"Basílica de Santa María de los Reales Alcázares",
+      desc:"Levantada sobre la antigua mezquita mayor, con <b>claustro gótico</b> y capillas cerradas por rejas del maestro Bartolomé. Está en la misma plaza que el Salvador.",
+      precio:"5 € con audioguía", dur:"~40 min", temp:"Todo el año",
+      horario:"L–S 10–19:45 · D 10–14 (horario municipal de mayo de 2026)",
+      cuando:"Junto con el Salvador: están a cien metros.",
+      compra:"En taquilla; la audioguía va por QR.",
+      como:"Plaza Vázquez de Molina.", web:"https://www.turismodeubeda.com/" },
+    { id:"sinagoga", z:"Z1", tags:["museo"], name:"Sinagoga del Agua",
+      desc:"Una casa del antiguo barrio judío con <b>baño ritual (mikvé)</b>, bodega y pozo, descubierta en 2007. Solo se visita con guía.",
+      precio:"~6 € (niños de 7 a 12, 4,50 €)", dur:"~35 min", temp:"Todo el año",
+      horario:"Pases guiados todos los días: 10:30, 11:15, 12:00, 12:45, 13:30, 17:00, 17:45, 18:30 y 19:15",
+      cuando:"Coge pase al llegar a Úbeda y encaja lo demás alrededor.",
+      compra:"En la propia sinagoga (tel. 953 758 150). En finde algún pase se llena.",
+      como:"Calle Roque Rojas 2, en la judería.", web:"https://www.turismodeubeda.com/" },
+    { id:"vazquezmolina", z:"Z1", tags:["renacimiento"], pt:"free", name:"Plaza Vázquez de Molina y Palacio de las Cadenas",
+      desc:"La plaza más bonita de Úbeda: palacios, iglesias y el <b>Palacio de las Cadenas</b> de Vandelvira, hoy ayuntamiento, con un patio que se puede ver.",
+      precio:"Gratis", dur:"~30 min", temp:"Atardecer",
+      horario:"La plaza, siempre; el patio del ayuntamiento, en horario de oficina",
+      cuando:"Al caer la tarde, con la piedra dorada.",
+      compra:"Sin entrada.",
+      como:"En el centro monumental.", web:"https://www.turismodeubeda.com/" },
+    { id:"santiago", z:"Z1", tags:["renacimiento"], pt:"free", name:"Hospital de Santiago",
+      desc:"El «Escorial andaluz»: una de las últimas obras de Vandelvira, con patio de doble arcada y escalera monumental. Hoy es centro cultural.",
+      precio:"Gratis", dur:"~30 min", temp:"Todo el año",
+      horario:"En el horario del centro cultural",
+      cuando:"Entre semana, cuando hay menos actos.",
+      compra:"Sin entrada.",
+      como:"Calle Obispo Cobos, a la entrada del casco viniendo de Villacarrillo.", web:"" },
+    { id:"miradores_ub", z:"Z1", tags:["mirador"], pt:"free", name:"Redonda de Miradores (murallas de Úbeda)",
+      desc:"Paseo por la muralla sur con el valle del Guadalquivir y el mar de olivos a los pies y, al fondo, las sierras de Cazorla y Mágina.",
+      precio:"Gratis", dur:"~30 min", temp:"Atardecer",
+      horario:"Siempre abierto",
+      cuando:"Al atardecer.",
+      compra:"Sin entrada.",
+      como:"Detrás de la plaza Vázquez de Molina.", web:"" },
+
+    /* 2 · BAEZA */
+    { id:"catedral_bz", z:"Z2", tags:["renacimiento"], name:"Catedral de Baeza",
+      desc:"Sobre la mezquita y una iglesia gótica, rehecha en el Renacimiento con Vandelvira. Se puede subir a la <b>torre</b>, con vistas al casco y al olivar.",
+      precio:"~7 € (con la torre)", dur:"~1 h", temp:"Todo el año",
+      horario:"Aprox. L–V 10:30–14 y 16–19 · S 10:30–19 · D 10:30–18 (las fuentes no coinciden: confírmalo)",
+      cuando:"Por la mañana; después, el Paseo de las Murallas, que sale de detrás.",
+      compra:"En taquilla.",
+      como:"Plaza de Santa María, en lo alto del casco.", web:"" },
+    { id:"jabalquinto", z:"Z2", tags:["renacimiento"], pt:"free", week:true, name:"Palacio de Jabalquinto",
+      desc:"Fachada gótico-isabelina de puntas de diamante, de lo más fotografiado de Baeza. Dentro, patio renacentista y escalera barroca (sede de la UNIA).",
+      precio:"Gratis", dur:"~20 min", temp:"Mañana",
+      horario:"L–V 9–14; fines de semana, consúltalo",
+      cuando:"Un viernes por la mañana. En finde, al menos la fachada.",
+      compra:"Sin entrada.",
+      como:"Cuesta de San Felipe Neri, junto a la catedral.", web:"" },
+    { id:"universidad_bz", z:"Z2", tags:["museo"], pt:"free", name:"Antigua Universidad y aula de Machado",
+      desc:"Universidad del s. XVI, hoy instituto. Conserva el <b>aula donde Antonio Machado</b> dio clases de francés.",
+      precio:"Gratis (alguna guía habla de 3 €)", dur:"~30 min", temp:"Todo el año",
+      horario:"Aprox. 10–14 y 16–19",
+      cuando:"Enfrente de Jabalquinto: se ven seguidos.",
+      compra:"Sin entrada.",
+      como:"Frente al palacio de Jabalquinto.", web:"" },
+    { id:"populo", z:"Z2", tags:["renacimiento"], pt:"free", name:"Plaza del Pópulo (Fuente de los Leones)",
+      desc:"La entrada del casco: la Fuente de los Leones, la Antigua Carnicería y la Casa del Pópulo, hoy oficina de turismo.",
+      precio:"Gratis", dur:"~20 min", temp:"Todo el año",
+      horario:"Siempre abierta",
+      cuando:"Para empezar la visita: en turismo dan plano.",
+      compra:"Sin entrada.",
+      como:"En el centro, junto a la plaza de España.", web:"" },
+    { id:"murallas_bz", z:"Z2", tags:["mirador"], pt:"free", name:"Paseo de las Murallas (Baeza)",
+      desc:"El paseo de la cornisa sur, con el valle del Guadalquivir y Sierra Mágina enfrente: el paisaje de los versos de Machado.",
+      precio:"Gratis", dur:"~40 min", temp:"Atardecer",
+      horario:"Siempre",
+      cuando:"Al atardecer.",
+      compra:"Sin entrada.",
+      como:"Sale de detrás de la catedral.", web:"" },
+
+    /* 3 · CAZORLA Y LA IRUELA */
+    { id:"yedra", z:"Z3", tags:["castillo","museo"], pt:"eu", cerrado:[0], name:"Castillo de la Yedra (Museo del Alto Guadalquivir)",
+      desc:"Castillo sobre el río Cerezuelo con la Torre del Homenaje y el <b>museo de artes y costumbres</b> de la comarca.",
+      precio:"Gratis UE · ~1,50 € otros", dur:"~1 h", temp:"Mañana",
+      horario:"Mar–sáb, mañana y tarde · dom solo mañana · lunes cerrado (cambia por temporada)",
+      cuando:"Por la mañana; luego se baja a las ruinas de Santa María.",
+      compra:"En taquilla, con DNI (tel. 953 10 14 02).",
+      como:"Subida a pie desde la plaza de Santa María.", web:"" },
+    { id:"santamaria_cz", z:"Z3", tags:["renacimiento"], pt:"free", name:"Ruinas de Santa María y plaza de Santa María",
+      desc:"Iglesia de Vandelvira que nunca llegó a cubrirse, levantada sobre el río Cerezuelo, que pasa por una <b>bóveda</b> bajo la plaza. La bóveda se ve en visita guiada.",
+      precio:"Plaza y ruinas, gratis · la bóveda, con visita guiada de pago", dur:"~30 min", temp:"Tarde",
+      horario:"Visitas a la bóveda aprox. mar–dom 10–14 y 16–19",
+      cuando:"Por la tarde: la plaza es el centro de tapas de Cazorla.",
+      compra:"La visita de la bóveda, en la oficina de turismo.",
+      como:"En el barrio viejo, bajo el castillo de la Yedra.", web:"" },
+    { id:"iruela", z:"Z3", tags:["castillo","mirador"], pt:"free", name:"Castillo de La Iruela",
+      desc:"Torre sobre un peñón a pocos kilómetros de Cazorla, con <b>vistas al valle</b> y al mar de olivos.",
+      precio:"Gratis", dur:"~45 min", temp:"Atardecer",
+      horario:"Acceso libre de día (confírmalo)",
+      cuando:"Al atardecer.",
+      compra:"Sin entrada.",
+      como:"En La Iruela, a 5 min en coche de Cazorla; se sube a pie desde el pueblo.", web:"" },
+
+    /* 4 · PARQUE NATURAL · VALLE DEL GUADALQUIVIR */
+    { id:"linarejos", z:"Z4", tags:["naturaleza"], pt:"free", name:"Cerrada del Utrero y cascada de Linarejos",
+      desc:"Sendero corto y circular junto al Guadalquivir encajado entre paredes de roca, con la <b>cascada de Linarejos</b>. Para empezar en el parque.",
+      precio:"Gratis", dur:"~1 h", temp:"Primavera/otoño",
+      horario:"Siempre (de día)",
+      cuando:"Primavera y otoño; en verano, a primera hora.",
+      compra:"Sin entrada.",
+      como:"Por la carretera de Vadillo Castril, pasado el puerto de las Palomas desde Cazorla.", web:"" },
+    { id:"nacimiento", z:"Z4", tags:["naturaleza"], pt:"free", name:"Nacimiento del Guadalquivir",
+      desc:"Donde brota el Guadalquivir, en un paraje de pinar. Corto y fácil, cerca del Puente de las Herrerías.",
+      precio:"Gratis", dur:"~1 h", temp:"Primavera/otoño",
+      horario:"Siempre (de día)",
+      cuando:"Primavera y otoño.",
+      compra:"Sin entrada.",
+      como:"Desde Cazorla hacia el Puente de las Herrerías; el último tramo es pista.", web:"" },
+    { id:"borosa", z:"Z4", tags:["naturaleza"], pt:"free", name:"Río Borosa y Cerrada de Elías",
+      desc:"La ruta más conocida del parque: el río Borosa y sus pasarelas de madera hasta la <b>Cerrada de Elías</b> (unos 4 km). Quien quiera más sigue hasta los túneles y las lagunas de Valdeazores.",
+      precio:"Gratis (el aparcamiento a veces se cobra)", dur:"2–3 h hasta la Cerrada, ida y vuelta", temp:"Primavera/otoño",
+      horario:"Siempre (de día)",
+      cuando:"Primavera y otoño. En verano, muy temprano.",
+      compra:"Sin entrada.",
+      como:"Sale del aparcamiento del río Borosa, a 1,5 km del centro de visitantes Torre del Vinagre.", web:"" },
+    { id:"vinagre", z:"Z4", tags:["museo","naturaleza"], pt:"free", name:"Centro de visitantes Torre del Vinagre",
+      desc:"El centro de interpretación del parque, con <b>museo de caza</b> y jardín botánico al lado. Buen sitio para pedir mapas de rutas.",
+      precio:"Gratis", dur:"~45 min", temp:"Todo el año",
+      horario:"Aprox. 10–14 y 16–19 (jul y ago, 17–20); los lunes, confírmalo",
+      cuando:"Antes de una ruta.",
+      compra:"Sin entrada (tel. 953 71 30 17).",
+      como:"En la A-319, km 48, entre Arroyo Frío y Coto Ríos.", web:"" },
+    { id:"almendral", z:"Z4", tags:["naturaleza"], pt:"free", name:"Centro de fauna Collado del Almendral",
+      desc:"Parque de fauna con miradores para ver <b>ciervos, gamos, muflones y cabras montesas</b> en semilibertad.",
+      precio:"Gratis", dur:"~1 h", temp:"Todo el año",
+      horario:"Consúltalo antes de ir",
+      cuando:"A primera hora o al caer la tarde, cuando se mueven los animales.",
+      compra:"Sin entrada.",
+      como:"En la A-319, cerca del embalse del Tranco y del mirador Félix Rodríguez de la Fuente.", web:"" },
+    { id:"tranco", z:"Z4", tags:["naturaleza","mirador"], pt:"free", name:"Embalse del Tranco",
+      desc:"El gran embalse del parque, con la isla de Bujaraiza y miradores a lo largo de la carretera.",
+      precio:"Gratis", dur:"~1 h", temp:"Atardecer",
+      horario:"Siempre",
+      cuando:"Al atardecer, mejor desde Hornos.",
+      compra:"Sin entrada.",
+      como:"Por la A-319 hacia Hornos.", web:"" },
+    { id:"palomas", z:"Z4", tags:["mirador"], pt:"free", name:"Mirador del Puerto de las Palomas",
+      desc:"El balcón de entrada al parque desde Cazorla, con todo el valle del Guadalquivir a los pies.",
+      precio:"Gratis", dur:"~15 min", temp:"Todo el año",
+      horario:"Siempre",
+      cuando:"De subida a la sierra.",
+      compra:"Sin entrada.",
+      como:"En el puerto, en la carretera de Cazorla a Arroyo Frío.", web:"" },
+    { id:"mirador_frf", z:"Z4", tags:["mirador"], pt:"free", name:"Mirador Félix Rodríguez de la Fuente",
+      desc:"Mirador sobre el embalse del Tranco, dedicado al naturalista.",
+      precio:"Gratis", dur:"~15 min", temp:"Atardecer",
+      horario:"Siempre",
+      cuando:"Combínalo con el Collado del Almendral.",
+      compra:"Sin entrada.",
+      como:"En la A-319, junto al Collado del Almendral.", web:"" },
+
+    /* 5 · SIERRA DE SEGURA */
+    { id:"segura", z:"Z5", tags:["castillo","mirador"], cerrado:[0], name:"Castillo de Segura de la Sierra",
+      desc:"Castillo en lo alto de uno de los pueblos más bonitos de Jaén, con vistas a toda la sierra de Segura.",
+      precio:"4,50 € (gratis menores de 7)", dur:"~1 h", temp:"Todo el año",
+      horario:"Aprox. mar–dom 10:30–14 y 17–20:30 · lunes cerrado (cambia por temporada: confírmalo)",
+      cuando:"Por la mañana o a última hora; en verano hay visitas nocturnas algunos días.",
+      compra:"En taquilla.",
+      como:"Se sube en coche hasta cerca del castillo.", web:"https://www.castilloseguradelasierra.es/" },
+    { id:"segura_pueblo", z:"Z5", tags:["pueblo"], pt:"free", name:"Segura de la Sierra: baños árabes y calles",
+      desc:"Pueblo encaramado bajo el castillo, con <b>baños árabes</b>, una plaza de toros cuadrada y miradores en cada esquina.",
+      precio:"Calles, gratis (los baños árabes, consúltalo)", dur:"~1 h", temp:"Todo el año",
+      horario:"Siempre",
+      cuando:"Antes o después del castillo.",
+      compra:"Sin entrada.",
+      como:"Aparca a la entrada del pueblo: dentro las calles son muy estrechas.", web:"" },
+    { id:"hornos", z:"Z5", tags:["castillo","museo"], cerrado:[0,1], name:"Hornos de Segura y Cosmolarium",
+      desc:"Pueblo-mirador sobre el Tranco. En su castillo está el <b>Cosmolarium</b>, museo de astronomía con planetario (la sierra tiene uno de los cielos más limpios de España).",
+      precio:"~5–6 €", dur:"~1 h", temp:"Tarde",
+      horario:"Mié–dom aprox. 10:30–14 y 17–20 · lunes y martes cerrado (confírmalo)",
+      cuando:"Por la tarde, y luego el atardecer en el mirador del pueblo.",
+      compra:"En taquilla; las observaciones nocturnas, con reserva.",
+      como:"En lo alto del pueblo, junto a las murallas.", web:"https://cosmolarium-hornos.com/" },
+    { id:"nac_segura", z:"Z5", tags:["naturaleza"], pt:"free", name:"Nacimiento del río Segura",
+      desc:"El Segura brota en una poza de agua clara junto a la aldea de Fuente Segura, en Santiago-Pontones.",
+      precio:"Gratis", dur:"~30 min", temp:"Primavera/otoño",
+      horario:"Siempre",
+      cuando:"Primavera y otoño.",
+      compra:"Sin entrada.",
+      como:"Por la carretera de Pontones (JF-7047).", web:"" },
+
+    /* 6 · LAS VILLAS */
+    { id:"villanueva", z:"Z6", tags:["pueblo"], pt:"free", name:"Villanueva del Arzobispo: plaza Mayor y San Andrés",
+      desc:"El casco: la plaza Mayor con su templete, la iglesia de San Andrés, sobre el antiguo castillo, y en la Vera Cruz el Cristo de <b>Mariano Benlliure</b>.",
+      precio:"Gratis", dur:"~1 h", temp:"Todo el año",
+      horario:"Las iglesias, en horario de culto",
+      cuando:"Cualquier tarde.",
+      compra:"Sin entrada.",
+      como:"En el centro del pueblo.", web:"" },
+    { id:"fuensanta", z:"Z6", tags:["pueblo"], pt:"free", name:"Santuario de la Fuensanta",
+      desc:"El santuario de la patrona de Villanueva, a las afueras del pueblo. En septiembre, feria y romería.",
+      precio:"Gratis", dur:"~30 min", temp:"Septiembre",
+      horario:"En horario de culto",
+      cuando:"En la feria de septiembre se vive de verdad.",
+      compra:"Sin entrada.",
+      como:"Junto a la carretera JV-7041, a la salida de Villanueva.", web:"" },
+    { id:"aguascebas", z:"Z6", tags:["naturaleza"], pt:"free", name:"Embalse del Aguascebas",
+      desc:"Embalse en la sierra de Las Villas, punto de partida de senderos como la ruta de la Osera, más exigente.",
+      precio:"Gratis", dur:"Medio día", temp:"Primavera/otoño",
+      horario:"Siempre (de día)",
+      cuando:"Primavera y otoño.",
+      compra:"Sin entrada.",
+      como:"Por la carretera de la sierra de Las Villas.", web:"" },
+    { id:"iznatoraf", z:"Z6", tags:["pueblo","mirador"], pt:"free", name:"Iznatoraf",
+      desc:"Pueblo amurallado en lo alto de un cerro, con callejuelas y <b>miradores</b> sobre la sierra y el valle. Hay ruta a pie desde Villanueva (unos 10 km).",
+      precio:"Gratis", dur:"~1 h", temp:"Atardecer",
+      horario:"Siempre",
+      cuando:"Al atardecer.",
+      compra:"Sin entrada.",
+      como:"A 10 min en coche de Villanueva.", web:"" },
+    { id:"villacarrillo", z:"Z6", tags:["renacimiento"], pt:"free", name:"Villacarrillo: iglesia de la Asunción",
+      desc:"Iglesia de Vandelvira levantada junto a los restos del castillo, en la cabeza de la comarca de Las Villas.",
+      precio:"Gratis", dur:"~30 min", temp:"Todo el año",
+      horario:"En horario de culto",
+      cuando:"De paso hacia Úbeda.",
+      compra:"Sin entrada.",
+      como:"En el centro de Villacarrillo.", web:"" }
+  ];
+
+  var ZONES = {
+    Z1:{ t:"Úbeda · Patrimonio Mundial", s:"El Renacimiento de Vandelvira alrededor de la plaza Vázquez de Molina; todo a pie." },
+    Z2:{ t:"Baeza · Patrimonio Mundial", s:"A 9 km de Úbeda: catedral, palacios y la universidad de Machado, en un casco pequeño." },
+    Z3:{ t:"Cazorla y La Iruela", s:"La puerta de la sierra: castillos, plazas de tapas y miradores sobre el olivar." },
+    Z4:{ t:"Parque Natural · valle del Guadalquivir", s:"Nacimiento, cerradas, cascadas y fauna a lo largo de la A-319. Sin entradas: coche y botas." },
+    Z5:{ t:"Sierra de Segura", s:"Pueblos con castillo colgados sobre el Tranco y el nacimiento del Segura." },
+    Z6:{ t:"Las Villas", s:"Villanueva del Arzobispo, Villacarrillo e Iznatoraf: entre el olivar y la sierra de Las Villas." }
+  };
+  var ZORDER = ["Z1","Z2","Z3","Z4","Z5","Z6"];
+
+  var PASS = {};
+  var DAYNAMES=["lunes","martes","miércoles","jueves","viernes","sábado","domingo"];
+  var CLOSED_MON=[];
+  var CLOSED_WEEKEND=["jabalquinto"];
+  var CLOSED_WEEKDAYS=[];
+  var MUSEOS=["yedra","sinagoga","vinagre","hornos","universidad_bz"];
+  var PRINCIPAL=["salvador","vazquezmolina","santamaria_ub","catedral_bz","populo","murallas_bz","yedra","santamaria_cz","linarejos","nacimiento","borosa","segura","hornos","iznatoraf"];
+
+  /* Avisos de estado (revisados el 22 oct 2026) */
+  var AVISOS_FECHA="28 oct 2026";
+  var AVISOS={};
+  var WEBS={};
+  var GENERIC=[];
+  function webFor(m){ if(WEBS[m.id]) return WEBS[m.id]; if(!m.web || GENERIC.indexOf(m.web)>=0) return ""; return m.web; }
+  var TIPS={
+    borosa:"En puentes y findes de primavera se llena: llega antes de las 9 o ve entre semana. Lleva agua; no hay fuentes seguras en todo el camino.",
+    linarejos:"Subiendo desde Cazorla, para en el mirador del Puerto de las Palomas.",
+    segura:"Si hay mucha gente, aparca abajo: las calles de arriba son estrechas y con mucha pendiente.",
+    sinagoga:"Pide pase nada más llegar a Úbeda: es guiada y con hora."
+  };
+
+  var ROUTES = [
+    { t:"Úbeda renacentista", meta:"Mañana o tarde · ~4 h", price:"~18 € (Salvador 7 + Santa María 5 + Sinagoga 6)", bono:"Ninguno: se paga suelto.",
+      stops:[["santiago","Hospital de Santiago"],["sinagoga","Sinagoga del Agua"],["vazquezmolina","Plaza Vázquez de Molina"],["salvador","Sacra Capilla del Salvador"],["santamaria_ub","Santa María"],["miradores_ub","Redonda de Miradores"]],
+      note:"Coge primero el pase de la Sinagoga y termina en las murallas al atardecer." },
+    { t:"Baeza en una mañana", meta:"Mañana · ~3 h", price:"~7 € (la catedral; lo demás, gratis)", bono:"Ninguno.",
+      stops:[["populo","Plaza del Pópulo"],["jabalquinto","Palacio de Jabalquinto"],["universidad_bz","Antigua Universidad"],["catedral_bz","Catedral"],["murallas_bz","Paseo de las Murallas"]],
+      note:"Jabalquinto solo abre por dentro de lunes a viernes por la mañana." },
+    { t:"Cazorla y la entrada al parque", meta:"Día · en coche", price:"Gratis (UE)", bono:"—",
+      stops:[["yedra","Castillo de la Yedra"],["santamaria_cz","Ruinas de Santa María"],["iruela","Castillo de La Iruela"],["palomas","Puerto de las Palomas"],["linarejos","Cerrada del Utrero"]],
+      note:"El castillo de la Yedra cierra los lunes." },
+    { t:"El valle del Guadalquivir", meta:"Día · en coche por la A-319", price:"Gratis", bono:"—",
+      stops:[["vinagre","Torre del Vinagre"],["borosa","Río Borosa"],["almendral","Collado del Almendral"],["mirador_frf","Mirador Félix Rodríguez de la Fuente"],["tranco","Embalse del Tranco"]],
+      note:"Empieza temprano por el Borosa y deja la fauna para la tarde." },
+    { t:"Sierra de Segura", meta:"Día · en coche", price:"~10 € (castillo de Segura y Cosmolarium)", bono:"—",
+      stops:[["hornos","Hornos y Cosmolarium"],["segura","Castillo de Segura"],["segura_pueblo","Segura de la Sierra"],["nac_segura","Nacimiento del Segura"]],
+      note:"El Cosmolarium cierra lunes y martes; el castillo de Segura, los lunes." },
+    { t:"Las Villas", meta:"Medio día · en coche", price:"Gratis", bono:"—",
+      stops:[["villanueva","Villanueva del Arzobispo"],["fuensanta","Santuario de la Fuensanta"],["iznatoraf","Iznatoraf"],["villacarrillo","Villacarrillo"]],
+      note:"Iznatoraf, mejor al atardecer." }
+  ];
+
+  var STORAGE_KEY="jaen:visitados";
+  var visited=new Set(), plan=new Set(), fState="todos", fCat="todo", fPrice="todo", fLevel="todo", fQuery="", fDay=-1;
+  var STORE=(function(){
+    if(typeof window!=="undefined" && window.storage && typeof window.storage.get==="function"){
+      return { get:function(k){ return Promise.resolve(window.storage.get(k)).then(function(r){ return (r&&r.value!=null)?r.value:null; }); },
+               set:function(k,v){ try{ return Promise.resolve(window.storage.set(k,v)); }catch(e){ return Promise.resolve(); } } };
+    }
+    var ls=null; try{ ls=window.localStorage; var t="__gr_t"; ls.setItem(t,"1"); ls.removeItem(t); }catch(e){ ls=null; }
+    if(ls){ return { get:function(k){ try{ return Promise.resolve(ls.getItem(k)); }catch(e){ return Promise.resolve(null); } },
+                     set:function(k,v){ try{ ls.setItem(k,v); }catch(e){} return Promise.resolve(); } }; }
+    var MEM={}; return { get:function(k){ return Promise.resolve(k in MEM?MEM[k]:null); },
+                         set:function(k,v){ MEM[k]=v; return Promise.resolve(); } };
+  })();
+
+  function norm(s){ return (s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase(); }
+  function icon(id){ return '<svg aria-hidden="true"><use href="#'+id+'"/></svg>'; }
+  function isFree(m){ return m.ptagFree; }
+  function mapsUrl(m){ return "https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(m.name.split("·")[0].split(":")[0].split("(")[0].trim()+" Jaén"); }
+
+  /* derive a free flag + price badge type from the precio string */
+  DATA.forEach(function(m){
+    var p = m.precio.toLowerCase();
+    if(p.indexOf("con cita")>=0){ m.pt="cita"; m.ptagFree=true; }
+    else if(p.indexOf("martes gratis")>=0){ m.pt="martes"; m.ptagFree=true; }
+    else if(p.indexOf("gratis dom")>=0){ m.pt="sun"; m.ptagFree=true; }
+    else if(p.indexOf("gratis ue")>=0){ m.pt="eu"; m.ptagFree=true; }
+    else if(p.indexOf("entrada libre")>=0 || p.indexOf("visita gratuita")>=0 || p.indexOf("sin entrada")>=0){ m.pt="free"; m.ptagFree=true; }
+    else { m.pt="none"; m.ptagFree=false; }
+    // coste orientativo (tarifa adulto; español/UE = gratis)
+    if(m.pt==="free"||m.pt==="eu"||m.pt==="cita"||p.indexOf("incluido en la conjunta")>=0){ m.eur=0; }
+    else { var em=m.precio.match(/(\d+[.,]?\d*)\s*€/); m.eur=em?parseFloat(em[1].replace(",",".")):0; }
+    // duración en minutos (extremo superior del rango)
+    var dl=m.dur.toLowerCase(), mn=0, hm=dl.match(/(\d+[.,]?\d*)\s*h/g);
+    if(hm){ var mx=0; hm.forEach(function(x){ var v=parseFloat(x.replace(",",".").replace(/[^0-9.]/g,"")); if(v>mx) mx=v; }); mn=Math.round(mx*60); }
+    else { var mm=dl.match(/(\d+)\s*min/g); if(mm){ var mx2=0; mm.forEach(function(x){ var v=parseInt(x,10); if(v>mx2) mx2=v; }); mn=mx2; } }
+    m.min=mn;
+  });
+
+  var board=document.getElementById("board");
+
+  function badgesFor(m){
+    var out=(PRINCIPAL.indexOf(m.id)>=0)?'<span class="badge b-star">★ Imprescindible</span>':'<span class="badge b-sec">Secundario</span>';
+    if(m.pt==="free")   out+='<span class="badge b-free">Entrada libre</span>';
+    if(m.pt==="cita")   out+='<span class="badge b-free">Gratis con cita</span>';
+    if(m.pt==="martes") out+='<span class="badge b-sun">Gratis los martes</span>';
+    if(m.pt==="sun")    out+='<span class="badge b-sun">Gratis los domingos</span>';
+    if(m.pt==="eu")     out+='<span class="badge b-eu">Gratis UE</span>';
+    if(m.noche)         out+='<span class="badge b-night">Nocturna</span>';
+    if(m.week)          out+='<span class="badge b-week">Solo entre semana</span>';
+    out+='<span class="badge b-season">'+m.temp+'</span>';
+    return out;
+  }
+  var PC={};
+  function shortPrice(m){ if(PC[m.id]) return PC[m.id]; if(m.precio.length<=42) return m.precio;
+    var parts=m.precio.split(" · "), out=parts[0]; for(var i=1;i<parts.length;i++){ if(/gratis/i.test(parts[i]) && (out+" · "+parts[i]).length<=48){ out+=" · "+parts[i]; break; } } return out; }
+  function cardHTML(m){
+    var bonos=passesFor(m), bonosRow=bonos?('<dt>Bonos</dt><dd><span class="hint">'+bonos+'</span></dd>'):'';
+    var w=webFor(m), webLink=w?('<a href="'+w+'" target="_blank" rel="noopener">'+icon("web")+'Web oficial</a>'):'';
+    var tip=TIPS[m.id]?('<p class="itip"><span class="itip-tag">Tip</span>'+TIPS[m.id]+'</p>'):'';
+    if(AVISOS[m.id]) tip='<p class="aviso"><span class="aviso-tag">Aviso · '+AVISOS_FECHA+'</span>'+AVISOS[m.id]+'</p>'+tip;
+    return ''+
+    '<article class="card reveal" data-id="'+m.id+'">'+
+      '<div class="card-top"><h3>'+m.name+'</h3><span class="stamp">'+icon("star8")+'Visitado</span></div>'+
+      '<p class="desc">'+m.desc+'</p>'+
+      '<div class="badges"><span class="daypill" hidden></span>'+badgesFor(m)+'</div>'+
+      '<p class="facts"><span class="price">'+shortPrice(m)+'</span><span class="sepd">·</span><span class="dur">'+m.dur+'</span></p>'+
+      tip+
+      '<details>'+
+        '<summary>Horario, entradas y cómo llegar <span class="arw">▾</span></summary>'+
+        '<dl class="meta">'+
+          (shortPrice(m)!==m.precio?'<dt>Precio</dt><dd><span class="hint">'+m.precio+'</span></dd>':'')+
+          '<dt>Horario</dt><dd><span class="hint">'+m.horario+'</span></dd>'+
+          '<dt>Cuándo ir</dt><dd><span class="hint">'+m.cuando+'</span></dd>'+
+          '<dt>Entradas</dt><dd><span class="hint">'+m.compra+'</span></dd>'+
+          bonosRow+
+          '<dt>Cómo llegar</dt><dd><span class="hint">'+m.como+'</span></dd>'+
+        '</dl>'+
+        '<div class="links">'+
+          '<a href="'+mapsUrl(m)+'" target="_blank" rel="noopener">'+icon("pin")+'Ver en mapa</a>'+
+          webLink+
+        '</div>'+
+      '</details>'+
+      '<button class="planbtn" type="button" data-plan="'+m.id+'" aria-pressed="false">'+
+        '<span class="padd">'+icon("plus")+'Añadir al plan</span>'+
+        '<span class="pon">'+icon("check")+'En el plan</span>'+
+      '</button>'+
+      '<button class="toggle" type="button" data-toggle="'+m.id+'">'+
+        '<span class="add">'+icon("plus")+'Marcar visitado</span>'+
+        '<span class="ck">'+icon("check")+'Visitado</span>'+
+      '</button>'+
+      '<details class="notebox"'+(notes[m.id]?' open':'')+'>'+
+        '<summary>Mi nota<span class="arw">\u25be</span></summary>'+
+        '<textarea class="notetext" data-note="'+m.id+'" rows="2" placeholder="Tu nota: donde aparcaste, que te gusto, con quien fuiste...">'+escNote(notes[m.id]||'')+'</textarea>'+
+      '</details>'+
+    '</article>';
+  }
+
+  function buildRoutes(){
+    var host=document.getElementById("routes");
+    host.innerHTML = ROUTES.map(function(r){
+      var stops = r.stops.map(function(s,i){
+        return (i? '<span class="sep">›</span>':'')+'<button class="stop" data-jump="'+s[0]+'">'+s[1]+'</button>';
+      }).join("");
+      return '<article class="route"><h3>'+r.t+'</h3><p class="route-meta">'+r.meta+'</p>'+
+             '<p class="route-price">'+r.price+'</p>'+
+             '<p class="route-bono"><b>Bono:</b> '+r.bono+'</p>'+
+             '<div class="stops">'+stops+'</div><p class="route-note">'+r.note+'</p></article>';
+    }).join("");
+    host.querySelectorAll("[data-jump]").forEach(function(b){
+      b.addEventListener("click", function(){ jumpTo(b.getAttribute("data-jump")); });
+    });
+  }
+
+  function build(){
+    var html="";
+    ZORDER.forEach(function(z){
+      var items=DATA.filter(function(m){return m.z===z;});
+      html+='<section class="zone" data-zone="'+z+'"><div class="zone-head">'+icon("star8")+'<h2>'+ZONES[z].t+'</h2></div>'+
+            '<p class="zone-sub">'+ZONES[z].s+' <span class="zcount" data-zcount="'+z+'"></span></p>'+
+            '<div class="grid">'+items.map(cardHTML).join("")+'</div></section>';
+    });
+    board.innerHTML=html;
+    board.querySelectorAll("[data-toggle]").forEach(function(btn){
+      btn.addEventListener("click", function(){ toggle(btn.getAttribute("data-toggle")); });
+    });
+    board.querySelectorAll("[data-plan]").forEach(function(btn){
+      btn.addEventListener("click", function(){ togglePlan(btn.getAttribute("data-plan")); });
+    });
+    markPlanAll();
+    syncAll();
+    requestAnimationFrame(function(){
+      board.querySelectorAll(".reveal").forEach(function(el,i){ setTimeout(function(){ el.classList.add("in"); }, Math.min(i*14,300)); });
+    });
+  }
+
+  function syncCard(id){
+    var card=board.querySelector('.card[data-id="'+id+'"]'); if(!card) return;
+    var on=visited.has(id); card.classList.toggle("done",on);
+    card.querySelector(".toggle").setAttribute("aria-pressed",on?"true":"false");
+  }
+  function syncAll(){ DATA.forEach(function(m){ syncCard(m.id); }); updateProgress(); updateZoneCounts(); markRouteStops(); applyFilter(); if(typeof renderFinde==="function" && document.getElementById("findebox") && document.getElementById("findebox").innerHTML) renderFinde(); if(typeof drawMap==="function") drawMap(); }
+  function toggle(id){ if(visited.has(id)) visited.delete(id); else visited.add(id); saveVisited(); syncCard(id); updateProgress(); updateZoneCounts(); markRouteStops(); applyFilter(); }
+
+  function updateProgress(){
+    var total=DATA.length,done=0; DATA.forEach(function(m){ if(visited.has(m.id)) done++; });
+    document.getElementById("count").textContent=done+" / "+total;
+    document.getElementById("fill").style.width=(total?(done/total*100):0)+"%";
+  }
+  function updateZoneCounts(){
+    ZORDER.forEach(function(z){
+      var items=DATA.filter(function(m){return m.z===z;}), done=items.filter(function(m){return visited.has(m.id);}).length;
+      var el=board.querySelector('[data-zcount="'+z+'"]'); if(el) el.textContent=done+"/"+items.length;
+    });
+  }
+  function matchCat(m){
+    if(fCat==="todo") return true;
+    if(fCat==="museo") return MUSEOS.indexOf(m.id)>=0;
+    return m.tags && m.tags.indexOf(fCat)>=0;
+  }
+  function matchPrice(m){
+    if(fPrice==="todo") return true;
+    if(fPrice==="gratis") return isFree(m);
+    if(fPrice==="pago") return !isFree(m);
+    if(fPrice==="noche") return !!m.noche;
+    return true;
+  }
+  function matchLevel(m){
+    if(fLevel==="todo") return true;
+    var p=PRINCIPAL.indexOf(m.id)>=0;
+    return fLevel==="principal"? p : !p;
+  }
+  function matchState(m){ var on=visited.has(m.id); return fState==="todos"||(fState==="visitados"&&on)||(fState==="pendientes"&&!on); }
+  function matchQuery(m){ if(!fQuery) return true; return norm(m.name+" "+m.desc).indexOf(fQuery)>=0; }
+  function applyFilter(){
+    var shown=0, hc=document.getElementById("hideClosed");
+    DATA.forEach(function(m){
+      var card=board.querySelector('.card[data-id="'+m.id+'"]'); if(!card) return;
+      var closedHide=(fDay>=0 && hc && hc.checked && card.getAttribute("data-closed")==="1");
+      var show=matchState(m)&&matchCat(m)&&matchPrice(m)&&matchLevel(m)&&matchQuery(m)&&!closedHide;
+      card.classList.toggle("hide",!show); if(show) shown++;
+    });
+    board.querySelectorAll(".zone").forEach(function(zone){ zone.style.display=zone.querySelectorAll(".card:not(.hide)").length?"":"none"; });
+    document.getElementById("empty").classList.toggle("show",shown===0);
+    document.getElementById("showing").textContent="Mostrando "+shown+" de "+DATA.length+" sitios";
+    var _n=activeCount(), _fc=document.getElementById("fcount"), _rf=document.getElementById("resetFilters");
+    if(_fc) _fc.textContent=_n?(" ("+_n+")"):"";
+    if(_rf) _rf.style.display=_n?"":"none";
+  }
+
+  function setState(v){ fState=v; document.querySelectorAll(".segmented button").forEach(function(b){ b.setAttribute("aria-pressed", b.getAttribute("data-filter")===v?"true":"false"); }); }
+  function setCat(v){ fCat=v; document.querySelectorAll("#chips .chip").forEach(function(c){ c.setAttribute("aria-pressed", c.getAttribute("data-cat")===v?"true":"false"); }); }
+  function setPrice(v){ fPrice=v; document.querySelectorAll("#pricechips .chip").forEach(function(c){ c.setAttribute("aria-pressed", c.getAttribute("data-price")===v?"true":"false"); }); }
+  function setLevel(v){ fLevel=v; document.querySelectorAll("#levelchips .chip").forEach(function(c){ c.setAttribute("aria-pressed", c.getAttribute("data-level")===v?"true":"false"); }); }
+  function activeCount(){ var n=0; if(fState!=="todos")n++; if(fCat!=="todo")n++; if(fPrice!=="todo")n++; if(fLevel!=="todo")n++; if(fQuery)n++; if(fDay>=0)n++; var hc=document.getElementById("hideClosed"); if(hc&&hc.checked)n++; return n; }
+  function resetFilters(){
+    setState("todos"); setCat("todo"); setPrice("todo"); setLevel("todo"); clearSearch();
+    fDay=-1;
+    document.querySelectorAll("#daychips button").forEach(function(x){ x.setAttribute("aria-pressed", x.getAttribute("data-day")==="-1"?"true":"false"); });
+    var hc=document.getElementById("hideClosed"); if(hc) hc.checked=false;
+    updateDayStatus();
+  }
+  function clearSearch(){ fQuery=""; var i=document.getElementById("q"); i.value=""; document.getElementById("searchbox").classList.remove("has"); }
+
+  function passesFor(m){ return ""; }
+  function dayStatus(m,d){
+    if(m.cerrado && m.cerrado.indexOf(d)>=0) return {k:"closed",t:"Cerrado ese día"};   // días de cierre propios de cada sitio (0 = lunes)
+    if((d===0 && CLOSED_MON.indexOf(m.id)>=0) || ((d===5||d===6) && CLOSED_WEEKEND.indexOf(m.id)>=0) || (d<=4 && CLOSED_WEEKDAYS.indexOf(m.id)>=0)) return {k:"closed",t:"Cerrado ese día"};
+    if(m.pt==="free"||m.pt==="eu") return {k:"free",t:"Gratis"};
+    if(m.pt==="cita") return {k:"cita",t:"Solo con cita"};
+    if(d===6 && m.pt==="sun") return {k:"free",t:"¡Gratis este día!"};
+    if(d===1 && m.pt==="martes") return {k:"free",t:"¡Gratis este día!"};
+    return {k:"open",t:"Abierto · de pago"};
+  }
+
+  var FESTIVOS={
+    "2026-01-01":"Año Nuevo","2026-01-06":"Reyes","2026-02-28":"Día de Andalucía","2026-04-02":"Jueves Santo","2026-04-03":"Viernes Santo","2026-05-01":"Día del Trabajo","2026-08-15":"La Asunción","2026-09-08":"Fiesta local de Villanueva del Arzobispo","2026-09-29":"Fiesta local de Villanueva del Arzobispo","2026-10-12":"Fiesta Nacional","2026-11-02":"Todos los Santos (trasladado)","2026-12-07":"Constitución (trasladado)","2026-12-08":"Inmaculada","2026-12-25":"Navidad",
+    "2027-01-01":"Año Nuevo","2027-01-06":"Reyes","2027-03-01":"Día de Andalucía (trasladado)","2027-03-25":"Jueves Santo","2027-03-26":"Viernes Santo","2027-05-01":"Día del Trabajo","2027-08-16":"La Asunción (trasladado)","2027-10-12":"Fiesta Nacional","2027-11-01":"Todos los Santos","2027-12-06":"Constitución","2027-12-08":"Inmaculada","2027-12-25":"Navidad"
+  };
+  function isoDay(dt){ var p=function(n){ return (n<10?"0":"")+n; }; return dt.getFullYear()+"-"+p(dt.getMonth()+1)+"-"+p(dt.getDate()); }
+  function addDays(dt,n){ var x=new Date(dt.getFullYear(),dt.getMonth(),dt.getDate()); x.setDate(x.getDate()+n); return x; }
+  function wdOf(dt){ return (dt.getDay()+6)%7; }
+  function festivoOf(dt){ return FESTIVOS[isoDay(dt)]||""; }
+  var CLOSED_FESTIVO=[];
+  function dayStatusDate(m,dt){
+    var d=wdOf(dt), f=festivoOf(dt);
+    if(f){
+      if(CLOSED_FESTIVO.indexOf(m.id)>=0) return {k:"closed",t:"Cerrado (festivo)"};
+      if(m.pt==="martes" && d===1) return {k:"open",t:"Festivo: hoy no es gratis"};
+    }
+    return dayStatus(m,d);
+  }
+  function freeSpecialDate(dt){ var a=DATA.filter(function(m){ var s=dayStatusDate(m,dt); return s.k==="free" && m.pt!=="free" && m.pt!=="eu"; }); a.sort(function(x,y){ return (PRINCIPAL.indexOf(y.id)>=0?1:0)-(PRINCIPAL.indexOf(x.id)>=0?1:0); }); return a; }
+  function freeSpecial(d){ var a=DATA.filter(function(m){ var s=dayStatus(m,d); return s.k==="free" && m.pt!=="free" && m.pt!=="eu"; }); a.sort(function(x,y){ return (PRINCIPAL.indexOf(y.id)>=0?1:0)-(PRINCIPAL.indexOf(x.id)>=0?1:0); }); return a; }
+  function dayNote(d){ return ""; }
+  function chipList(a){ return a.map(function(m){ return '<button class="today-chip" data-jump="'+m.id+'">'+m.name+'</button>'; }).join(""); }
+  function updateDayStatus(){
+    var free=0,open=0,closed=0,cita=0;
+    DATA.forEach(function(m){
+      var card=board.querySelector('.card[data-id="'+m.id+'"]'); if(!card) return;
+      var pill=card.querySelector(".daypill");
+      if(fDay<0){ if(pill) pill.hidden=true; card.classList.remove("closedtoday"); card.removeAttribute("data-closed"); return; }
+      var s=dayStatus(m,fDay);
+      if(pill){ pill.hidden=false; pill.textContent=s.t; pill.className="daypill dp-"+s.k; }
+      card.classList.toggle("closedtoday", s.k==="closed");
+      if(s.k==="closed"){ card.setAttribute("data-closed","1"); closed++; }
+      else { card.removeAttribute("data-closed"); if(s.k==="free") free++; else if(s.k==="cita") cita++; else open++; }
+    });
+    var sum=document.getElementById("daysum");
+    if(fDay<0){ sum.innerHTML=""; }
+    else {
+      var sp=freeSpecial(fDay);
+      var head = sp.length ? ('<p class="daysum-lbl">'+icon("star8")+'Interesante gratis'+dayNote(fDay)+'</p><div class="today-chips daysum-chips">'+chipList(sp)+'</div>') : '';
+      sum.innerHTML = head + '<p class="daysum-counts">El '+DAYNAMES[fDay]+': <b>'+free+'</b> gratis &middot; <b>'+open+'</b> de pago abiertos &middot; <b>'+closed+'</b> cerrados'+(cita?(' &middot; '+cita+' con cita'):'')+'.</p>';
+      sum.querySelectorAll("[data-jump]").forEach(function(b){ b.addEventListener("click", function(){ jumpTo(b.getAttribute("data-jump")); }); });
+    }
+    applyFilter();
+  }
+  function eurStr(v){ return (Number.isInteger(v)? String(v) : v.toFixed(2)).replace(".",","); }
+  function fmtTime(mins){ if(mins<=0) return "—"; if(mins<60) return mins+" min"; var h=Math.floor(mins/60), r=mins%60; return h+" h"+(r? " "+r+" min":""); }
+  function markPlanBtn(id){ var c=board.querySelector('.card[data-id="'+id+'"]'); if(!c) return; var on=plan.has(id); c.classList.toggle("inplan",on); var b=c.querySelector(".planbtn"); if(b) b.setAttribute("aria-pressed",on?"true":"false"); }
+  function markPlanAll(){ DATA.forEach(function(m){ markPlanBtn(m.id); }); }
+  function togglePlan(id){ if(plan.has(id)) plan.delete(id); else plan.add(id); savePlan(); markPlanBtn(id); updatePlanBar(); }
+  function updatePlanBar(){
+    var items=DATA.filter(function(m){ return plan.has(m.id); });
+    var bar=document.getElementById("planbar"), listEl=document.getElementById("planbarList");
+    updateNavPlan(); if(typeof drawMap==="function" && mapFilter==="plan") drawMap();
+    if(items.length===0){ bar.hidden=true; bar.setAttribute("data-open","false"); listEl.hidden=true; document.getElementById("planbarToggle").setAttribute("aria-expanded","false"); document.body.classList.remove("hasplan"); return; }
+    bar.hidden=false; document.body.classList.add("hasplan");
+    var eur=0, mn=0; items.forEach(function(m){ eur+=m.eur; mn+=m.min; });
+    document.getElementById("planbarSum").innerHTML="Mi plan · <b>"+items.length+"</b> sitios · ~"+Math.round(eur)+" € · "+fmtTime(mn);
+    var seq=planOrder(), route=seq.length>=2?('<a class="planbar-route" href="'+planRouteUrl(seq)+'" target="_blank" rel="noopener">Abrir la ruta a pie en Google Maps</a><p class="planbar-order">Orden sugerido (el más corto): '+seq.map(function(m){ return m.name.split(" · ")[0]; }).join(" → ")+(seq.length>11?' · Google Maps solo admite 11 paradas: lleva las primeras.':'')+'</p>'):'';
+    listEl.innerHTML=route+'<p class="planbar-hint">Coste orientativo (tarifa adulto; los domingos muchos son gratis). Tiempo solo de visita, sin desplazamientos.</p>'+
+      items.map(function(m){ return '<div class="planrow"><span class="pn">'+m.name+'</span><span class="pc">'+(m.eur? "~"+eurStr(m.eur)+" €":"gratis")+" · "+fmtTime(m.min)+'</span><button class="prm" type="button" data-remove="'+m.id+'" aria-label="Quitar del plan">✕</button></div>'; }).join("");
+    listEl.querySelectorAll("[data-remove]").forEach(function(b){ b.addEventListener("click", function(){ togglePlan(b.getAttribute("data-remove")); }); });
+  }
+  function markRouteStops(){ document.querySelectorAll(".stop[data-jump]").forEach(function(b){ b.classList.toggle("done", visited.has(b.getAttribute("data-jump"))); }); }
+  function jumpTo(id){
+    setState("todos"); setCat("todo"); setPrice("todo"); setLevel("todo"); clearSearch(); applyFilter();
+    var card=board.querySelector('.card[data-id="'+id+'"]'); if(!card) return;
+    var det=card.querySelector("details"); if(det) det.open=true;
+    card.scrollIntoView({behavior:"smooth",block:"center"});
+    card.classList.remove("flash"); void card.offsetWidth; card.classList.add("flash");
+    setTimeout(function(){ card.classList.remove("flash"); }, 1500);
+  }
+
+  async function loadVisited(){
+    try{ var v=await STORE.get(STORAGE_KEY); if(v){ JSON.parse(v).forEach(function(id){ visited.add(id); }); } }catch(e){}
+  }
+  async function saveVisited(){ try{ await STORE.set(STORAGE_KEY, JSON.stringify(Array.from(visited))); }catch(e){} }
+  async function loadPlan(){ try{ var v=await STORE.get("jaen:plan"); if(v){ JSON.parse(v).forEach(function(id){ plan.add(id); }); } }catch(e){} }
+  async function savePlan(){ try{ await STORE.set("jaen:plan", JSON.stringify(Array.from(plan))); }catch(e){} }
+  var notes={};
+  async function loadNotes(){ try{ var v=await STORE.get("jaen:notas"); if(v){ notes=JSON.parse(v)||{}; } }catch(e){} }
+  function saveNotes(){ try{ STORE.set("jaen:notas", JSON.stringify(notes)); }catch(e){} }
+  function escNote(s){ return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+  /* wire controls */
+  document.querySelectorAll(".segmented button").forEach(function(btn){ btn.addEventListener("click", function(){ setState(btn.getAttribute("data-filter")); applyFilter(); }); });
+  document.querySelectorAll("#chips .chip").forEach(function(chip){ chip.addEventListener("click", function(){ setCat(chip.getAttribute("data-cat")); applyFilter(); }); });
+  document.querySelectorAll("#pricechips .chip").forEach(function(chip){ chip.addEventListener("click", function(){ setPrice(chip.getAttribute("data-price")); applyFilter(); }); });
+  document.querySelectorAll("#levelchips .chip").forEach(function(chip){ chip.addEventListener("click", function(){ setLevel(chip.getAttribute("data-level")); applyFilter(); }); });
+  var qInput=document.getElementById("q"), searchBox=document.getElementById("searchbox");
+  qInput.addEventListener("input", function(){ fQuery=norm(qInput.value.trim()); searchBox.classList.toggle("has", qInput.value.length>0); applyFilter(); });
+  document.getElementById("clr").addEventListener("click", function(){ clearSearch(); qInput.focus(); applyFilter(); });
+  function twoTap(btn, label, armedLabel, action){
+    var t=null;
+    btn.addEventListener("click", function(){
+      if(btn.classList.contains("armed")){ clearTimeout(t); btn.classList.remove("armed"); btn.textContent=label; action(); return; }
+      btn.classList.add("armed"); btn.textContent=armedLabel;
+      t=setTimeout(function(){ btn.classList.remove("armed"); btn.textContent=label; }, 4000);
+    });
+  }
+  twoTap(document.getElementById("reset"), "Reiniciar lo marcado", "¿Seguro? Toca otra vez para borrar lo marcado", function(){ visited=new Set(); saveVisited(); syncAll(); toast("Marcados borrados. El plan y las notas siguen."); });
+  board.addEventListener("input", function(e){ var t=e.target; if(t&&t.classList&&t.classList.contains("notetext")){ var id=t.getAttribute("data-note"); if(t.value.trim()){ notes[id]=t.value; } else { delete notes[id]; } saveNotes(); } });
+
+  document.querySelectorAll("#daychips button").forEach(function(b){
+    b.addEventListener("click", function(){
+      fDay=parseInt(b.getAttribute("data-day"),10);
+      document.querySelectorAll("#daychips button").forEach(function(x){ x.setAttribute("aria-pressed", x===b?"true":"false"); });
+      updateDayStatus();
+    });
+  });
+  document.getElementById("hideClosed").addEventListener("change", applyFilter);
+  (function(){
+    var ft=document.getElementById("filtersToggle"), fr=document.getElementById("filterrows");
+    function setOpen(open){ fr.classList.toggle("collapsed",!open); ft.setAttribute("aria-expanded",open?"true":"false"); }
+    ft.addEventListener("click", function(){ setOpen(fr.classList.contains("collapsed")); });
+    setOpen(window.innerWidth>=640);
+  })();
+  document.getElementById("resetFilters").addEventListener("click", resetFilters);
+
+  document.getElementById("planbarToggle").addEventListener("click", function(){
+    var bar=document.getElementById("planbar"), open=bar.getAttribute("data-open")==="true";
+    bar.setAttribute("data-open", open?"false":"true");
+    document.getElementById("planbarList").hidden=open;
+    this.setAttribute("aria-expanded", open?"false":"true");
+  });
+  twoTap(document.getElementById("planbarClear"), "Vaciar", "¿Vaciar?", function(){ plan=new Set(); savePlan(); markPlanAll(); updatePlanBar(); });
+  document.getElementById("planbarShare").addEventListener("click", sharePlan);
+
+  buildRoutes();
+  function makeFoldable(){
+    document.querySelectorAll("section.strategy, section.passes, section.info, section.routes, section.dayplan").forEach(function(sec){
+      var kicker=sec.querySelector(".kicker"); if(!kicker) return;
+      var body=document.createElement("div"); body.className="fold-body";
+      var node=kicker.nextSibling;
+      while(node){ var nx=node.nextSibling; body.appendChild(node); node=nx; }
+      kicker.parentNode.appendChild(body);
+      kicker.classList.add("fold-head");
+      kicker.setAttribute("role","button"); kicker.setAttribute("tabindex","0"); kicker.setAttribute("aria-expanded","false");
+      var chev=document.createElement("span"); chev.className="fold-arw"; chev.setAttribute("aria-hidden","true"); chev.textContent="\u25be"; kicker.appendChild(chev);
+      sec.classList.add("folded");
+      function tog(){ var folded=sec.classList.toggle("folded"); kicker.setAttribute("aria-expanded", folded?"false":"true"); }
+      kicker.addEventListener("click", tog);
+      kicker.addEventListener("keydown", function(e){ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); tog(); } });
+    });
+  }
+  makeFoldable();
+  function renderToday(){
+    var box=document.getElementById("todaybox"); if(!box) return;
+    var now=new Date(), tmr=addDays(now,1), today=wdOf(now), tom=wdOf(tmr);
+    var sT=freeSpecialDate(now), sM=freeSpecialDate(tmr), fT=festivoOf(now), fM=festivoOf(tmr);
+    var closedP=DATA.filter(function(m){ return PRINCIPAL.indexOf(m.id)>=0 && dayStatusDate(m,now).k==="closed"; });
+    var h='<div class="wrap"><div class="today-card"><div class="today-wx" id="todayWx" hidden></div>';
+    h+='<p class="today-day">Hoy &middot; <b>'+DAYNAMES[today]+'</b>'+(fT?' &middot; <span class="fest">festivo: '+fT+'</span>':'')+'</p>';
+    if(sT.length){ h+='<p class="today-lbl">'+icon("star8")+'Gratis hoy'+dayNote(today)+' &mdash; ma&ntilde;ana ya se paga</p><div class="today-chips">'+chipList(sT)+'</div>'; }
+    else { h+='<p class="today-none">Hoy nada interesante gratis por el d&iacute;a. Lo de siempre (miradores, plazas, museos con DNI) est&aacute; en el filtro <b>Precio &#8594; Gratis</b>.</p>'; }
+    if(closedP.length){ h+='<p class="today-closed"><b>Cerrado hoy:</b> '+closedP.map(function(m){ return m.name; }).join(" &middot; ")+'.</p>'; }
+    h+='<div class="today-tom"><p class="today-day">Ma&ntilde;ana &middot; <b>'+DAYNAMES[tom]+'</b>'+(fM?' &middot; <span class="fest">festivo: '+fM+'</span>':'')+'</p>';
+    if(fM) h+='<p class="today-none">Festivo: muchos museos abren con horario de domingo y las visitas de entre semana (Aljibe, Hospital Real) no hay. Mira cada ficha.</p>';
+    if(sM.length){ h+='<p class="today-lbl mn">'+icon("star8")+'Gratis ma&ntilde;ana'+dayNote(tom)+'</p><div class="today-chips">'+chipList(sM)+'</div>'; }
+    else { h+='<p class="today-none">Ma&ntilde;ana, nada nuevo gratis por el d&iacute;a.</p>'; }
+    h+='</div>';
+    h+='<button class="today-more" type="button" data-today-more>Ver todo lo de hoy en la lista &#8594;</button>';
+    h+='</div></div>';
+    box.innerHTML=h;
+    box.querySelectorAll("[data-jump]").forEach(function(b){ b.addEventListener("click", function(){ jumpTo(b.getAttribute("data-jump")); }); });
+    var more=box.querySelector("[data-today-more]");
+    if(more) more.addEventListener("click", function(){
+      var dp=document.querySelector("section.dayplan");
+      if(dp){ dp.classList.remove("folded"); var k=dp.querySelector(".fold-head"); if(k) k.setAttribute("aria-expanded","true"); }
+      var chip=document.querySelector('#daychips button[data-day="'+today+'"]');
+      if(chip){ fDay=today; document.querySelectorAll("#daychips button").forEach(function(x){ x.setAttribute("aria-pressed", x===chip?"true":"false"); }); updateDayStatus(); }
+      if(dp) dp.scrollIntoView({behavior:"smooth", block:"start"});
+    });
+  }
+
+  /* ===== utilidades ===== */
+  var toastT=null;
+  function toast(msg){ var el=document.getElementById("toast"); if(!el) return; el.textContent=msg; el.classList.add("on"); clearTimeout(toastT); toastT=setTimeout(function(){ el.classList.remove("on"); }, 3200); }
+  var IDS={}; DATA.forEach(function(m){ IDS[m.id]=m; });
+  function copyText(txt){
+    if(navigator.clipboard && navigator.clipboard.writeText){ return navigator.clipboard.writeText(txt); }
+    return new Promise(function(res,rej){ try{ var ta=document.createElement("textarea"); ta.value=txt; ta.style.position="fixed"; ta.style.opacity="0"; document.body.appendChild(ta); ta.select(); var ok=document.execCommand("copy"); document.body.removeChild(ta); ok?res():rej(); }catch(e){ rej(e); } });
+  }
+  function daysAgo(iso){ var d=new Date(iso); if(isNaN(d)) return null; return Math.floor((Date.now()-d.getTime())/86400000); }
+
+  /* ===== copia de seguridad ===== */
+  function backupObj(){ return { app:"granada-monumental", v:1, fecha:new Date().toISOString(), visitados:Array.from(visited), plan:Array.from(plan), notas:notes, bares:baresProbados }; }
+  async function markBackup(){ try{ await STORE.set("jaen:ultimaCopia", new Date().toISOString()); }catch(e){} updateBackupMeta(); }
+  async function updateBackupMeta(){
+    var el=document.getElementById("bkMeta"); if(!el) return;
+    var last=null; try{ last=await STORE.get("jaen:ultimaCopia"); }catch(e){}
+    var hay=visited.size+plan.size+Object.keys(notes).length;
+    var txt, warn=false;
+    if(!last){ txt=hay? "Aún no has guardado ninguna copia." : "Cuando marques algo, guarda una copia."; warn=hay>0; }
+    else { var d=daysAgo(last); txt="Última copia: "+(d===0?"hoy":d===1?"ayer":"hace "+d+" días")+"."; warn=d>30 && hay>0; }
+    if(window.__persisted===true) txt+=" El navegador ha protegido estos datos frente a la limpieza automática.";
+    el.textContent=txt; el.classList.toggle("warn",warn);
+  }
+  function fileName(){ var d=new Date(); var p=function(n){ return (n<10?"0":"")+n; }; return "granada-copia-"+d.getFullYear()+"-"+p(d.getMonth()+1)+"-"+p(d.getDate())+".json"; }
+  document.getElementById("bkDownload").addEventListener("click", function(){
+    try{
+      var blob=new Blob([JSON.stringify(backupObj(),null,1)],{type:"application/json"});
+      var a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download=fileName(); document.body.appendChild(a); a.click();
+      setTimeout(function(){ URL.revokeObjectURL(a.href); a.remove(); }, 1500);
+      markBackup(); toast("Copia descargada. Guárdala en Drive, en el correo o donde quieras.");
+    }catch(e){ toast("Este navegador no deja descargar: usa «Copiar copia»."); }
+  });
+  document.getElementById("bkCopy").addEventListener("click", function(){
+    copyText(JSON.stringify(backupObj())).then(function(){ markBackup(); toast("Copia en el portapapeles. Pégala en una nota o mándatela."); })
+      .catch(function(){ toast("No he podido copiar. Prueba con «Descargar copia»."); });
+  });
+  document.getElementById("bkRestore").addEventListener("click", function(){ var p=document.getElementById("bkPaste"); p.hidden=!p.hidden; });
+  document.getElementById("bkPick").addEventListener("click", function(){ document.getElementById("bkFile").click(); });
+  document.getElementById("bkFile").addEventListener("change", function(e){
+    var f=e.target.files&&e.target.files[0]; if(!f) return;
+    var r=new FileReader(); r.onload=function(){ restoreFrom(String(r.result)); }; r.onerror=function(){ toast("No he podido leer el archivo."); }; r.readAsText(f);
+    e.target.value="";
+  });
+  document.getElementById("bkApply").addEventListener("click", function(){ restoreFrom(document.getElementById("bkText").value); });
+  function restoreFrom(txt){
+    var o; try{ o=JSON.parse((txt||"").trim()); }catch(e){ toast("Eso no parece una copia de esta guía."); return; }
+    if(!o || o.app!=="granada-monumental"){ toast("Eso no parece una copia de esta guía."); return; }
+    var nV=0,nP=0,nN=0;
+    (o.visitados||[]).forEach(function(id){ if(IDS[id] && !visited.has(id)){ visited.add(id); nV++; } });
+    (o.plan||[]).forEach(function(id){ if(IDS[id] && !plan.has(id)){ plan.add(id); nP++; } });
+    var on=o.notas||{}; Object.keys(on).forEach(function(id){
+      if(!IDS[id] || typeof on[id]!=="string" || !on[id].trim()) return;
+      if(!notes[id]){ notes[id]=on[id]; nN++; }
+      else if(notes[id].trim()!==on[id].trim()){ notes[id]=notes[id]+"\n— "+on[id]; nN++; }
+    });
+    if(o.bares && typeof o.bares==="object"){ Object.keys(o.bares).forEach(function(k){ if(!baresProbados[k]) baresProbados[k]=o.bares[k]; }); saveBares(); }
+    saveVisited(); savePlan(); saveNotes(); build(); renderBares(); updatePlanBar(); renderToday(); renderFinde(); loadWeather(); updateBackupMeta();
+    document.getElementById("bkText").value=""; document.getElementById("bkPaste").hidden=true;
+    toast("Restaurado: "+nV+" marcados, "+nP+" en el plan y "+nN+" notas nuevas.");
+  }
+
+  /* ===== compartir el plan (enlace) ===== */
+  function planLink(){ return location.origin+location.pathname+"#plan="+Array.from(plan).join(","); }
+  function sharePlan(){
+    var items=DATA.filter(function(m){ return plan.has(m.id); }); if(!items.length) return;
+    var txt="Mi plan en Jaén:\n"+items.map(function(m){ return "· "+m.name; }).join("\n");
+    var url=planLink(), isWeb=location.protocol.indexOf("http")===0;
+    if(navigator.share && isWeb){ navigator.share({ title:"Plan Jaén", text:txt, url:url }).catch(function(){}); return; }
+    copyText(txt+(isWeb?"\n"+url:"")).then(function(){ toast(isWeb?"Plan y enlace copiados: pégalos en WhatsApp.":"Plan copiado. El enlace funciona una vez publicada la guía."); })
+      .catch(function(){ toast("No he podido copiar el plan."); });
+  }
+  function checkIncomingPlan(){
+    var m=(location.hash||"").match(/^#plan=([a-z0-9_,]+)$/i); if(!m) return;
+    var ids=m[1].split(",").filter(function(id){ return IDS[id]; });
+    var nuevos=ids.filter(function(id){ return !plan.has(id); });
+    var box=document.getElementById("inbox"); if(!box) return;
+    function close(){ box.hidden=true; try{ history.replaceState(null,"",location.pathname+location.search); }catch(e){} }
+    if(!ids.length){ close(); return; }
+    box.innerHTML='<p>Te han pasado un plan con <b>'+ids.length+'</b> sitios: '+ids.map(function(id){ return IDS[id].name; }).join(", ")+'.</p>'+
+      (nuevos.length?'<button class="inbox-btn" type="button" data-in="add">Añadir '+nuevos.length+' a mi plan</button>':'<p>Ya los tienes todos en tu plan.</p>')+
+      '<button class="inbox-btn alt" type="button" data-in="no">Cerrar</button>';
+    box.hidden=false;
+    box.querySelectorAll("[data-in]").forEach(function(b){ b.addEventListener("click", function(){
+      if(b.getAttribute("data-in")==="add"){ nuevos.forEach(function(id){ plan.add(id); }); savePlan(); markPlanAll(); updatePlanBar(); toast("Añadidos "+nuevos.length+" sitios a tu plan."); }
+      close();
+    }); });
+  }
+
+  /* ===== almacenamiento persistente ===== */
+  function askPersist(){
+    try{
+      if(!(navigator.storage && navigator.storage.persist)) return;
+      navigator.storage.persisted().then(function(p){
+        if(p){ window.__persisted=true; updateBackupMeta(); return; }
+        return navigator.storage.persist().then(function(ok){ window.__persisted=!!ok; updateBackupMeta(); });
+      }).catch(function(){});
+    }catch(e){}
+  }
+
+  /* ===== sin conexión ===== */
+  function netState(){ var p=document.getElementById("netpill"); if(p) p.hidden=navigator.onLine!==false; }
+  window.addEventListener("online", function(){ netState(); loadWeather(); });
+  window.addEventListener("offline", netState);
+
+
+
+  /* ===== coordenadas (Google Places, oct 2026) ===== */
+  var GEO={
+    salvador:[38.00815,-3.36647], santamaria_ub:[38.00706,-3.36837], sinagoga:[38.01000,-3.36889], vazquezmolina:[38.00764,-3.36824], santiago:[38.01225,-3.37645], miradores_ub:[38.00644,-3.36530],
+    catedral_bz:[37.98996,-3.46903], jabalquinto:[37.99128,-3.46889], universidad_bz:[37.99170,-3.46860], populo:[37.99162,-3.47042], murallas_bz:[37.99222,-3.46277],
+    yedra:[37.90780,-3.00111], santamaria_cz:[37.90856,-2.99978], iruela:[37.92095,-2.99008],
+    linarejos:[37.92736,-2.92275], nacimiento:[37.83911,-2.97396], borosa:[37.99413,-2.83568], vinagre:[38.01403,-2.87285], almendral:[38.09046,-2.81391], tranco:[38.14462,-2.78148], palomas:[37.94273,-2.93964], mirador_frf:[38.09766,-2.81209],
+    segura:[38.29918,-2.64960], segura_pueblo:[38.29770,-2.65228], hornos:[38.21644,-2.71850], nac_segura:[38.09138,-2.69946],
+    villanueva:[38.16900,-3.00954], fuensanta:[38.16299,-2.99422], aguascebas:[38.04479,-2.95009], iznatoraf:[38.15735,-3.03310], villacarrillo:[38.11463,-3.08610]
+  };
+  function mapsDir(lat,lng,name){ return "https://www.google.com/maps/dir/?api=1&destination="+lat+","+lng+"&travelmode=walking"; }
+  /* ===== escapadas y bares ===== */
+  var ESCAPADAS=[
+    { id:"jaen", t:"Jaén capital", donde:"Catedral, Baños Árabes y castillo de Santa Catalina", coche:"~1 h 15 min", wx:0, monte:false, meses:[1,2,3,4,5,6,7,8,9,10,11,12],
+      desc:"La <b>Catedral</b> de Vandelvira (entrada general 10 €), los <b>Baños Árabes</b> del palacio de Villardompardo (gratis; cierran los lunes) y el castillo de Santa Catalina (3,50 €; miércoles por la tarde gratis con reserva), con la cruz y la vista de toda la ciudad.",
+      comer:[ {n:"Taberna La Manchega", d:"c/ Bernardo López 8 (también por el Arco del Consuelo)", w:"La taberna más antigua de la ciudad (1886): tapas sencillas y mucho ambiente."},
+              {n:"Taberna Alcocer", d:"Arco del Consuelo 3", w:"Producto de la tierra y raciones generosas, junto a la catedral."},
+              {n:"Casa Gorrón", d:"Casco antiguo", w:"Otra taberna centenaria (1888); se recomiendan las judías con perdiz."} ],
+      tip:"Sube al castillo en coche (está a las afueras) y baja al casco a tapear.", pueblo:"Jaén" },
+    { id:"sabiote", t:"Sabiote", donde:"Pueblo renacentista amurallado", coche:"~40 min", wx:0, monte:false, meses:[1,2,3,4,5,6,9,10,11,12],
+      desc:"Castillo, murallas y calles con casas señoriales del Renacimiento, a diez minutos de Úbeda. Tranquilo y poco conocido.",
+      comer:[ {n:"Lleva algo de comer", d:"O come en Úbeda", w:"Está a 10 min."} ],
+      tip:"Combínalo con Úbeda en la misma tarde.", pueblo:"Sabiote" },
+    { id:"quesada", t:"Quesada y Tíscar", donde:"Puerta sur del parque", coche:"~1 h", wx:0, monte:true, meses:[1,2,3,4,5,6,9,10,11,12],
+      desc:"El museo del pintor <b>Rafael Zabaleta</b> en Quesada y, en Tíscar, el santuario y la <b>Cueva del Agua</b>, con el agua cayendo por dentro de la roca.",
+      comer:[ {n:"Lleva algo de comer", d:"Pocos servicios en Tíscar", w:"O come en Quesada o en Cazorla a la vuelta."} ],
+      tip:"La Cueva del Agua es de bajar escaleras: calzado que agarre.", pueblo:"Quesada" },
+    { id:"banos", t:"Baños de la Encina", donde:"Castillo califal de Burgalimar", coche:"~1 h 15 min", wx:0, monte:false, meses:[1,2,3,4,5,6,9,10,11,12],
+      desc:"Uno de los <b>castillos califales</b> mejor conservados de Europa (s. X), con sus torres casi intactas, sobre un pueblo con mucho encanto.",
+      comer:[ {n:"Bury", d:"Baños de la Encina", w:"Brasa y producto local; muy bien valorado. Abre de jueves a domingo."},
+              {n:"Restaurante Baños", d:"c/ Donantes de Sangre", w:"Carnes de caza (ciervo, jabalí, perdiz) con terraza; Solete de la Guía Repsol."} ],
+      tip:"Consulta antes el horario de visita del castillo.", pueblo:"Baños de la Encina" },
+    { id:"despenaperros", t:"Despeñaperros y Santa Elena", donde:"Desfiladero y pinturas rupestres", coche:"~1 h 20 min", wx:0, monte:true, meses:[1,2,3,4,5,6,9,10,11,12],
+      desc:"El desfiladero y Los Órganos desde los miradores, y las pinturas rupestres de la <b>Cueva de los Muñecos</b>, en un paseo corto desde Santa Elena.",
+      comer:[ {n:"Lleva algo de comer", d:"Pocos servicios", w:"O come en La Carolina a la vuelta."} ],
+      tip:"Primavera y otoño; en verano, solo a primera hora.", pueblo:"Santa Elena" }
+  ];
+
+  /* ===== notas de reseñas (las actualiza la revisión automática; g = Google, ta = Tripadvisor, tf = TheFork sobre 10) ===== */
+  var NOTAS_FECHA="28 oct 2026";
+  var NOTAS={};
+  function notaHTML(n){
+    var r=NOTAS[n]; if(!r) return "";
+    function f(x){ return String(x).replace(".",","); }
+    function c(x){ return x>=1000?String(x).replace(/\B(?=(\d{3})+(?!\d))/g,"."):String(x); }
+    var p=[];
+    if(r.g) p.push("Google "+f(r.g[0])+" ★"+(r.g[1]?" ("+c(r.g[1])+")":""));
+    if(r.ta) p.push("Tripadvisor "+f(r.ta[0])+(r.ta[1]?" ("+c(r.ta[1])+")":""));
+    if(r.tf) p.push("TheFork "+f(r.tf[0])+"/10"+(r.tf[1]?" ("+c(r.tf[1])+")":""));
+    if(!p.length) return "";
+    var pocas=r.g && r.g[1]<50 ? ' · <i>pocas reseñas, poco fiable</i>':'';
+    return '<p class="bnota">'+p.join(" · ")+pocas+(r.ojo?' · <b>'+escNote(r.ojo)+'</b>':'')+'</p>';
+  }
+  /* ===== contacto y horario (Google, oct 2026; t=teléfono, h=horario, rv=reserva o cola, web/ig/res/guia=enlaces) ===== */
+  var INFO={};
+  function infoHTML(n){
+    var r=INFO[n]; if(!r) return "";
+    return (r.h?'<p class="bhora">'+escNote(r.h)+'</p>':'')+(r.rv?'<p class="brv">'+escNote(r.rv)+'</p>':'');
+  }
+  function infoBtns(n){
+    var r=INFO[n]||{}, out="";
+    if(r.t) out+='<a class="fbtn" href="tel:+34'+r.t.replace(/\s/g,"")+'">Llamar</a>';
+    if(r.res) out+='<a class="fbtn" href="'+r.res+'" target="_blank" rel="noopener">Reservar</a>';
+    if(r.web) out+='<a class="fbtn" href="'+r.web+'" target="_blank" rel="noopener">Web</a>';
+    if(r.guia) out+='<a class="fbtn" href="'+r.guia+'" target="_blank" rel="noopener">Guía</a>';
+    out+='<a class="fbtn" href="'+(r.ig?r.ig:"https://www.google.com/search?q="+encodeURIComponent("site:instagram.com "+n+" Jaén"))+'" target="_blank" rel="noopener">Instagram</a>';
+    return out;
+  }
+  var BARES=[
+    { id:"tintorera", ok:false, zona:"Úbeda", n:"La Tintorera", dir:"c/ Real 27 · Úbeda", w:"Tapas de cocina, originales y bien hechas; de los bares mejor valorados de Úbeda.", cierra:"", g:[38.01093,-3.37080] },
+    { id:"antique", ok:false, zona:"Úbeda", n:"Antique", dir:"c/ Real 25 · Úbeda", w:"Restaurante y bar de tapas: dan tapa con cada ronda. Muy bien valorado y con muchas reseñas.", cierra:"", g:[38.01046,-3.37021] },
+    { id:"misa12", ok:false, zona:"Úbeda", n:"Misa de 12", dir:"c/ Montiel 6 · Úbeda", w:"Bar pequeño y con encanto, de buen trato; tapas de cerdo.", cierra:"", g:[38.01010,-3.36699] },
+    { id:"lola", ok:false, zona:"Úbeda", n:"Llámame Lola", dir:"c/ Baja del Salvador 5 · Úbeda", w:"Gastrobar junto al Salvador; algunas tapas tradicionales van con la bebida.", cierra:"", g:[38.00787,-3.36603] },
+    { id:"casaandres", ok:false, zona:"Baeza", n:"Taberna Casa Andrés", dir:"Paseo Ciudad de Ávila 8 · Baeza", w:"La taberna mejor valorada de Baeza en Tripadvisor: tapas con un toque propio.", cierra:"", g:[37.99174,-3.46359] },
+    { id:"arcediano", ok:false, zona:"Baeza", n:"Taberna El Arcediano", dir:"c/ Barbacana · Baeza", w:"Tostas (queso de tres leches, panceta, atún) y revueltos; muy recomendada en reseñas.", cierra:"", g:[37.99265,-3.46841] },
+    { id:"burladero", ok:false, zona:"Baeza", n:"Tasca Burladero", dir:"c/ Barbacana · Baeza", w:"Tapas de cocina en pleno casco.", cierra:"", s:"Premio de la ruta «Baeza de Tapas»", g:[37.99252,-3.46853] },
+    { id:"quinito", ok:false, lleno:true, zona:"Cazorla", n:"Taberna Quinito", dir:"Pl. de Santa María · Cazorla", w:"Tapas variadas y servicio rápido, en la plaza de las ruinas.", cierra:"", g:[37.90915,-2.99998] },
+    { id:"rinconserrano", ok:false, lleno:true, zona:"Cazorla", n:"El Rincón Serrano", dir:"Pl. de la Corredera · Cazorla", w:"Tapas y raciones para cenar; muy concurrido en finde.", cierra:"", g:[37.91072,-3.00212] },
+    { id:"layedra", ok:false, zona:"Cazorla", n:"La Yedra", dir:"c/ Cruz de Orea 51 · Cazorla", w:"Menú del día y tapas generosas; de los más populares del pueblo.", cierra:"", g:[37.91171,-3.00455] },
+    { id:"mendez", ok:false, zona:"Las Villas", n:"Bar Méndez", dir:"c/ San Francisco 8 · Villanueva del Arzobispo", w:"El mejor valorado del pueblo en Tripadvisor.", cierra:"", g:[38.16887,-3.00809] },
+    { id:"martin", ok:false, zona:"Las Villas", n:"Bar Martín", dir:"Av. de Valencia 46 · Villanueva del Arzobispo", w:"Tapas y buen trato; recomiendan las patatas alioli y el ajo morcilla.", cierra:"", g:[38.17121,-3.00665] }
+  ];
+  var BARES_PROBAR=BARES.filter(function(b){ return !b.ok; }).map(function(b){ return { id:b.id, n:b.n, d:b.dir, w:b.w+(b.cierra?" (Cierra: "+b.cierra.toLowerCase()+".)":"") }; });
+  var BARES_OK=BARES.filter(function(b){ return b.ok; }).map(function(b){ return { id:b.id, n:b.n, d:b.dir, w:b.w+(b.cierra?" (Cierra: "+b.cierra.toLowerCase()+".)":"") }; });
+  function barMapUrl(b){ return "https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(b.n+" "+b.dir.replace(" · "," ")); }
+  function renderBares(){
+    var host=document.getElementById("barlist"); if(!host) return;
+    function card(b,nuevo){
+      var pr=baresProbados[b.id];
+      return '<article class="barcard'+(nuevo?' nuevo':'')+'" data-bar="'+b.id+'"><h4>'+b.n+'</h4><p class="bdir">'+b.dir+'</p>'+(b.lleno?'<p class="blleno">Se llena siempre: llega pronto</p>':'')+notaHTML(b.n)+infoHTML(b.n)+(b.s?'<p class="bsello">'+b.s+'</p>':'')+'<p>'+b.w+'</p>'+
+        (b.cierra&&!(INFO[b.n]&&INFO[b.n].h)?'<p class="bcierra">Cierra: '+b.cierra.toLowerCase()+' (según Google, oct 2026)</p>':'')+
+        (pr&&!b.ok?'<p class="bcierra" style="color:var(--green)">Probado el '+pr.split("-").reverse().join("/")+'</p>':'')+
+        '<div class="fbtns"><a class="fbtn" href="'+barMapUrl(b)+'" target="_blank" rel="noopener">Mapa</a>'+infoBtns(b.n)+
+        (!b.ok?(pr?'<button class="fbtn" type="button" data-bar-undo="'+b.id+'">Quitar «probado»</button>':'<button class="fbtn solid" type="button" data-bar-mark="'+b.id+'">Ya lo probé</button>'):'')+
+        '</div></article>';
+    }
+    var ok=BARES.filter(function(b){ return b.ok || baresProbados[b.id]; }), por=BARES.filter(function(b){ return !b.ok && !baresProbados[b.id]; });
+    // Los que faltan por probar, agrupados por pueblo
+    var zonas=[]; por.forEach(function(b){ if(zonas.indexOf(b.zona)<0) zonas.push(b.zona); });
+    host.innerHTML=(ok.length?'<h3 class="bartitle">★ Recomendados · probados en persona</h3><div class="bargrid">'+ok.map(function(b){ return card(b,false); }).join("")+'</div>':'')+
+      zonas.map(function(z){ return '<h3 class="bartitle">Para probar · '+z+'</h3><div class="bargrid">'+por.filter(function(b){ return b.zona===z; }).map(function(b){ return card(b,true); }).join("")+'</div>'; }).join("");
+    if(typeof buildRutasT==="function" && document.getElementById("rtgrid") && document.getElementById("rtgrid").innerHTML) buildRutasT();
+    host.querySelectorAll("[data-bar-mark]").forEach(function(x){ x.addEventListener("click", function(){ baresProbados[x.getAttribute("data-bar-mark")]=isoDay(new Date()); saveBares(); renderBares(); renderFinde(); toast("Apuntado como probado."); }); });
+    host.querySelectorAll("[data-bar-undo]").forEach(function(x){ x.addEventListener("click", function(){ delete baresProbados[x.getAttribute("data-bar-undo")]; saveBares(); renderBares(); renderFinde(); }); });
+  }
+  var baresProbados={};
+  async function loadBares(){ try{ var v=await STORE.get("jaen:baresProbados"); if(v) baresProbados=JSON.parse(v)||{}; }catch(e){} }
+  function saveBares(){ try{ STORE.set("jaen:baresProbados", JSON.stringify(baresProbados)); }catch(e){} }
+  var barSkip=0;
+  function weekNum(dt){ var d=new Date(Date.UTC(dt.getFullYear(),dt.getMonth(),dt.getDate())); var day=d.getUTCDay()||7; d.setUTCDate(d.getUTCDate()+4-day); var y=new Date(Date.UTC(d.getUTCFullYear(),0,1)); return Math.ceil(((d-y)/86400000+1)/7); }
+
+  // Enlace de un lugar: su web si la tiene; si no, su ficha en Google Maps
+  function lugarUrl(l,e){ return l.web || "https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(l.n+" "+(e?(e.pueblo||e.t):"")); }
+  var K_TXT={ver:"qué ver", nat:"naturaleza", playa:"playa", oculto:"escondido"};
+  function queVer(e){
+    var ls=LUGARES_FUERA.filter(function(l){ return l.e===e.id && l.k!=="comer"; });
+    if(!ls.length) return "";
+    return '<p class="esc-comer"><b>Qué ver</b>:</p><ul class="esc-list">'+ls.map(function(l){
+      return '<li><a href="'+lugarUrl(l,e)+'" target="_blank" rel="noopener"><b>'+escNote(l.n)+'</b></a> <small>('+K_TXT[l.k]+')</small>'+(l.w?' · '+escNote(l.w):'')+'</li>'; }).join("")+'</ul>';
+  }
+  function buildEscondidos(){
+    var host=document.getElementById("escgrid2"); if(!host) return;
+    var ls=LUGARES_FUERA.filter(function(l){ return l.k==="oculto"; });
+    host.innerHTML=ls.map(function(l){ var e=l.e && ESCAPADAS.filter(function(x){ return x.id===l.e; })[0];
+      return '<article class="ibox"><h3>'+escNote(l.n)+'</h3><p>'+escNote(l.w||"")+'</p><p class="esc-comer"><a href="'+lugarUrl(l,e)+'" target="_blank" rel="noopener">'+(l.web?'Web':'Ver en el mapa')+'</a>'+
+        ' · <a href="https://www.google.com/maps/dir/?api=1&destination='+l.g[0]+','+l.g[1]+'&travelmode=driving" target="_blank" rel="noopener">Cómo llegar</a>'+(e?' · <a href="#" data-esc-go2="'+e.id+'">Escapada: '+escNote(e.t)+'</a>':'')+'</p></article>'; }).join("");
+    host.querySelectorAll("[data-esc-go2]").forEach(function(a){ a.addEventListener("click", function(ev){ ev.preventDefault(); jumpEsc(a.getAttribute("data-esc-go2")); }); });
+  }
+  function buildEscapadas(){
+    var host=document.getElementById("escapgrid"); if(!host) return;
+    if(!document.getElementById("escgrid2")){ var s=document.createElement("div"); s.innerHTML='<p class="kicker" style="margin-top:22px"><svg><use href="#star8"/></svg>Lugares escondidos · poco conocidos</p><p class="inote">Rincones que no salen en las guías de siempre. Accesos y caudales cambian: infórmate antes.</p><div class="igrid" id="escgrid2"></div>'; host.parentNode.appendChild(s); }
+    setTimeout(buildEscondidos,0);
+    host.innerHTML=ESCAPADAS.map(function(e){
+      return '<article class="ibox" data-esc="'+e.id+'"><h3>'+e.t+'</h3><p class="esc-meta">'+e.donde+' · '+e.coche+'</p><p>'+e.desc+'</p>'+
+        '<div class="esc-wx" data-escwx="'+e.id+'" hidden></div><p class="esc-comer"><b>Comer</b> (horarios según Google; confirma antes):</p><ul class="esc-list">'+e.comer.map(function(c){ var u=/^Lleva/.test(c.n)?'':"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(c.n+" "+e.pueblo); return '<li>'+(u?'<a href="'+u+'" target="_blank" rel="noopener"><b>'+c.n+'</b></a>':'<b>'+c.n+'</b>')+(c.ok?' <span class="esc-ok">★ recomendado</span>':'')+' · '+c.d+'. '+c.w+'</li>'; }).join("")+'</ul>'+queVer(e)+'<p class="esc-comer"><b>Tip:</b> '+e.tip+'</p>'+
+        '<p class="esc-comer"><a href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(e.t+" "+e.donde)+'" target="_blank" rel="noopener">Ver en mapa</a>'+(e.web?' · <a href="'+e.web+'" target="_blank" rel="noopener">Web</a>':'')+'</p></article>';
+    }).join("");
+  }
+  function paintEscWx(){
+    if(!WX) return; var days=findeDays();
+    document.querySelectorAll("[data-escwx]").forEach(function(el){
+      var id=el.getAttribute("data-escwx"), idx=LOC_IDX[id]; if(idx==null) return;
+      var parts=days.map(function(d){ var w=wxAt(idx,dayIdx(d)); if(!w) return ''; return '<span class="ed">'+DAYNAMES[wdOf(d)].slice(0,3)+'</span>'+wxBadge(w)+warnHTML(wxWarns(w)); }).filter(Boolean);
+      if(!parts.length){ el.hidden=true; return; }
+      el.innerHTML='<span class="ed" style="width:100%">Este finde allí:</span>'+parts.join(""); el.hidden=false;
+    });
+  }
+  function jumpEsc(id){
+    var sec=document.querySelector("section.escapadas"); if(sec){ sec.classList.remove("folded"); var k=sec.querySelector(".fold-head"); if(k) k.setAttribute("aria-expanded","true"); }
+    var el=document.querySelector('[data-esc="'+id+'"]'); if(!el) return;
+    el.scrollIntoView({behavior:"smooth",block:"center"}); el.classList.add("flash"); setTimeout(function(){ el.classList.remove("flash"); },1500);
+  }
+
+
+  /* Eventos (los mantiene la revisión automática de los jueves) */
+  var EVENTOS_FUENTE="la agenda de los ayuntamientos y de turismo de la provincia (sin revisar todavía)";
+  var EVENTOS=[];
+  function eventosEn(days){
+    var a=isoDay(days[0]), b=isoDay(days[days.length-1]);
+    return EVENTOS.filter(function(e){ return e.d1<=b && e.d2>=a; }).sort(function(x,y){ return x.d1<y.d1?-1:1; });
+  }
+  /* ===== este finde ===== */
+  var WX=null;
+  var MESES=["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];
+  function findeDays(){
+    var now=new Date(), wd=wdOf(now), start, n;
+    if(wd<=3){ start=addDays(now,4-wd); n=3; }
+    else if(wd<=5){ start=now; n=7-wd; }
+    else if(now.getHours()<15){ start=now; n=1; }
+    else { start=addDays(now,5); n=3; }
+    var days=[]; for(var i=0;i<n;i++) days.push(addDays(start,i));
+    var prev=addDays(days[0],-1); if(wdOf(prev)===3 && festivoOf(prev) && prev>=new Date(now.getFullYear(),now.getMonth(),now.getDate())) days.unshift(prev);
+    var next=addDays(days[days.length-1],1); if(festivoOf(next)) days.push(next);
+    return days;
+  }
+  function dayIdx(dt){ var t=new Date(); var a=new Date(t.getFullYear(),t.getMonth(),t.getDate()); return Math.round((dt-a)/86400000); }
+  function wxAt(loc,i){ if(!WX||!WX[loc]||!WX[loc].daily) return null; var d=WX[loc].daily; if(i<0||i>=d.time.length) return null; return { code:d.weather_code[i], max:d.temperature_2m_max[i], min:d.temperature_2m_min[i], rain:d.precipitation_probability_max[i], sunset:(d.sunset&&d.sunset[i])?d.sunset[i].slice(11,16):"", snow:(d.snowfall_sum&&d.snowfall_sum[i])||0, gust:(d.wind_gusts_10m_max&&d.wind_gusts_10m_max[i])||0 }; }
+  function wxTxt(w){ return wxLabel(w.code)+", "+Math.round(w.min)+"–"+Math.round(w.max)+" °C"+(w.rain!=null?", lluvia "+w.rain+" %":""); }
+  function minusMin(hm,mins){ var p=hm.split(":"); var t=parseInt(p[0],10)*60+parseInt(p[1],10)-mins; return Math.floor(t/60)+":"+("0"+(t%60)).slice(-2); }
+  function pendingBy(fn){ return DATA.filter(function(m){ return !visited.has(m.id) && fn(m); }).sort(function(x,y){ return (PRINCIPAL.indexOf(y.id)>=0?1:0)-(PRINCIPAL.indexOf(x.id)>=0?1:0); }); }
+  function renderFinde(){
+    var box=document.getElementById("findebox"); if(!box) return;
+    var days=findeDays(), wk=weekNum(days[0]);
+    var h='<div class="wrap"><div class="finde-card"><h2>Este finde</h2><p class="fsub">Lo que te conviene según el día, el tiempo y lo que te falta por ver. Se recalcula solo.</p>';
+    days.forEach(function(dt,k){
+      var i=dayIdx(dt), wd=wdOf(dt), f=festivoOf(dt), w=wxAt(0,i);
+      h+='<div class="fday"><div class="fday-h"><h3>'+DAYNAMES[wd].charAt(0).toUpperCase()+DAYNAMES[wd].slice(1)+' '+dt.getDate()+' '+MESES[dt.getMonth()]+(f?' <span class="fest">· festivo: '+f+'</span>':'')+'</h3>'+(w?wxBadge(w):'')+'</div>';
+      if(w) h+='<p>'+wxLabel(w.code).charAt(0).toUpperCase()+wxLabel(w.code).slice(1)+(w.sunset?' · '+ICO_SUNSET+' atardecer '+w.sunset:'')+'</p>'+(wxWarns(w).length?'<p>'+warnHTML(wxWarns(w))+'</p>':'');
+      else h+='<p>'+(WX?'Previsión aún no disponible: sale una semana antes.':'Sin previsión ahora mismo (necesita conexión).')+'</p>';
+      var fr=freeSpecialDate(dt).filter(function(m){ return !visited.has(m.id); }).slice(0,5);
+      if(fr.length) h+='<p><b>Gratis ese día y aún sin ver:</b></p><div class="today-chips">'+chipList(fr)+'</div>';
+      var wet=w && (w.rain>=60 || (w.code>=51 && w.rain>=40));
+      if(wet){
+        var ins=pendingBy(function(m){ return (MUSEOS.indexOf(m.id)>=0 || m.tags.indexOf("renacimiento")>=0) && dayStatusDate(m,dt).k!=="closed"; }).slice(0,3);
+        if(ins.length) h+='<p><b>Día de techo:</b> museos e iglesias abiertos que te faltan:</p><div class="today-chips">'+chipList(ins)+'</div>';
+      } else {
+        var SUNSET=["miradores_ub","murallas_bz","iznatoraf","iruela","palomas","tranco","mirador_frf"];
+        var mir=pendingBy(function(m){ return SUNSET.indexOf(m.id)>=0; });
+        if(mir.length<2) mir=SUNSET.map(function(id){ return IDS[id]; }).filter(Boolean);
+        var pick=mir[(wk+k)%mir.length];
+        if(pick && w && w.sunset) h+='<p><b>Atardecer:</b> sobre las '+minusMin(w.sunset,30)+' sube a <b>'+pick.name+'</b> y espera la luz.</p><div class="today-chips">'+chipList([pick])+'</div>';
+      }
+      var cl=DATA.filter(function(m){ return PRINCIPAL.indexOf(m.id)>=0 && dayStatusDate(m,dt).k==="closed"; });
+      if(cl.length) h+='<p><b>Cerrado ese día:</b> '+cl.map(function(m){ return m.name; }).join(" · ")+'.</p>';
+      h+='</div>';
+    });
+    // bar del finde
+    var cand=BARES_PROBAR.filter(function(b){ return !baresProbados[b.id]; }), bar, nuevo=true;
+    if(cand.length){ bar=cand[(wk+barSkip)%cand.length]; } else { var rep=BARES_OK.length?BARES_OK:BARES_PROBAR; bar=rep[(wk+barSkip)%rep.length]; nuevo=false; }
+    h+='<div class="fextra"><div class="fbox"><h4>'+(nuevo?'Bar para probar este finde':'Para repetir este finde')+'</h4><span class="fname">'+bar.n+'</span>'+bar.d+'. '+bar.w+
+       '<div class="fbtns">'+(nuevo?'<button class="fbtn solid" type="button" data-bar-ok="'+bar.id+'">Ya lo probé</button>':'')+'<button class="fbtn" type="button" data-bar-next>Otro</button></div></div>';
+    // escapada del finde
+    var mon=days[0].getMonth()+1, sat=days.filter(function(d){ return wdOf(d)===5; })[0]||days[0], si=dayIdx(sat);
+    var esc=ESCAPADAS.filter(function(e){ return e.meses.indexOf(mon)>=0; });
+    function bad(e){ var w=wxAt(LOC_IDX[e.id],si); if(!w) return false; return w.rain>=60 || w.gust>=60 || w.code>=95 || (e.monte && (w.snow>=1 && e.id!=="sierranevada")) || w.max>=36; }
+    var badMtn=false, okE=esc.filter(function(e){ return !bad(e); });
+    if(okE.length && okE.length<esc.length){ badMtn=true; esc=okE; }
+    var e=esc[wk%esc.length];
+    h+='<div class="fbox"><h4>Escapada del finde</h4><span class="fname">'+e.t+'</span>'+e.donde+' · '+e.coche+'.';
+    var ew=wxAt(LOC_IDX[e.id],si);
+    if(ew) h+='<div class="esc-wx"><span class="ed">El '+DAYNAMES[wdOf(sat)]+' allí:</span>'+wxBadge(ew)+warnHTML(wxWarns(ew))+'</div>'+(badMtn?'<p class="wxadv">Hay mal tiempo en otras zonas: te propongo una que se libra.</p>':'');
+    h+='<div class="fbtns"><button class="fbtn solid" type="button" data-esc-go="'+e.id+'">Ver la escapada</button></div></div></div>';
+    var evs=eventosEn(days);
+    h+='<div class="zonas"><h3>Qué hay este finde por la zona</h3>';
+    if(evs.length){
+      h+='<ul class="evlist">'+evs.map(function(e){ var dd=new Date(e.d1+"T12:00:00"), multi=e.d1!==e.d2;
+        return '<li><span class="evdate">'+DAYNAMES[wdOf(dd)].slice(0,3)+'<b>'+dd.getDate()+'</b></span><span><a href="'+e.url+'" target="_blank" rel="noopener"><b class="evn">'+escNote(e.t)+'</b></a> · '+escNote(e.donde)+'. '+escNote(e.w)+(multi?' (hasta el '+parseInt(e.d2.slice(8),10)+' '+MESES[parseInt(e.d2.slice(5,7),10)-1]+')':'')+'</span></li>'; }).join("")+'</ul>';
+      h+='<p class="wxadv">Según '+EVENTOS_FUENTE+'. Confirma horarios y entradas en la web del evento.</p>';
+    } else h+='<p class="wxadv">No tengo eventos apuntados para estos días. La lista se actualiza los jueves.</p>';
+    h+='</div>';
+    if(WX){
+      var Z=[["Las Villas","base"],["Úbeda y Baeza","ubeda"],["Cazorla","cazorla"],["Valle (A-319)","valle"],["Segura","segura"]];
+      var cols=days.filter(function(d){ return wxAt(0,dayIdx(d)); });
+      if(cols.length){
+        h+='<div class="zonas"><h3>El tiempo por zonas</h3><table class="ztab"><thead><tr><th></th>'+cols.map(function(d){ return '<th>'+DAYNAMES[wdOf(d)].slice(0,3)+' '+d.getDate()+'</th>'; }).join("")+'</tr></thead><tbody>'+
+          Z.map(function(z){ return '<tr><td>'+z[0]+'</td>'+cols.map(function(d){ var w=wxAt(LOC_IDX[z[1]],dayIdx(d)); if(!w) return '<td>—</td>';
+            var wr=wxWarns(w); return '<td><div class="zcell">'+wxIcon(w.code,24)+'<span><b>'+Math.round(w.max)+'°</b> <small>'+Math.round(w.min)+'°</small></span>'+(w.rain>=20?'<small style="color:#2F6DB5">'+w.rain+'%</small>':'')+(wr.length?'<span class="zw">⚠ '+wr[0]+'</span>':'')+'</div></td>'; }).join("")+'</tr>'; }).join("")+
+          '</tbody></table><p class="wxadv">Avisos oficiales de la AEMET: <a href="https://www.aemet.es/es/eltiempo/prediccion/avisos?w=hoy&k=and" target="_blank" rel="noopener">aemet.es</a>.</p></div>';
+      }
+    }
+    var av=Object.keys(AVISOS).filter(function(id){ return IDS[id] && !visited.has(id); });
+    if(av.length) h+='<p class="fsub" style="margin-top:12px"><b>Avisos ('+AVISOS_FECHA+'):</b> '+av.map(function(id){ return IDS[id].name; }).join(" · ")+'. Lo tienes en el recuadro rojo de cada ficha.</p>';
+    h+='</div></div>';
+    box.innerHTML=h;
+    box.querySelectorAll("[data-jump]").forEach(function(b){ b.addEventListener("click", function(){ jumpTo(b.getAttribute("data-jump")); }); });
+    var ok=box.querySelector("[data-bar-ok]"); if(ok) ok.addEventListener("click", function(){ baresProbados[ok.getAttribute("data-bar-ok")]=isoDay(new Date()); saveBares(); barSkip=0; renderFinde(); renderBares(); toast("Apuntado. Te propongo otro."); });
+    var nx=box.querySelector("[data-bar-next]"); if(nx) nx.addEventListener("click", function(){ barSkip++; renderFinde(); });
+    var eg=box.querySelector("[data-esc-go]"); if(eg) eg.addEventListener("click", function(){ jumpEsc(eg.getAttribute("data-esc-go")); });
+  }
+
+
+  /* ===== rutas temáticas ===== */
+  var RUTAS_T=[];
+  function rtStops(r){
+    if(r.bares) return r.bares.map(function(id){ return {bar:id}; });
+    return r.stops;
+  }
+  function stopInfo(s){
+    if(s.bar){ var b=BARES.filter(function(x){ return x.id===s.bar; })[0]; if(!b) return null; return {n:b.n, g:b.g, w:s.w||(b.dir+'. '+b.w+(b.cierra?' Cierra: '+b.cierra.toLowerCase()+'.':'')), bar:b.id, ok:b.ok||!!baresProbados[b.id]}; }
+    if(s.id){ var m=IDS[s.id]; if(!m||!GEO[s.id]) return null; return {n:m.name, g:GEO[s.id], w:s.w, site:s.id}; }
+    return s;
+  }
+  function buildRutasT(){
+    var host=document.getElementById("rtgrid"); if(!host) return;
+    host.innerHTML=RUTAS_T.map(function(r){
+      var st=rtStops(r).map(stopInfo).filter(Boolean);
+      var p=function(x){ return x.g[0]+","+x.g[1]; };
+      var url="https://www.google.com/maps/dir/?api=1&travelmode="+(r.mode||"walking")+"&origin="+p(st[0])+"&destination="+p(st[st.length-1])+(st.length>2?"&waypoints="+st.slice(1,-1).slice(0,9).map(p).join("%7C"):"");
+      return '<article class="rtcard"><h3>'+r.t+'</h3><p class="rtmeta">'+r.meta+'</p><p>'+r.p+'</p><ol class="rtstops">'+
+        st.map(function(x){ var name=x.site?'<button type="button" data-rtj="'+x.site+'">'+escNote(x.n)+'</button>':(x.bar?'<button type="button" data-rtb="'+x.bar+'">'+escNote(x.n)+'</button>':'<b>'+escNote(x.n)+'</b>');
+          return '<li>'+name+(x.bar&&x.ok?' <span class="esc-ok">★ recomendado</span>':'')+' · '+escNote(x.w)+'</li>'; }).join("")+'</ol>'+
+        (r.extra?'<p>'+r.extra+'</p>':'')+'<a class="rtgo" href="'+url+'" target="_blank" rel="noopener">Abrir la ruta en Google Maps</a></article>';
+    }).join("");
+    host.querySelectorAll("[data-rtj]").forEach(function(b){ b.addEventListener("click", function(){ jumpTo(b.getAttribute("data-rtj")); }); });
+    host.querySelectorAll("[data-rtb]").forEach(function(b){ b.addEventListener("click", function(){ var sec=document.getElementById("bares"); openSec(sec); var c=document.querySelector('[data-bar="'+b.getAttribute("data-rtb")+'"]'); if(c){ c.scrollIntoView({behavior:"smooth",block:"center"}); c.classList.add("flash"); setTimeout(function(){ c.classList.remove("flash"); },1500); } }); });
+  }
+  /* ===== copas, cócteles y terrazas ===== */
+  var COPAS=[];
+  var ESPECIAL=[
+    { t:"En la sierra", s:"Cocina serrana para después de una ruta: caza, cordero, migas y andrajos. En finde, reserva.", l:[
+      {n:"Mesón El Parral", dir:"Av. del Campillo · Arroyo Frío", w:"Carnes a la brasa, chuletas de cordero y rin-ran con bacalao.", cierra:"", g:[37.94501,-2.92127]},
+      {n:"Mesón Rural Casa Antonia", dir:"Av. del Campillo · Arroyo Frío", w:"Cocina típica: migas, andrajos, caldereta de cordero y carnes de monte.", cierra:"", g:[37.94596,-2.92042]},
+      {n:"Restaurante Raisa", dir:"c/ Puerta Nueva 35 · Hornos", w:"Cocina tradicional en un local rústico; choto al ajillo.", cierra:"", g:[38.21654,-2.71705]} ]}
+  ];
+  function placeCards(groups){
+    return groups.map(function(gr){
+      return '<h3 class="cpgrp">'+gr.t+'<small>'+gr.s+'</small></h3><div class="cpgrid">'+gr.l.map(function(b){
+        var url="https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(b.n+" "+b.dir.replace(" · "," "));
+        return '<article class="barcard"><h4>'+escNote(b.n)+(b.ok?' <span class="esc-ok">★ recomendado</span>':'')+'</h4><p class="bdir">'+escNote(b.dir)+'</p>'+notaHTML(b.n)+infoHTML(b.n)+(b.s?'<p class="bsello">'+escNote(b.s)+'</p>':'')+'<p>'+escNote(b.w)+'</p>'+
+          (b.cierra&&!(INFO[b.n]&&INFO[b.n].h)?'<p class="bcierra">Cierra: '+escNote(b.cierra.toLowerCase())+' (según Google, oct 2026)</p>':'')+
+          '<div class="fbtns"><a class="fbtn" href="'+url+'" target="_blank" rel="noopener">Mapa</a>'+infoBtns(b.n)+'</div></article>';
+      }).join("")+'</div>';
+    }).join("");
+  }
+  function buildCopas(){
+    var host=document.getElementById("cplist"); if(host) host.innerHTML=placeCards(COPAS);
+    var h2=document.getElementById("eslist"); if(h2) h2.innerHTML=placeCards(ESPECIAL);
+  }
+  document.addEventListener("click", function(e){ var a=e.target.closest("[data-goto-cp]"); if(!a) return; e.preventDefault(); var sec=document.getElementById("copas"); openSec(sec); sec.scrollIntoView({behavior:"smooth",block:"start"}); });
+  /* ===== pestañas de la agenda ===== */
+  function setAg(which){
+    document.querySelectorAll(".agtabs [data-ag]").forEach(function(b){ b.setAttribute("aria-selected", b.getAttribute("data-ag")===which?"true":"false"); });
+    document.querySelectorAll(".agpane").forEach(function(p){ p.hidden=p.getAttribute("data-pane")!==which; });
+  }
+  document.querySelectorAll(".agtabs [data-ag]").forEach(function(b){ b.addEventListener("click", function(){ setAg(b.getAttribute("data-ag")); }); });
+  (function(){ var wd=wdOf(new Date()); setAg(wd>=1 && wd<=3 ? "finde" : "hoy"); })();
+
+  /* ===== navegación inferior ===== */
+  function openSec(sec){ if(sec && sec.classList.contains("folded")){ sec.classList.remove("folded"); var k=sec.querySelector(".fold-head"); if(k) k.setAttribute("aria-expanded","true"); } }
+  /* ===== pantallas: cada botón de abajo enseña solo lo suyo ===== */
+  var NAV2VIEW={agenda:"hoy",sitios:"sitios",mapa:"mapa",bares:"comer",escapadas:"escapadas",plan:"plan"};
+  var VTITLE={sitios:"Sitios y entradas",mapa:"Mapa",comer:"Comer y beber",escapadas:"Escapadas",plan:"Mi plan"};
+  var curView=null, scrollMem={};
+  function showView(v, keepScroll){
+    if(!document.querySelector('.view[data-view="'+v+'"]')) v="hoy";
+    if(v!==curView){
+      if(curView) scrollMem[curView]=window.scrollY;
+      document.querySelectorAll(".view").forEach(function(el){ el.hidden=el.getAttribute("data-view")!==v; });
+      curView=v;
+      document.querySelectorAll("#bnav [data-nav]").forEach(function(b){ var on=NAV2VIEW[b.getAttribute("data-nav")]===v; b.classList.toggle("on",on); if(on) b.setAttribute("aria-current","page"); else b.removeAttribute("aria-current"); });
+      try{ history.replaceState(null,"","#"+v); }catch(e){}
+      if(!keepScroll) window.scrollTo(0, scrollMem[v]||0);
+    }
+    if(v==="mapa") initMap();
+  }
+  function setCm(which){
+    document.querySelectorAll("[data-cm]").forEach(function(b){ b.setAttribute("aria-selected", b.getAttribute("data-cm")===which?"true":"false"); });
+    document.querySelectorAll("[data-cmpane]").forEach(function(p){ p.hidden=p.getAttribute("data-cmpane")!==which; });
+    try{ localStorage.setItem("jaen:cmtab", which); }catch(e){}
+  }
+  function ensureVisible(el){
+    if(!el || !el.closest) return;
+    var view=el.closest(".view"); if(view && view.hidden) showView(view.getAttribute("data-view"), true);
+    var pane=el.closest("[data-cmpane]"); if(pane && pane.hidden) setCm(pane.getAttribute("data-cmpane"));
+  }
+  (function(){
+    var _siv=Element.prototype.scrollIntoView;
+    Element.prototype.scrollIntoView=function(o){ try{ ensureVisible(this); }catch(e){} return _siv.call(this,o); };
+  })();
+  function goNav(t){
+    var v=NAV2VIEW[t]||"hoy";
+    if(v===curView) window.scrollTo({top:0,behavior:"smooth"}); else showView(v);
+    if(t==="plan" && plan.size){ var bar=document.getElementById("planbar"); if(bar.getAttribute("data-open")!=="true") document.getElementById("planbarToggle").click(); }
+  }
+  (function buildViews(){
+    function q(sel){ return document.querySelector(sel); }
+    var inbox=q("#inbox"); inbox=inbox?inbox.parentNode:null;
+    var G={
+      hoy:[q("header.hero"), inbox, q("#agenda"), q("#s_finde"), q("section.strategy")],
+      sitios:[q("section.dayplan"), q("nav.controls"), q("main"), q("section.passes"), q("#s_bono"), q("#s_alh"), q("#s_mover"), q("#s_otras")],
+      mapa:[q("#mapa")],
+      comer:[q("#bares"), q("#copas"), q("#especial"), q("#rutastem")],
+      escapadas:[q("section.escapadas")],
+      plan:[q("section.routes"), q("footer")]
+    };
+    var anchor=q("#bnav");
+    Object.keys(G).forEach(function(v){
+      var box=document.createElement("div"); box.className="view"; box.setAttribute("data-view",v); box.hidden=true;
+      if(VTITLE[v]){ var h=document.createElement("div"); h.className="vhead"; h.innerHTML='<div class="wrap"><small>Jaén · sierra y Renacimiento</small><h2>'+VTITLE[v]+'</h2></div>'; box.appendChild(h); }
+      if(v==="comer"){ var t=document.createElement("div"); t.className="wrap"; t.innerHTML='<div class="agtabs cmtabs" role="tablist" aria-label="Comer y beber"><button role="tab" type="button" data-cm="bares">Bares</button><button role="tab" type="button" data-cm="especial">Restaurantes</button></div>'; box.appendChild(t); }
+      if(v==="plan"){ var ph=document.createElement("section"); ph.className="planintro"; ph.innerHTML='<div class="wrap"><p>Añade sitios con <b>«Añadir al plan»</b> en sus fichas: la barra azul de abajo los ordena por cercanía y abre la ruta en Google Maps. Aquí tienes además rutas ya montadas y, al final, cómo guardar copia de lo que llevas.</p><button type="button" class="dt-btn" id="planOpen">Ver mi plan</button></div>'; box.appendChild(ph); }
+      G[v].forEach(function(el){ if(el) box.appendChild(el); });
+      anchor.parentNode.insertBefore(box, anchor);
+    });
+    [["bares","bares"],["copas","copas"],["especial","especial"],["rutastem","rutas"]].forEach(function(p){ var el=document.getElementById(p[0]); if(el){ el.setAttribute("data-cmpane",p[1]); openSec(el); } });
+    openSec(q("section.escapadas")); openSec(q("section.routes"));
+    document.querySelectorAll("[data-cm]").forEach(function(b){ b.addEventListener("click", function(){ setCm(b.getAttribute("data-cm")); }); });
+    var cm="bares"; try{ cm=localStorage.getItem("jaen:cmtab")||"bares"; }catch(e){}
+    setCm(cm);
+    var po=document.getElementById("planOpen"); if(po) po.addEventListener("click", function(){ if(!plan.size){ toast("Tu plan está vacío: añade sitios con «Añadir al plan»."); return; } var bar=document.getElementById("planbar"); if(bar.getAttribute("data-open")!=="true") document.getElementById("planbarToggle").click(); });
+    var h=(location.hash||"").replace("#","");
+    showView(Object.keys(G).indexOf(h)>=0 ? h : "hoy");
+  })();
+  document.querySelectorAll("#bnav [data-nav]").forEach(function(b){ b.addEventListener("click", function(){ goNav(b.getAttribute("data-nav")); }); });
+  document.addEventListener("click", function(e){ var a=e.target.closest("[data-goto-rt]"); if(!a) return; e.preventDefault(); var sec=document.getElementById("rutastem"); openSec(sec); sec.scrollIntoView({behavior:"smooth",block:"start"}); });
+  function updateNavPlan(){ var c=document.getElementById("navPlanCount"); if(!c) return; c.hidden=!plan.size; c.textContent=plan.size; }
+
+  /* ===== ruta del plan en Google Maps ===== */
+  function planOrder(){
+    var items=DATA.filter(function(m){ return plan.has(m.id) && GEO[m.id]; }); if(items.length<2) return items;
+    function d(a,b){ var x=GEO[a.id],y=GEO[b.id],dx=(x[1]-y[1])*Math.cos(x[0]*Math.PI/180),dy=x[0]-y[0]; return dx*dx+dy*dy; }
+    var best=null,bestL=Infinity;
+    items.forEach(function(start){
+      var rest=items.filter(function(m){ return m!==start; }), seq=[start], L=0;
+      while(rest.length){ var cur=seq[seq.length-1], bi=0; for(var i=1;i<rest.length;i++){ if(d(cur,rest[i])<d(cur,rest[bi])) bi=i; } L+=Math.sqrt(d(cur,rest[bi])); seq.push(rest.splice(bi,1)[0]); }
+      if(L<bestL){ bestL=L; best=seq; }
+    });
+    return best;
+  }
+  function planRouteUrl(seq){
+    var p=function(m){ return GEO[m.id][0]+","+GEO[m.id][1]; };
+    var u="https://www.google.com/maps/dir/?api=1&travelmode=walking&destination="+p(seq[seq.length-1]);
+    if(seq.length>1){ u+="&origin="+p(seq[0]); var w=seq.slice(1,-1).slice(0,9); if(w.length) u+="&waypoints="+w.map(p).join("%7C"); }
+    return u;
+  }
+
+  /* ===== mapa (Leaflet + OpenStreetMap) ===== */
+  var LMAP=null, LLAYER=null, mapFilter="pend", leafletLoading=false;
+  function loadLeaflet(cb){
+    if(window.L){ cb(); return; } if(leafletLoading) return; leafletLoading=true;
+    var css=document.createElement("link"); css.rel="stylesheet"; css.href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"; document.head.appendChild(css);
+    var sc=document.createElement("script"); sc.src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js";
+    sc.onload=function(){ leafletLoading=false; cb(); };
+    sc.onerror=function(){ leafletLoading=false; document.getElementById("map").innerHTML='<p class="mapmsg">No he podido cargar el mapa. Necesita conexión; prueba más tarde.</p>'; };
+    document.head.appendChild(sc);
+  }
+  function initMap(){
+    if(LMAP){ setTimeout(function(){ LMAP.invalidateSize(); },150); return; }
+    loadLeaflet(function(){
+      var el=document.getElementById("map"); el.innerHTML="";
+      LMAP=L.map(el,{zoomControl:true,scrollWheelZoom:false}).setView([38.0,-3.0],9);
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(LMAP);
+      LLAYER=L.layerGroup().addTo(LMAP); drawMap();
+    });
+  }
+  function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;"); }
+  function drawMap(){
+    if(!LMAP||!LLAYER) return; LLAYER.clearLayers(); var pts=[];
+    var today=new Date(), fr=freeSpecialDate(today).map(function(m){ return m.id; });
+    if(mapFilter!=="bares" && mapFilter!=="fuera"){
+      DATA.forEach(function(m){
+        var g=GEO[m.id]; if(!g) return; var v=visited.has(m.id), pr=PRINCIPAL.indexOf(m.id)>=0;
+        if(mapFilter==="pend" && v) return;
+        if(mapFilter==="hoy" && !(fr.indexOf(m.id)>=0 || m.pt==="free" || m.pt==="eu")) return;
+        if(mapFilter==="plan" && !plan.has(m.id)) return;
+        var col=v?"#9A958A":(pr?"#C99A2E":"#2E5E4E");
+        var mk=L.circleMarker(g,{radius:pr?9:7,color:"#fff",weight:2,fillColor:col,fillOpacity:.95});
+        var st=dayStatusDate(m,today);
+        mk.bindPopup('<div class="mappop"><b>'+esc(m.name)+'</b><br>'+esc(shortPrice(m))+'<br><span style="color:#585C4B">Hoy: '+esc(st.t)+'</span>'+(AVISOS[m.id]?'<br><span style="color:#B23A2A">Hay un aviso en la ficha</span>':'')+
+          '<div class="mp-b"><button type="button" data-mj="'+m.id+'">Ver ficha</button><a href="'+mapsDir(g[0],g[1])+'" target="_blank" rel="noopener">Cómo llegar</a></div></div>');
+        mk.addTo(LLAYER); pts.push(g);
+      });
+    }
+    // Fuera de la ciudad: cada escapada (Sierra Nevada, Alpujarra, costa…) con sus sitios para comer
+    if(mapFilter==="fuera" || mapFilter==="todo"){
+      ESCAPADAS.forEach(function(e){
+        var g=ESC_LL[e.id]; if(!g) return;
+        var mk=L.circleMarker(g,{radius:10,color:"#fff",weight:2,fillColor:"#B4532A",fillOpacity:.95});
+        var comer=e.comer.filter(function(c){ return !/^Lleva/.test(c.n); }).map(function(c){
+          return '<li><a href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(c.n+" "+(e.pueblo||e.t))+'" target="_blank" rel="noopener">'+esc(c.n)+'</a>'+(c.ok?' ★':'')+'</li>'; }).join("");
+        mk.bindPopup('<div class="mappop"><b>'+esc(e.t)+'</b><br>'+esc(e.donde)+' · '+esc(e.coche)+
+          (comer?'<br><span style="color:#585C4B">Para comer:</span><ul style="margin:.2em 0 .3em 1.1em;padding:0">'+comer+'</ul>':'')+
+          '<div class="mp-b"><button type="button" data-me="'+e.id+'">Ver ficha</button><a href="https://www.google.com/maps/dir/?api=1&destination='+g[0]+','+g[1]+'&travelmode=driving" target="_blank" rel="noopener">Cómo llegar</a></div></div>');
+        mk.addTo(LLAYER); pts.push(g);
+      });
+      var COL_LF={ver:"#7B3F98", nat:"#3E7D3A", comer:"#4E6B2E", playa:"#2F86B5", oculto:"#C2416B"};
+      LUGARES_FUERA.forEach(function(l){
+        var es=l.e && ESCAPADAS.filter(function(x){ return x.id===l.e; })[0];
+        var c=l.k==="comer" && es ? es.comer.filter(function(x){ return x.n===l.n; })[0] : null;
+        var w=l.w || (c ? c.w : "");
+        var mk=L.circleMarker(l.g,{radius:l.k==="comer"?5:6,color:"#fff",weight:2,fillColor:COL_LF[l.k],fillOpacity:.95});
+        mk.bindPopup('<div class="mappop"><b>'+esc(l.n)+'</b>'+(c&&c.ok?' ★':'')+(es?'<br><span style="color:#585C4B">'+esc(es.t)+'</span>':'')+(w?'<br>'+esc(w):'')+
+          '<div class="mp-b">'+(es?'<button type="button" data-me="'+es.id+'">Ver escapada</button>':'')+'<a href="https://www.google.com/maps/dir/?api=1&destination='+l.g[0]+','+l.g[1]+'&travelmode=driving" target="_blank" rel="noopener">Cómo llegar</a></div></div>');
+        mk.addTo(LLAYER); pts.push(l.g);
+      });
+      if(mapFilter==="fuera") pts.push([38.168,-3.008]);   // Villanueva, para ver la distancia
+    }
+    if(mapFilter==="bares" || mapFilter==="todo"){
+      BARES.forEach(function(b){
+        var mk=L.circleMarker(b.g,{radius:6,color:"#fff",weight:2,fillColor:"#4E6B2E",fillOpacity:.95});
+        mk.bindPopup('<div class="mappop"><b>'+esc(b.n)+'</b><br>'+esc(b.dir)+'<br>'+esc(b.w)+(b.cierra?'<br><span style="color:#7A4E2D">Cierra: '+esc(b.cierra.toLowerCase())+'</span>':'')+
+          '<div class="mp-b"><button type="button" data-mb="'+b.id+'">Ver en la lista</button><a href="'+mapsDir(b.g[0],b.g[1])+'" target="_blank" rel="noopener">Cómo llegar</a></div></div>');
+        mk.addTo(LLAYER); pts.push(b.g);
+      });
+    }
+    if(pts.length) LMAP.fitBounds(pts,{padding:[24,24],maxZoom:16});
+  }
+  document.getElementById("map").addEventListener("click", function(e){
+    var t=e.target.closest("[data-mj],[data-mb],[data-me]"); if(!t) return;
+    if(t.hasAttribute("data-me")){ var ec=document.querySelector('[data-esc="'+t.getAttribute("data-me")+'"]'); if(ec) ensureVisible(ec); jumpEsc(t.getAttribute("data-me")); return; }
+    if(t.hasAttribute("data-mj")) jumpTo(t.getAttribute("data-mj"));
+    else { var sec=document.getElementById("bares"); openSec(sec); var c=document.querySelector('[data-bar="'+t.getAttribute("data-mb")+'"]'); if(c){ c.scrollIntoView({behavior:"smooth",block:"center"}); c.classList.add("flash"); setTimeout(function(){ c.classList.remove("flash"); },1500); } }
+  });
+  document.querySelectorAll("#mapchips [data-mf]").forEach(function(b){ b.addEventListener("click", function(){
+    mapFilter=b.getAttribute("data-mf"); document.querySelectorAll("#mapchips [data-mf]").forEach(function(x){ x.setAttribute("aria-pressed", x===b?"true":"false"); });
+    if(!LMAP) initMap(); else drawMap(); }); });
+  var meMk=null;
+  function distM(a,b,c,d){ var R=6371000, t=Math.PI/180, x=(d-b)*t*Math.cos((a+c)/2*t), y=(c-a)*t; return Math.sqrt(x*x+y*y)*R; }
+  function walk(m){ var min=Math.round(m*1.3/75); return m>4000?(m/1000).toFixed(1)+" km":(min<1?"1":min)+" min a pie"; }
+  function renderNearby(lat,lng){
+    var el=document.getElementById("nearby"); if(!el) return; var now=new Date();
+    var sites=DATA.filter(function(m){ return GEO[m.id] && !visited.has(m.id) && dayStatusDate(m,now).k!=="closed"; })
+      .map(function(m){ return {m:m,d:distM(lat,lng,GEO[m.id][0],GEO[m.id][1])}; }).sort(function(a,b){ return a.d-b.d; }).slice(0,6);
+    var bars=BARES.map(function(b){ return {b:b,d:distM(lat,lng,b.g[0],b.g[1])}; }).sort(function(a,b){ return a.d-b.d; }).slice(0,4);
+    if(sites.length && sites[0].d>60000){ el.innerHTML='<p class="wxadv">Estás lejos de la zona: la lista de cercanía funciona cuando estés allí.</p>'; el.hidden=false; return; }
+    el.innerHTML='<h4>Cerca de ti y aún sin ver</h4>'+sites.map(function(x){ return '<button type="button" data-nj="'+x.m.id+'">'+esc(x.m.name)+(AVISOS[x.m.id]?' ⚠':'')+'<span>'+walk(x.d)+'</span></button>'; }).join("")+
+      '<h4>Bares cerca</h4>'+bars.map(function(x){ return '<button type="button" data-nb="'+x.b.id+'">'+esc(x.b.n)+(x.b.ok||baresProbados[x.b.id]?'':' · por probar')+'<span>'+walk(x.d)+'</span></button>'; }).join("")+
+      '<p class="wxadv">Distancias aproximadas en línea recta. «⚠» = tiene aviso en la ficha.</p>';
+    el.hidden=false;
+    el.querySelectorAll("[data-nj]").forEach(function(b){ b.addEventListener("click", function(){ jumpTo(b.getAttribute("data-nj")); }); });
+    el.querySelectorAll("[data-nb]").forEach(function(b){ b.addEventListener("click", function(){ var sec=document.getElementById("bares"); openSec(sec); var c=document.querySelector('[data-bar="'+b.getAttribute("data-nb")+'"]'); if(c){ c.scrollIntoView({behavior:"smooth",block:"center"}); c.classList.add("flash"); setTimeout(function(){ c.classList.remove("flash"); },1500); } }); });
+  }
+  document.getElementById("mapLocate").addEventListener("click", function(){
+    if(!navigator.geolocation){ toast("Este navegador no da la ubicación."); return; }
+    initMap();
+    navigator.geolocation.getCurrentPosition(function(p){
+      var go=function(){ if(!LMAP){ setTimeout(go,300); return; } var ll=[p.coords.latitude,p.coords.longitude];
+        if(meMk) meMk.remove(); meMk=L.circleMarker(ll,{radius:8,color:"#fff",weight:3,fillColor:"#B23A2A",fillOpacity:1}).addTo(LMAP).bindPopup("Estás aquí"); LMAP.setView(ll,16); };
+      go(); renderNearby(p.coords.latitude,p.coords.longitude);
+    }, function(){ toast("No tengo permiso para tu ubicación."); }, {enableHighAccuracy:true,timeout:10000});
+  });
+  if("IntersectionObserver" in window){ var mio=new IntersectionObserver(function(es){ if(es[0].isIntersecting){ initMap(); mio.disconnect(); } },{rootMargin:"200px"}); mio.observe(document.getElementById("map")); }
+  /* ===== el tiempo (Open-Meteo, sin clave) ===== */
+  var ESC_LL={ jaen:[37.7729,-3.7883], sabiote:[38.0692,-3.3068], quesada:[37.8430,-3.0669], banos:[38.1710,-3.7745], despenaperros:[38.3402,-3.5396] };
+  /* Fuera de la ciudad: lugares concretos de cada escapada para el mapa (coordenadas de OpenStreetMap).
+     k: ver (monumento, pueblo), nat (naturaleza, mirador, cumbre), comer (uno de los sitios de su lista "comer"). */
+  var LUGARES_FUERA=[
+    {e:"jaen", k:"ver", n:"Catedral de Jaén", g:[37.7651,-3.7898], w:"Obra cumbre de Vandelvira. Entrada general 10 €."},
+    {e:"jaen", k:"ver", n:"Baños Árabes (palacio de Villardompardo)", g:[37.7713,-3.7939], w:"Los baños árabes más grandes que se conservan en España. Gratis; cierran los lunes."},
+    {e:"jaen", k:"nat", n:"Castillo de Santa Catalina", g:[37.7675,-3.7993], w:"Castillo y cruz sobre la ciudad. 3,50 €; miércoles por la tarde gratis con reserva."},
+    {e:"jaen", k:"comer", n:"Taberna Alcocer", g:[37.7658,-3.7910]},
+    {e:"sabiote", k:"ver", n:"Castillo de Sabiote", g:[38.0712,-3.3027], w:"Castillo-palacio renacentista sobre la muralla."},
+    {e:"quesada", k:"ver", n:"Museo Rafael Zabaleta", g:[37.8426,-3.0666], w:"Museo del pintor de Quesada."},
+    {e:"quesada", k:"nat", n:"Cueva del Agua (Tíscar)", g:[37.7681,-3.0238], w:"El agua cae por dentro de la roca junto al santuario de Tíscar."},
+    {e:"banos", k:"ver", n:"Castillo de Burgalimar", g:[38.1702,-3.7755], w:"Castillo califal del s. X, de los mejor conservados de Europa."},
+    {e:"banos", k:"comer", n:"Restaurante Baños", g:[38.1733,-3.7773]},
+    {e:"despenaperros", k:"nat", n:"Cueva de los Muñecos", g:[38.3884,-3.4986], w:"Pinturas rupestres en un abrigo; paseo corto desde la carretera."},
+    {e:null, k:"oculto", n:"Charco del Aceite", g:[38.1790,-2.8301], w:"Piscina natural del Guadalquivir pasado el Tranco, con aparcamiento, mesas y chiringuito en temporada."},
+    {e:null, k:"oculto", n:"Cascada de Chorrogil", g:[38.0385,-2.9416], w:"Salto de agua en la sierra de Las Villas, a algo más de una hora andando."},
+    {e:null, k:"oculto", n:"Salto de los Órganos", g:[37.9690,-2.8199], w:"En la ruta del Borosa, pasada la Cerrada de Elías: más de 100 m de caída."},
+    {e:null, k:"oculto", n:"Cascada de Guazalamanco", g:[37.8054,-2.9198], w:"Ruta corta (1 km) hasta una cascada que forma un dique, en Pozo Alcón."},
+    {e:"quesada", k:"oculto", n:"Pilón Azul", g:[37.7634,-3.0238], w:"Poza y cascada entre Don Pedro y Belerda; solo lleva agua tras las lluvias."}
+  ];
+  var LOC_IDX={base:0}, LOC_LL=[[38.168,-3.008]];
+  // Zonas del tiempo además de las escapadas
+  [["ubeda",[38.0133,-3.3705]],["cazorla",[37.911,-3.003]],["valle",[38.014,-2.873]],["segura",[38.299,-2.652]]].forEach(function(z){ LOC_IDX[z[0]]=LOC_LL.length; LOC_LL.push(z[1]); });
+  ESCAPADAS.forEach(function(e){ if(ESC_LL[e.id]){ LOC_IDX[e.id]=LOC_LL.length; LOC_LL.push(ESC_LL[e.id]); } });
+  var WX_URL="https://api.open-meteo.com/v1/forecast?latitude="+LOC_LL.map(function(x){ return x[0]; }).join(",")+"&longitude="+LOC_LL.map(function(x){ return x[1]; }).join(",")+
+    "&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,sunset,snowfall_sum,wind_gusts_10m_max&timezone=Europe%2FMadrid&forecast_days=8";
+  /* iconos del tiempo (SVG propio) */
+  var WXC={sun:"#E1A23A",cloud:"#8C97AB",dark:"#5F6B80",rain:"#2F6DB5",snow:"#7FB2E5"};
+  function cloudP(dy,fill){ return '<path d="M7.2 '+(17+dy)+'h9.6a3.9 3.9 0 0 0 .6-7.75 5.6 5.6 0 0 0-10.7 1.3A3.3 3.3 0 0 0 7.2 '+(17+dy)+'z" fill="'+fill+'"/>'; }
+  function sunP(cx,cy,r){ var rays=""; for(var k=0;k<8;k++){ var a=k*Math.PI/4, x1=cx+Math.cos(a)*(r+2), y1=cy+Math.sin(a)*(r+2), x2=cx+Math.cos(a)*(r+4.2), y2=cy+Math.sin(a)*(r+4.2); rays+='<line x1="'+x1.toFixed(1)+'" y1="'+y1.toFixed(1)+'" x2="'+x2.toFixed(1)+'" y2="'+y2.toFixed(1)+'" stroke="'+WXC.sun+'" stroke-width="1.8" stroke-linecap="round"/>'; } return rays+'<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="'+WXC.sun+'"/>'; }
+  function drops(n,col){ var o=""; for(var k=0;k<n;k++){ var x=8+k*4; o+='<path d="M'+x+' 18.5l-1.2 2.6a1.3 1.3 0 0 0 2.4 0z" fill="'+col+'"/>'; } return o; }
+  function wxIcon(c,sz){
+    sz=sz||22; var g;
+    if(c===0) g=sunP(12,12,4.6);
+    else if(c<=2) g=sunP(9,8.5,3.4)+cloudP(1,WXC.cloud);
+    else if(c===3) g=cloudP(0,WXC.cloud);
+    else if(c===45||c===48) g='<g stroke="'+WXC.cloud+'" stroke-width="2" stroke-linecap="round"><line x1="4" y1="9" x2="20" y2="9"/><line x1="6" y1="13" x2="18" y2="13"/><line x1="4" y1="17" x2="20" y2="17"/></g>';
+    else if(c>=51&&c<=57) g=cloudP(-3,WXC.cloud)+drops(2,WXC.rain);
+    else if((c>=61&&c<=67)||(c>=80&&c<=82)) g=cloudP(-3,WXC.dark)+drops(3,WXC.rain);
+    else if((c>=71&&c<=77)||c===85||c===86) g=cloudP(-3,WXC.cloud)+'<g fill="'+WXC.snow+'"><circle cx="8" cy="19.5" r="1.3"/><circle cx="12" cy="21" r="1.3"/><circle cx="16" cy="19.5" r="1.3"/></g>';
+    else if(c>=95) g=cloudP(-3,WXC.dark)+'<path d="M12.5 15l-3 4.5h2.5l-1 3.5 3.5-5h-2.5z" fill="'+WXC.sun+'"/>';
+    else g=cloudP(0,WXC.cloud);
+    return '<svg class="wxi" width="'+sz+'" height="'+sz+'" viewBox="0 0 24 24" aria-hidden="true">'+g+'</svg>';
+  }
+  var ICO_DROP='<svg class="wxi" width="11" height="11" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l-5.5 9a6 6 0 1 0 11 0z" fill="#2F6DB5"/></svg>';
+  var ICO_SUNSET='<svg class="wxi" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 17a7 7 0 0 1 14 0z" fill="#E1A23A"/><line x1="2" y1="19.5" x2="22" y2="19.5" stroke="#B5651D" stroke-width="1.8" stroke-linecap="round"/><path d="M12 4v4m-3-2 3 3 3-3" stroke="#B5651D" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>';
+  function wxWarns(w){ var a=[]; if(!w) return a;
+    if(w.code>=95) a.push("tormenta"); if(w.snow>=1) a.push("nieve"+(w.snow>=5?" ("+Math.round(w.snow)+" cm)":""));
+    if(w.gust>=60) a.push("rachas de "+Math.round(w.gust)+" km/h"); if(w.max>=35) a.push("calor fuerte"); if(w.min<=0) a.push("helada");
+    if(w.rain>=70 && a.indexOf("tormenta")<0) a.push("lluvia casi segura"); return a; }
+  function wxBadge(w){ if(!w) return '<span class="wxb">—</span>';
+    return '<span class="wxb" title="'+esc(wxLabel(w.code))+'">'+wxIcon(w.code,22)+'<b>'+Math.round(w.max)+'°</b><span class="lo">'+Math.round(w.min)+'°</span>'+(w.rain>=20?'<span class="rn">'+ICO_DROP+w.rain+'%</span>':'')+'</span>'; }
+  function warnHTML(a){ return a.map(function(x){ return '<span class="wxwarn">⚠ '+x+'</span>'; }).join(""); }
+  function wxLabel(c){
+    if(c===0) return "despejado"; if(c<=2) return "algo de nubes"; if(c===3) return "nublado";
+    if(c===45||c===48) return "niebla"; if(c>=51&&c<=57) return "llovizna"; if(c>=61&&c<=67) return "lluvia";
+    if(c>=71&&c<=77) return "nieve"; if(c>=80&&c<=82) return "chubascos"; if(c>=85&&c<=86) return "chubascos de nieve"; if(c>=95) return "tormenta"; return "";
+  }
+  function wxDay(d,i){ return wxLabel(d.weather_code[i])+", "+Math.round(d.temperature_2m_min[i])+"–"+Math.round(d.temperature_2m_max[i])+" °C"+(d.precipitation_probability_max[i]!=null?", lluvia "+d.precipitation_probability_max[i]+" %":""); }
+  function paintWeather(arr){
+    if(!Array.isArray(arr)||!arr[0]||!arr[0].daily) return;
+    WX=arr; renderFinde(); paintEscWx();
+    var d=arr[0].daily;
+    var el=document.getElementById("todayWx"); if(!el||!d.weather_code) return;
+    var wet=(d.precipitation_probability_max[0]||0)>=60, hot=(d.temperature_2m_max[0]||0)>=35;
+    function card(lbl,i){ var w=wxAt(0,i); if(!w) return ''; return '<div class="wxcard">'+wxIcon(w.code,40)+'<div><p class="wxl">'+lbl+' · '+wxLabel(w.code)+'</p><p class="wxt">'+Math.round(w.max)+'° <span>/ '+Math.round(w.min)+'°</span></p><p class="wxs">'+(w.rain!=null?'<span>'+ICO_DROP+' '+w.rain+'%</span>':'')+(w.sunset?'<span>'+ICO_SUNSET+' '+w.sunset+'</span>':'')+'</p></div></div>'; }
+    var h='<div class="wxtoday">'+card("Hoy",0)+card("Mañana",1)+'</div>';
+    var wt=wxWarns(wxAt(0,0)), wm=wxWarns(wxAt(0,1));
+    if(wt.length||wm.length) h+='<p class="wxadv">'+(wt.length?'Hoy: '+warnHTML(wt):'')+(wm.length?' Mañana: '+warnHTML(wm):'')+'</p>';
+    if(wet) h+='<p class="wxadv">Día de techo: tira de museos e interiores.<button class="wx-go" type="button" data-wx="museo">Ver museos</button></p>';
+    else if(hot) h+='<p class="wxadv">Mucho calor: miradores a primera hora o al atardecer, y a mediodía, interiores.</p>';
+    el.innerHTML=h; el.hidden=false;
+    var b=el.querySelector("[data-wx]"); if(b) b.addEventListener("click", function(){ setState("todos"); setPrice("todo"); setLevel("todo"); clearSearch(); setCat("museo"); applyFilter(); board.scrollIntoView({behavior:"smooth",block:"start"}); });
+  }
+  async function loadWeather(){
+    try{
+      var c=await STORE.get("jaen:tiempo4");
+      if(c){ c=JSON.parse(c); var hoy=isoDay(new Date());
+        if(c && c.t && Date.now()-c.t<3600000 && Array.isArray(c.d) && c.d.length===LOC_LL.length && c.d[0] && c.d[0].daily && c.d[0].daily.time[0]===hoy){ paintWeather(c.d); return; } }
+    }catch(e){}
+    if(navigator.onLine===false) return;
+    try{
+      var ctl=("AbortController" in window)?new AbortController():null; var to=setTimeout(function(){ if(ctl) ctl.abort(); }, 6000);
+      var r=await fetch(WX_URL, ctl?{signal:ctl.signal}:{}); clearTimeout(to);
+      if(!r.ok) return; var j=await r.json(); if(!Array.isArray(j)) j=[j]; if(!j[0]||!j[0].daily) return;
+      paintWeather(j); STORE.set("jaen:tiempo4", JSON.stringify({t:Date.now(), d:j}));
+    }catch(e){}
+  }
+  renderToday();
+  netState();
+  (async function(){ await loadVisited(); await loadPlan(); await loadNotes(); await loadBares(); build(); buildEscapadas(); renderBares(); buildRutasT(); buildCopas(); updatePlanBar(); renderFinde(); checkIncomingPlan(); updateBackupMeta(); askPersist(); loadWeather(); })();
+})();
+</script>
+<script>
+(function(){
+  var i192="data:image/png;base64,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";
+  var i512="data:image/png;base64,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";
+  function add(rel,href,attrs){var l=document.createElement("link");l.rel=rel;l.href=href;if(attrs)for(var k in attrs)l.setAttribute(k,attrs[k]);document.head.appendChild(l);}
+  add("apple-touch-icon",i192);
+  add("icon",i192,{sizes:"192x192",type:"image/png"});
+  // El manifest es un archivo de verdad (manifest.webmanifest): con uno fabricado aquí, Android no crea la app y la deja como acceso directo con el icono de Chrome
+  // Offline opcional: se activa solo si subes tambien sw.js junto al index
+  try{ if(location.protocol.indexOf("http")===0 && "serviceWorker" in navigator){ window.addEventListener("load",function(){ navigator.serviceWorker.register("sw.js").catch(function(){}); }); } }catch(e){}
+})();
+</script>
+<!-- Botón "Instalar app": sale solo cuando Chrome ofrece instalarla (en algunos Android el menú ⋮ no lo consigue y esto sí) -->
+<style>#btn-instalar{position:fixed;right:16px;bottom:calc(88px + env(safe-area-inset-bottom));z-index:9999;border:0;border-radius:999px;padding:11px 16px;font:600 14px/1 system-ui,-apple-system,sans-serif;background:#2F3B1E;color:#fff;box-shadow:0 4px 14px rgba(0,0,0,.28);cursor:pointer}#btn-instalar[hidden]{display:none}</style>
+<button id="btn-instalar" type="button" hidden>📲 Instalar app</button>
+<script>
+(function(){
+  var aviso=null, b=document.getElementById("btn-instalar");
+  window.addEventListener("beforeinstallprompt", function(e){ e.preventDefault(); aviso=e; b.hidden=false; });
+  b.addEventListener("click", function(){ if(!aviso) return; aviso.prompt(); aviso.userChoice.then(function(){ aviso=null; b.hidden=true; }); });
+  window.addEventListener("appinstalled", function(){ aviso=null; b.hidden=true; });
+})();
+</script>
+</body>
+</html>
