@@ -590,7 +590,7 @@
 <section class="info" id="bares">
   <div class="wrap">
     <p class="kicker"><svg><use href="#star8"/></svg>Bares de tapeo · tapa caliente con cada bebida</p>
-    <p class="inote">Sacados de reseñas (oct 2026) y todavía sin probar en persona. Cuando pruebes uno, márcalo: así la guía sabe cuáles recomendar.</p>
+    <p class="inote">Sacados de reseñas (oct 2026) y todavía sin probar en persona. Lo que lleva * solo lo cita una fuente o tiene notas que no coinciden: búscalo. Cuando pruebes uno, márcalo: así la guía sabe cuáles recomendar.</p>
     <div id="barlist"></div>
     <h3 class="bartitle">Lo de aquí</h3>
     <div class="igrid">
@@ -633,6 +633,14 @@
     <p class="kicker"><svg><use href="#star8"/></svg>Restaurantes · para comer bien</p>
     <p class="inote">Sacados de reseñas (oct 2026). Horarios cambiantes: confírmalos y reserva en finde.</p>
     <div id="eslist"></div>
+  </div>
+</section>
+
+<section class="info" id="rutassierra">
+  <div class="wrap">
+    <p class="kicker"><svg><use href="#star8"/></svg>Rutas · a pie, en 4x4 y en coche</p>
+    <p class="inote">Distancias y tiempos aproximados, de guías y de Wikiloc. Lo que lleva * no está confirmado del todo: búscalo antes de ir. Muchas pistas del parque tienen barrera o acceso restringido a coches particulares: pregunta en los centros de visitantes.</p>
+    <div id="rsgrid"></div>
   </div>
 </section>
 
@@ -962,6 +970,41 @@
       cuando:"Por la tarde, y luego el atardecer en el mirador del pueblo.",
       compra:"En taquilla; las observaciones nocturnas, con reserva.",
       como:"En lo alto del pueblo, junto a las murallas.", web:"https://cosmolarium-hornos.com/" },
+    { id:"campos_hp", z:"Z5", tags:["naturaleza"], pt:"free", name:"Campos de Hernán Perea (o «Hernán Pelea»)",
+      desc:"La <b>altiplanicie más extensa de España</b>: más de 5.000 ha a 1.600–1.700 m, con dolinas, piornos, enebros rastreros y muchos muflones. Desde aquí se sube al pico Banderillas (1.993 m) o a las Empanadas (2.127 m).",
+      precio:"Gratis", dur:"Día entero", temp:"Mayo–octubre",
+      horario:"Siempre; en invierno, riesgo de nevadas fuertes",
+      cuando:"De mayo a octubre y con buen tiempo. No hay cobertura: no vayas solo y no te salgas de los caminos.",
+      compra:"Sin entrada.",
+      como:"Desde Santiago de la Espada, A-317 hacia Puebla de Don Fadrique; a 2,1 km, la JF-7091 hacia La Matea y la aldea de Don Domingo. Desde allí, pista forestal hacia Rambla Seca (unos 11 km). También desde Cazorla por la pista de Nava de San Pedro.", web:"https://turismosantiagopontones.es/campos-de-hernan-pelea/" },
+    { id:"zumeta", z:"Z5", tags:["naturaleza"], pt:"free", name:"Pozas y cascadas del río Zumeta",
+      desc:"Paseo circular con pasarelas por las pozas y cascadas del Zumeta a su paso por <b>Santiago de la Espada</b>. Fácil, incluso con movilidad reducida.",
+      precio:"Gratis", dur:"~1 h", temp:"Primavera",
+      horario:"Siempre (de día)",
+      cuando:"En primavera, con más agua.",
+      compra:"Sin entrada.",
+      como:"En Santiago de la Espada.", web:"" },
+    { id:"charcohumo", z:"Z5", tags:["naturaleza"], pt:"free", name:"Charco del Humo (Pontones)",
+      desc:"Cascada del Segura que, al chocar con las rocas, levanta una <b>bruma espesa</b>: de ahí el nombre.",
+      precio:"Gratis", dur:"~1 h", temp:"Primavera/verano",
+      horario:"Siempre (de día)",
+      cuando:"En verano se llena a partir de media mañana: ve temprano.",
+      compra:"Sin entrada.",
+      como:"Junto a Pontones, en el cañón del Segura.", web:"" },
+    { id:"cuevaagua_p", z:"Z5", tags:["naturaleza"], pt:"free", name:"Cueva del Agua de Poyotello",
+      desc:"Formación kárstica con cascadas y mucha vegetación, al final de un sendero que baja sin parar desde la entrada de la aldea de Poyotello.",
+      precio:"Gratis", dur:"~1 h", temp:"Primavera/otoño",
+      horario:"Siempre (de día)",
+      cuando:"Con agua, en primavera y tras lluvias. La vuelta es toda de subida.",
+      compra:"Sin entrada.",
+      como:"Sale de la entrada de Poyotello, junto a Pontones.", web:"" },
+    { id:"acebeas", z:"Z5", tags:["naturaleza","mirador"], pt:"free", name:"Las Acebeas y mirador del Navalperal",
+      desc:"Bosque de acebos y, al final del sendero PR-A 176 (unos 3,3 km de ida), el <b>mirador del Navalperal</b> a 1.640 m, de los mejores del parque.",
+      precio:"Gratis", dur:"~2–3 h", temp:"Otoño",
+      horario:"Siempre (de día)",
+      cuando:"En otoño e invierno, con los acebos cargados de bolas rojas.",
+      compra:"Sin entrada.",
+      como:"Desde Siles por la carretera de Las Acebeas (JF-7020); el sendero sale por una pista con barrera, a unos 10 km de Los Huertos de Segura.", web:"" },
     { id:"nac_segura", z:"Z5", tags:["naturaleza"], pt:"free", name:"Nacimiento del río Segura",
       desc:"El Segura brota en una poza de agua clara junto a la aldea de Fuente Segura, en Santiago-Pontones.",
       precio:"Gratis", dur:"~30 min", temp:"Primavera/otoño",
@@ -1013,7 +1056,7 @@
     Z2:{ t:"Baeza · Patrimonio Mundial", s:"A 9 km de Úbeda: catedral, palacios y la universidad de Machado, en un casco pequeño." },
     Z3:{ t:"Cazorla y La Iruela", s:"La puerta de la sierra: castillos, plazas de tapas y miradores sobre el olivar." },
     Z4:{ t:"Parque Natural · valle del Guadalquivir", s:"Nacimiento, cerradas, cascadas y fauna a lo largo de la A-319. Sin entradas: coche y botas." },
-    Z5:{ t:"Sierra de Segura", s:"Pueblos con castillo colgados sobre el Tranco y el nacimiento del Segura." },
+    Z5:{ t:"Sierra de Segura y Santiago-Pontones", s:"Castillos sobre el Tranco, el nacimiento y el cañón del Segura, los Campos de Hernán Perea y el cordero segureño." },
     Z6:{ t:"Las Villas", s:"Villanueva del Arzobispo, Villacarrillo e Iznatoraf: entre el olivar y la sierra de Las Villas." }
   };
   var ZORDER = ["Z1","Z2","Z3","Z4","Z5","Z6"];
@@ -1024,7 +1067,7 @@
   var CLOSED_WEEKEND=["jabalquinto"];
   var CLOSED_WEEKDAYS=[];
   var MUSEOS=["yedra","sinagoga","vinagre","hornos","universidad_bz"];
-  var PRINCIPAL=["salvador","vazquezmolina","santamaria_ub","catedral_bz","populo","murallas_bz","yedra","santamaria_cz","linarejos","nacimiento","borosa","segura","hornos","iznatoraf"];
+  var PRINCIPAL=["salvador","vazquezmolina","santamaria_ub","catedral_bz","populo","murallas_bz","yedra","santamaria_cz","linarejos","nacimiento","borosa","segura","hornos","iznatoraf","campos_hp","acebeas"];
 
   /* Avisos de estado (revisados el 22 oct 2026) */
   var AVISOS_FECHA="28 oct 2026";
@@ -1560,6 +1603,7 @@
     yedra:[37.90780,-3.00111], santamaria_cz:[37.90856,-2.99978], iruela:[37.92095,-2.99008],
     linarejos:[37.92736,-2.92275], nacimiento:[37.83911,-2.97396], borosa:[37.99413,-2.83568], vinagre:[38.01403,-2.87285], almendral:[38.09046,-2.81391], tranco:[38.14462,-2.78148], palomas:[37.94273,-2.93964], mirador_frf:[38.09766,-2.81209],
     segura:[38.29918,-2.64960], segura_pueblo:[38.29770,-2.65228], hornos:[38.21644,-2.71850], nac_segura:[38.09138,-2.69946],
+    campos_hp:[37.9845,-2.7401], zumeta:[38.1132,-2.5692], charcohumo:[38.1491,-2.6311], cuevaagua_p:[38.1531,-2.6242], acebeas:[38.3337,-2.5849],
     villanueva:[38.16900,-3.00954], fuensanta:[38.16299,-2.99422], aguascebas:[38.04479,-2.95009], iznatoraf:[38.15735,-3.03310], villacarrillo:[38.11463,-3.08610]
   };
   function mapsDir(lat,lng,name){ return "https://www.google.com/maps/dir/?api=1&destination="+lat+","+lng+"&travelmode=walking"; }
@@ -1621,18 +1665,46 @@
     return out;
   }
   var BARES=[
-    { id:"tintorera", ok:false, zona:"Úbeda", n:"La Tintorera", dir:"c/ Real 27 · Úbeda", w:"Tapas de cocina, originales y bien hechas; de los bares mejor valorados de Úbeda.", cierra:"", g:[38.01093,-3.37080] },
-    { id:"antique", ok:false, zona:"Úbeda", n:"Antique", dir:"c/ Real 25 · Úbeda", w:"Restaurante y bar de tapas: dan tapa con cada ronda. Muy bien valorado y con muchas reseñas.", cierra:"", g:[38.01046,-3.37021] },
-    { id:"misa12", ok:false, zona:"Úbeda", n:"Misa de 12", dir:"c/ Montiel 6 · Úbeda", w:"Bar pequeño y con encanto, de buen trato; tapas de cerdo.", cierra:"", g:[38.01010,-3.36699] },
-    { id:"lola", ok:false, zona:"Úbeda", n:"Llámame Lola", dir:"c/ Baja del Salvador 5 · Úbeda", w:"Gastrobar junto al Salvador; algunas tapas tradicionales van con la bebida.", cierra:"", g:[38.00787,-3.36603] },
-    { id:"casaandres", ok:false, zona:"Baeza", n:"Taberna Casa Andrés", dir:"Paseo Ciudad de Ávila 8 · Baeza", w:"La taberna mejor valorada de Baeza en Tripadvisor: tapas con un toque propio.", cierra:"", g:[37.99174,-3.46359] },
-    { id:"arcediano", ok:false, zona:"Baeza", n:"Taberna El Arcediano", dir:"c/ Barbacana · Baeza", w:"Tostas (queso de tres leches, panceta, atún) y revueltos; muy recomendada en reseñas.", cierra:"", g:[37.99265,-3.46841] },
-    { id:"burladero", ok:false, zona:"Baeza", n:"Tasca Burladero", dir:"c/ Barbacana · Baeza", w:"Tapas de cocina en pleno casco.", cierra:"", s:"Premio de la ruta «Baeza de Tapas»", g:[37.99252,-3.46853] },
-    { id:"quinito", ok:false, lleno:true, zona:"Cazorla", n:"Taberna Quinito", dir:"Pl. de Santa María · Cazorla", w:"Tapas variadas y servicio rápido, en la plaza de las ruinas.", cierra:"", g:[37.90915,-2.99998] },
-    { id:"rinconserrano", ok:false, lleno:true, zona:"Cazorla", n:"El Rincón Serrano", dir:"Pl. de la Corredera · Cazorla", w:"Tapas y raciones para cenar; muy concurrido en finde.", cierra:"", g:[37.91072,-3.00212] },
-    { id:"layedra", ok:false, zona:"Cazorla", n:"La Yedra", dir:"c/ Cruz de Orea 51 · Cazorla", w:"Menú del día y tapas generosas; de los más populares del pueblo.", cierra:"", g:[37.91171,-3.00455] },
-    { id:"mendez", ok:false, zona:"Las Villas", n:"Bar Méndez", dir:"c/ San Francisco 8 · Villanueva del Arzobispo", w:"El mejor valorado del pueblo en Tripadvisor.", cierra:"", g:[38.16887,-3.00809] },
-    { id:"martin", ok:false, zona:"Las Villas", n:"Bar Martín", dir:"Av. de Valencia 46 · Villanueva del Arzobispo", w:"Tapas y buen trato; recomiendan las patatas alioli y el ajo morcilla.", cierra:"", g:[38.17121,-3.00665] }
+    {id:"martin",ok:false,zona:"Villanueva del Arzobispo",n:"Bar Martín",dir:"Av. de Valencia 46 · Villanueva del Arzobispo",w:"Tapas y buen trato; recomiendan las patatas alioli y el ajo morcilla.",cierra:"",g:[38.17121,-3.00665]},
+    {id:"rufino",ok:false,zona:"Villanueva del Arzobispo",n:"Mesón-Freiduría Rufino",dir:"Villanueva del Arzobispo",w:"Muchísima variedad de tapas (se habla de 80 a 100), sobre todo fritura y pescado.",cierra:""},
+    {id:"bolera",ok:false,zona:"Villanueva del Arzobispo",n:"Bar La Bolera *",dir:"Villanueva del Arzobispo",w:"Aparece en la lista de sitios para comer del ayuntamiento (de 2020); sin reseñas recientes.",cierra:""},
+    {id:"chiringuitocharco",ok:false,zona:"Villanueva del Arzobispo",n:"Chiringuito del Charco del Aceite *",dir:"Charco del Aceite · Sorihuela del Guadalimar",w:"Junto a la piscina natural del Guadalquivir; abre en temporada.",cierra:"",g:[38.179,-2.8301]},
+    {id:"delicias",ok:false,zona:"Villacarrillo",n:"Bar Las Delicias",dir:"Villacarrillo",w:"El más citado del pueblo: tapas y raciones de calidad y bien presentadas.",cierra:""},
+    {id:"paseo",ok:false,zona:"Villacarrillo",n:"Bar El Paseo",dir:"Villacarrillo",w:"Bar de tapeo con buenas notas en varias webs.",cierra:""},
+    {id:"rinconiberico",ok:false,zona:"Villacarrillo",n:"Bar Rincón Ibérico",dir:"Villacarrillo",w:"4,5 con más de cien valoraciones.",cierra:""},
+    {id:"larufa",ok:false,zona:"Villacarrillo",n:"Bar La Rufa *",dir:"Villacarrillo",w:"Muy bien valorado en un blog local, peor en Tripadvisor: las notas no coinciden.",cierra:""},
+    {id:"frida",ok:false,zona:"Villacarrillo",n:"El Rincón de Frida *",dir:"Villacarrillo",w:"Buenas notas en un blog local; sin más reseñas contrastadas.",cierra:""},
+    {id:"soguero",ok:false,zona:"Puente de Génave y Beas de Segura",n:"Mesón El Soguero *",dir:"Beas de Segura",w:"Tapas y terraza; pocas reseñas.",cierra:""},
+    {id:"carrillo",ok:false,zona:"Puente de Génave y Beas de Segura",n:"Café Bar Carrillo *",dir:"Beas de Segura",w:"Bar de ambiente con buena relación calidad-precio; pocas reseñas.",cierra:""},
+    {id:"tintorera",ok:false,zona:"Úbeda",n:"La Tintorera",dir:"c/ Real 27 · Úbeda",w:"Tapas de cocina, originales y bien hechas; de los bares mejor valorados de Úbeda.",cierra:"",g:[38.01093,-3.3708]},
+    {id:"antique",ok:false,zona:"Úbeda",n:"Antique",dir:"c/ Real 25 · Úbeda",w:"Restaurante y bar de tapas: dan tapa con cada ronda. Muy bien valorado y con muchas reseñas.",cierra:"",g:[38.01046,-3.37021]},
+    {id:"misa12",ok:false,zona:"Úbeda",n:"Misa de 12",dir:"c/ Montiel 6 · Úbeda",w:"Bar pequeño y con encanto, de buen trato; tapas de cerdo.",cierra:"",g:[38.0101,-3.36699]},
+    {id:"lola",ok:false,zona:"Úbeda",n:"Llámame Lola",dir:"c/ Baja del Salvador 5 · Úbeda",w:"Gastrobar junto al Salvador; algunas tapas tradicionales van con la bebida.",cierra:"",g:[38.00787,-3.36603]},
+    {id:"estacion",ok:false,zona:"Úbeda",n:"Cantina La Estación",dir:"Cuesta de la Rodadera 1 · Úbeda",w:"De las más citadas en las listas de tapas de Úbeda.",cierra:"",g:[38.01168,-3.36722]},
+    {id:"bodegaub",ok:false,zona:"Úbeda",n:"La Bodega de Úbeda",dir:"Úbeda",w:"Tapas tradicionales abundantes y buenas; algo cara.",cierra:""},
+    {id:"melancolia",ok:false,zona:"Úbeda",n:"Taberna Calle Melancolía",dir:"Úbeda",w:"Dedicada a Joaquín Sabina: tapas caseras con vino o cerveza.",cierra:""},
+    {id:"casaandres",ok:false,zona:"Baeza",n:"Taberna Casa Andrés",dir:"Paseo Ciudad de Ávila 8 · Baeza",w:"La taberna mejor valorada de Baeza en Tripadvisor: tapas con un toque propio.",cierra:"",g:[37.99174,-3.46359]},
+    {id:"arcediano",ok:false,zona:"Baeza",n:"Taberna El Arcediano",dir:"c/ Barbacana · Baeza",w:"Tostas (queso de tres leches, panceta, atún) y revueltos; muy recomendada en reseñas.",cierra:"",g:[37.99265,-3.46841]},
+    {id:"burladero",ok:false,zona:"Baeza",n:"Tasca Burladero",dir:"c/ Barbacana · Baeza",w:"Tapas de cocina en pleno casco.",cierra:"",s:"Premio de la ruta «Baeza de Tapas»",g:[37.99252,-3.46853]},
+    {id:"barberia",ok:false,zona:"Baeza",n:"La Barbería",dir:"c/ Conde de Romanones 11 · Baeza",w:"Tapa con la bebida y buen servicio.",cierra:"",g:[37.9916,-3.46935]},
+    {id:"pacos",ok:false,zona:"Baeza",n:"Bar Paco's",dir:"Baeza",w:"Buenas tapas en casi todas las listas; el servicio va lento cuando se llena.",cierra:""},
+    {id:"rinconbaezano",ok:false,zona:"Baeza",n:"Rincón Baezano",dir:"Baeza (algo apartado del centro)",w:"Buen tapeo a buen precio y guisos como el bacalao a la baezana.",cierra:""},
+    {id:"donchema",ok:false,zona:"Cazorla",n:"Mesón Don Chema",dir:"Callejón José María Marín · Cazorla",w:"4,5 con más de mil reseñas. De tapa: lomo, paella, almejas y solomillo.",cierra:"",g:[37.91227,-3.00294]},
+    {id:"quinito",ok:false,lleno:true,zona:"Cazorla",n:"Taberna Quinito",dir:"Pl. de Santa María · Cazorla",w:"Tapas variadas y servicio rápido, en la plaza de las ruinas.",cierra:"",g:[37.90915,-2.99998]},
+    {id:"casatino",ok:false,zona:"Cazorla",n:"Casa Tino",dir:"Pl. de Santa María · Cazorla",w:"Bacalao con tomate, choto con ajos y caracoles; tapa con cada bebida. Notas desiguales.",cierra:""},
+    {id:"lusco",ok:false,zona:"Cazorla",n:"Lusco",dir:"Cazorla",w:"Tapas de cocina creativa, sin pretensiones; también restaurante.",cierra:""},
+    {id:"vinas",ok:false,zona:"Cazorla",n:"Bar Las Viñas",dir:"Pl. de la Corredera · Cazorla",w:"Su tapa estrella es «el popeye», de espinacas.",cierra:""},
+    {id:"rinconserrano",ok:false,lleno:true,zona:"Cazorla",n:"El Rincón Serrano",dir:"Pl. de la Corredera · Cazorla",w:"Tapas y raciones para cenar; muy concurrido en finde.",cierra:"",g:[37.91072,-3.00212]},
+    {id:"layedra",ok:false,zona:"Cazorla",n:"La Yedra",dir:"c/ Cruz de Orea 51 · Cazorla",w:"Menú del día y tapas generosas; de los más populares del pueblo.",cierra:"",g:[37.91171,-3.00455]},
+    {id:"mesontoba",ok:false,zona:"Cazorla",n:"Mesón La Toba *",dir:"Paseo del Santo Cristo · Cazorla",w:"Una reseña destaca su «lata» de cordero.",cierra:"",g:[37.91464,-3.00393]},
+    {id:"tabernaaf",ok:false,zona:"Arroyo Frío",n:"La Taberna",dir:"Av. del Campillo · Arroyo Frío",w:"Migas, entrecot, lomo de ciervo, jabalí y choto frito.",cierra:"",g:[37.94638,-2.92051]},
+    {id:"casaluis",ok:false,zona:"Peal de Becerro, Quesada y Pozo Alcón",n:"Casa Luis (Café Bar Luis)",dir:"Av. Poeta Antonio Machado · Peal de Becerro",w:"Careta frita y patatas con huevo y chorizo: de las frituras más alabadas de la provincia.",cierra:"",g:[37.91349,-3.12633]},
+    {id:"verbenilla",ok:false,zona:"Peal de Becerro, Quesada y Pozo Alcón",n:"Café-Bar La Verbenilla",dir:"c/ San Marcos · Peal de Becerro",w:"Mucha variedad de tapas a buen precio.",cierra:"",g:[37.91346,-3.12686]},
+    {id:"launion",ok:false,zona:"Peal de Becerro, Quesada y Pozo Alcón",n:"Bar La Unión (Casa el Músico)",dir:"c/ Iturralde · Pozo Alcón",w:"Albóndigas y pinchos; muy bien valorado y con muchas reseñas.",cierra:"",g:[37.7014,-2.93426]},
+    {id:"tirol",ok:false,zona:"Peal de Becerro, Quesada y Pozo Alcón",n:"Bar El Tirol *",dir:"Pl. de la Coronación · Quesada",w:"Lo único que aparece en Quesada; sin reseñas detalladas.",cierra:"",g:[37.84597,-3.06695]},
+    {id:"che",ok:false,zona:"Sierra de Segura",n:"Bar Pizzería Ché",dir:"Orcera",w:"Tapas caseras de cuchara y raciones muy buenas; a veces hay que esperar.",cierra:""},
+    {id:"laloma",ok:false,zona:"Sierra de Segura",n:"Bar La Loma *",dir:"Carretera de La Puerta · Siles",w:"Citado entre los de Siles; sin reseñas detalladas.",cierra:"",g:[38.38505,-2.58561]},
+    {id:"mezquita",ok:false,zona:"Sierra de Segura",n:"Bar La Mezquita *",dir:"c/ Paseo · Siles",w:"Citado entre los de Siles; sin reseñas detalladas.",cierra:"",g:[38.39027,-2.5847]}
   ];
   var BARES_PROBAR=BARES.filter(function(b){ return !b.ok; }).map(function(b){ return { id:b.id, n:b.n, d:b.dir, w:b.w+(b.cierra?" (Cierra: "+b.cierra.toLowerCase()+".)":"") }; });
   var BARES_OK=BARES.filter(function(b){ return b.ok; }).map(function(b){ return { id:b.id, n:b.n, d:b.dir, w:b.w+(b.cierra?" (Cierra: "+b.cierra.toLowerCase()+".)":"") }; });
@@ -1682,7 +1754,7 @@
   }
   function buildEscapadas(){
     var host=document.getElementById("escapgrid"); if(!host) return;
-    if(!document.getElementById("escgrid2")){ var s=document.createElement("div"); s.innerHTML='<p class="kicker" style="margin-top:22px"><svg><use href="#star8"/></svg>Lugares escondidos · poco conocidos</p><p class="inote">Rincones que no salen en las guías de siempre. Accesos y caudales cambian: infórmate antes.</p><div class="igrid" id="escgrid2"></div>'; host.parentNode.appendChild(s); }
+    if(!document.getElementById("escgrid2")){ var s=document.createElement("div"); s.innerHTML='<p class="kicker" style="margin-top:22px"><svg><use href="#star8"/></svg>Lugares escondidos · poco conocidos</p><p class="inote">Rincones que no salen en las guías de siempre. Accesos y caudales cambian: infórmate antes. Lo que lleva * no está confirmado: búscalo.</p><div class="igrid" id="escgrid2"></div>'; host.parentNode.appendChild(s); }
     setTimeout(buildEscondidos,0);
     host.innerHTML=ESCAPADAS.map(function(e){
       return '<article class="ibox" data-esc="'+e.id+'"><h3>'+e.t+'</h3><p class="esc-meta">'+e.donde+' · '+e.coche+'</p><p>'+e.desc+'</p>'+
@@ -1831,10 +1903,30 @@
   /* ===== copas, cócteles y terrazas ===== */
   var COPAS=[];
   var ESPECIAL=[
+    { t:"Las Villas", s:"Para comer o cenar cerca de casa. Lo que lleva * solo lo cita una fuente.", l:[
+      {n:"Moratilla Restaurante", dir:"Villanueva del Arzobispo", w:"El mejor valorado del pueblo en Tripadvisor (4,7 con más de cien opiniones); cocina mediterránea y española.", cierra:""},
+      {n:"Mesón Rural El Yantar", dir:"Villacarrillo", w:"Buenas notas con cientos de opiniones.", cierra:""},
+      {n:"El Molinillo", dir:"Villacarrillo", w:"Unos 20–30 € por persona; muchas opiniones.", cierra:""},
+      {n:"Restaurante Sierra de Segura", dir:"Av. de Andalucía 146 · Puente de Génave", w:"El del hotel: carne a la brasa y menú del día económico.", cierra:"", g:[38.35743,-2.79793]},
+      {n:"La Vicaria *", dir:"Puente de Génave", w:"Asador con muy buena nota, pero pocas reseñas y alguna muy negativa sobre el trato.", cierra:""} ]},
+    { t:"Cazorla y alrededores", s:"Para una comida con calma.", l:[
+      {n:"Restaurante Casa Esteban", dir:"Peal de Becerro", w:"4,6 en Google: cerdo, paté y terrina. De los caros de la zona (50–60 € por persona).", cierra:""} ]},
     { t:"En la sierra", s:"Cocina serrana para después de una ruta: caza, cordero, migas y andrajos. En finde, reserva.", l:[
       {n:"Mesón El Parral", dir:"Av. del Campillo · Arroyo Frío", w:"Carnes a la brasa, chuletas de cordero y rin-ran con bacalao.", cierra:"", g:[37.94501,-2.92127]},
       {n:"Mesón Rural Casa Antonia", dir:"Av. del Campillo · Arroyo Frío", w:"Cocina típica: migas, andrajos, caldereta de cordero y carnes de monte.", cierra:"", g:[37.94596,-2.92042]},
-      {n:"Restaurante Raisa", dir:"c/ Puerta Nueva 35 · Hornos", w:"Cocina tradicional en un local rústico; choto al ajillo.", cierra:"", g:[38.21654,-2.71705]} ]}
+      {n:"Restaurante Raisa", dir:"c/ Puerta Nueva 35 · Hornos", w:"Cocina tradicional en un local rústico; choto al ajillo.", cierra:"", g:[38.21654,-2.71705]} ]},
+    { t:"Sierra de Segura y Santiago-Pontones", s:"La tierra del cordero segureño (IGP). Lo que lleva * solo lo cita una fuente: búscalo antes de ir.", l:[
+      {n:"La Casa del Cordero", dir:"Pontones · Santiago-Pontones", w:"Cordero segureño y migas; menú degustación de la casa (unos 30 € sin bebida, según Macarfi).", cierra:"", s:"Solete Guía Repsol"},
+      {n:"El Mirador de Peñalta", dir:"c/ San Vicente 29 · Segura de la Sierra", w:"Cordero segureño con vistas; tiene opciones para celíacos y veganos.", cierra:"", s:"Solete Guía Repsol", g:[38.2959,-2.6506]},
+      {n:"La Mesa Segureña", dir:"c/ Postigo 2 · Segura de la Sierra", w:"Cordero segureño y chuletón que se termina en la mesa sobre barro caliente; terraza con vistas.", cierra:"", g:[38.2990,-2.6514]},
+      {n:"Chiringuito El Pajarito", dir:"El Tranco · Hornos", w:"Cordero segureño a la brasa junto al embalse; con chimenea en invierno.", cierra:"", g:[38.1753,-2.7939]},
+      {n:"La Fonda del Perchel *", dir:"Pontones · Santiago-Pontones", w:"Cocina que mezcla tradición y vanguardia, con buena relación calidad-precio.", cierra:""},
+      {n:"Mirador de Messía de Leiva *", dir:"Segura de la Sierra", w:"Cocina más tradicional, alternativa a La Mesa Segureña.", cierra:""},
+      {n:"Palbuche *", dir:"Camino de las Acebeas · Siles", w:"Citado en guías de la sierra; sin reseñas contrastadas.", cierra:"", g:[38.3754,-2.5804]},
+      {n:"Cordero Almoroje *", dir:"Siles", w:"Citado en guías de la sierra; sin reseñas contrastadas.", cierra:""},
+      {n:"Restaurante Cortijo de Ramón *", dir:"Siles", w:"Citado entre los de Siles; sin reseñas detalladas.", cierra:""},
+      {n:"Restaurante Acacia *", dir:"Hornos", w:"Una reseña dice que sus migas son las mejores que ha comido en quince años.", cierra:""},
+      {n:"El Tranco *", dir:"Embalse del Tranco · Hornos", w:"Vistas al embalse; opiniones muy divididas y las recientes, peores. Mira reseñas antes.", cierra:""} ]}
   ];
   function placeCards(groups){
     return groups.map(function(gr){
@@ -1904,7 +1996,7 @@
       sitios:[q("section.dayplan"), q("nav.controls"), q("main"), q("section.passes"), q("#s_bono"), q("#s_alh"), q("#s_mover"), q("#s_otras")],
       mapa:[q("#mapa")],
       comer:[q("#bares"), q("#copas"), q("#especial"), q("#rutastem")],
-      escapadas:[q("section.escapadas")],
+      escapadas:[q("#rutassierra"), q("section.escapadas")],
       plan:[q("section.routes"), q("footer")]
     };
     var anchor=q("#bnav");
@@ -1917,7 +2009,7 @@
       anchor.parentNode.insertBefore(box, anchor);
     });
     [["bares","bares"],["copas","copas"],["especial","especial"],["rutastem","rutas"]].forEach(function(p){ var el=document.getElementById(p[0]); if(el){ el.setAttribute("data-cmpane",p[1]); openSec(el); } });
-    openSec(q("section.escapadas")); openSec(q("section.routes"));
+    openSec(q("section.escapadas")); openSec(q("#rutassierra")); openSec(q("section.routes"));
     document.querySelectorAll("[data-cm]").forEach(function(b){ b.addEventListener("click", function(){ setCm(b.getAttribute("data-cm")); }); });
     var cm="bares"; try{ cm=localStorage.getItem("jaen:cmtab")||"bares"; }catch(e){}
     setCm(cm);
@@ -1981,7 +2073,7 @@
         var mk=L.circleMarker(g,{radius:pr?9:7,color:"#fff",weight:2,fillColor:col,fillOpacity:.95});
         var st=dayStatusDate(m,today);
         mk.bindPopup('<div class="mappop"><b>'+esc(m.name)+'</b><br>'+esc(shortPrice(m))+'<br><span style="color:#585C4B">Hoy: '+esc(st.t)+'</span>'+(AVISOS[m.id]?'<br><span style="color:#B23A2A">Hay un aviso en la ficha</span>':'')+
-          '<div class="mp-b"><button type="button" data-mj="'+m.id+'">Ver ficha</button><a href="'+mapsDir(g[0],g[1])+'" target="_blank" rel="noopener">Cómo llegar</a></div></div>');
+          '<div class="mp-b"><button type="button" data-mj="'+m.id+'">Ver ficha</button>'+'<a href="'+(webFor(m)||mapsUrl(m))+'" target="_blank" rel="noopener">'+(webFor(m)?'Web':'Ficha (Google)')+'</a>'+'<a href="'+mapsDir(g[0],g[1])+'" target="_blank" rel="noopener">Cómo llegar</a></div></div>');
         mk.addTo(LLAYER); pts.push(g);
       });
     }
@@ -1994,7 +2086,7 @@
           return '<li><a href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(c.n+" "+(e.pueblo||e.t))+'" target="_blank" rel="noopener">'+esc(c.n)+'</a>'+(c.ok?' ★':'')+'</li>'; }).join("");
         mk.bindPopup('<div class="mappop"><b>'+esc(e.t)+'</b><br>'+esc(e.donde)+' · '+esc(e.coche)+
           (comer?'<br><span style="color:#585C4B">Para comer:</span><ul style="margin:.2em 0 .3em 1.1em;padding:0">'+comer+'</ul>':'')+
-          '<div class="mp-b"><button type="button" data-me="'+e.id+'">Ver ficha</button><a href="https://www.google.com/maps/dir/?api=1&destination='+g[0]+','+g[1]+'&travelmode=driving" target="_blank" rel="noopener">Cómo llegar</a></div></div>');
+          '<div class="mp-b"><button type="button" data-me="'+e.id+'">Ver ficha</button>'+'<a href="'+(e.web||"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(e.t+" "+e.donde))+'" target="_blank" rel="noopener">'+(e.web?'Web':'Ficha (Google)')+'</a>'+'<a href="https://www.google.com/maps/dir/?api=1&destination='+g[0]+','+g[1]+'&travelmode=driving" target="_blank" rel="noopener">Cómo llegar</a></div></div>');
         mk.addTo(LLAYER); pts.push(g);
       });
       var COL_LF={ver:"#7B3F98", nat:"#3E7D3A", comer:"#4E6B2E", playa:"#2F86B5", oculto:"#C2416B"};
@@ -2004,16 +2096,17 @@
         var w=l.w || (c ? c.w : "");
         var mk=L.circleMarker(l.g,{radius:l.k==="comer"?5:6,color:"#fff",weight:2,fillColor:COL_LF[l.k],fillOpacity:.95});
         mk.bindPopup('<div class="mappop"><b>'+esc(l.n)+'</b>'+(c&&c.ok?' ★':'')+(es?'<br><span style="color:#585C4B">'+esc(es.t)+'</span>':'')+(w?'<br>'+esc(w):'')+
-          '<div class="mp-b">'+(es?'<button type="button" data-me="'+es.id+'">Ver escapada</button>':'')+'<a href="https://www.google.com/maps/dir/?api=1&destination='+l.g[0]+','+l.g[1]+'&travelmode=driving" target="_blank" rel="noopener">Cómo llegar</a></div></div>');
+          '<div class="mp-b">'+(es?'<button type="button" data-me="'+es.id+'">Ver escapada</button>':'')+'<a href="'+lugarUrl(l,es)+'" target="_blank" rel="noopener">'+(l.web?'Web':'Ficha (Google)')+'</a>'+'<a href="https://www.google.com/maps/dir/?api=1&destination='+l.g[0]+','+l.g[1]+'&travelmode=driving" target="_blank" rel="noopener">Cómo llegar</a></div></div>');
         mk.addTo(LLAYER); pts.push(l.g);
       });
       if(mapFilter==="fuera") pts.push([38.168,-3.008]);   // Villanueva, para ver la distancia
     }
     if(mapFilter==="bares" || mapFilter==="todo"){
       BARES.forEach(function(b){
+        if(!b.g) return;
         var mk=L.circleMarker(b.g,{radius:6,color:"#fff",weight:2,fillColor:"#4E6B2E",fillOpacity:.95});
         mk.bindPopup('<div class="mappop"><b>'+esc(b.n)+'</b><br>'+esc(b.dir)+'<br>'+esc(b.w)+(b.cierra?'<br><span style="color:#7A4E2D">Cierra: '+esc(b.cierra.toLowerCase())+'</span>':'')+
-          '<div class="mp-b"><button type="button" data-mb="'+b.id+'">Ver en la lista</button><a href="'+mapsDir(b.g[0],b.g[1])+'" target="_blank" rel="noopener">Cómo llegar</a></div></div>');
+          '<div class="mp-b"><button type="button" data-mb="'+b.id+'">Ver en la lista</button>'+'<a href="'+((INFO[b.n]&&INFO[b.n].web)||barMapUrl(b))+'" target="_blank" rel="noopener">'+((INFO[b.n]&&INFO[b.n].web)?'Web':'Ficha (Google)')+'</a>'+'<a href="'+mapsDir(b.g[0],b.g[1])+'" target="_blank" rel="noopener">Cómo llegar</a></div></div>');
         mk.addTo(LLAYER); pts.push(b.g);
       });
     }
@@ -2035,7 +2128,7 @@
     var el=document.getElementById("nearby"); if(!el) return; var now=new Date();
     var sites=DATA.filter(function(m){ return GEO[m.id] && !visited.has(m.id) && dayStatusDate(m,now).k!=="closed"; })
       .map(function(m){ return {m:m,d:distM(lat,lng,GEO[m.id][0],GEO[m.id][1])}; }).sort(function(a,b){ return a.d-b.d; }).slice(0,6);
-    var bars=BARES.map(function(b){ return {b:b,d:distM(lat,lng,b.g[0],b.g[1])}; }).sort(function(a,b){ return a.d-b.d; }).slice(0,4);
+    var bars=BARES.filter(function(b){ return b.g; }).map(function(b){ return {b:b,d:distM(lat,lng,b.g[0],b.g[1])}; }).sort(function(a,b){ return a.d-b.d; }).slice(0,4);
     if(sites.length && sites[0].d>60000){ el.innerHTML='<p class="wxadv">Estás lejos de la zona: la lista de cercanía funciona cuando estés allí.</p>'; el.hidden=false; return; }
     el.innerHTML='<h4>Cerca de ti y aún sin ver</h4>'+sites.map(function(x){ return '<button type="button" data-nj="'+x.m.id+'">'+esc(x.m.name)+(AVISOS[x.m.id]?' ⚠':'')+'<span>'+walk(x.d)+'</span></button>'; }).join("")+
       '<h4>Bares cerca</h4>'+bars.map(function(x){ return '<button type="button" data-nb="'+x.b.id+'">'+esc(x.b.n)+(x.b.ok||baresProbados[x.b.id]?'':' · por probar')+'<span>'+walk(x.d)+'</span></button>'; }).join("")+
@@ -2073,8 +2166,51 @@
     {e:null, k:"oculto", n:"Cascada de Chorrogil", g:[38.0385,-2.9416], w:"Salto de agua en la sierra de Las Villas, a algo más de una hora andando."},
     {e:null, k:"oculto", n:"Salto de los Órganos", g:[37.9690,-2.8199], w:"En la ruta del Borosa, pasada la Cerrada de Elías: más de 100 m de caída."},
     {e:null, k:"oculto", n:"Cascada de Guazalamanco", g:[37.8054,-2.9198], w:"Ruta corta (1 km) hasta una cascada que forma un dique, en Pozo Alcón."},
+    {e:null, k:"oculto", n:"Pino Galapán", g:[38.0107,-2.6641], w:"Pino laricio de más de 400 años y 40 m de alto, en los Campos de Hernán Perea."},
+    {e:null, k:"oculto", n:"Nacimiento y cascada de la Toba *", g:[38.1827,-2.5603], w:"Se deja el coche en la aldea de La Toba (entre Santiago de la Espada y Pontones) y se camina un poco. Punto aproximado: búscalo."},
+    {e:null, k:"oculto", n:"Mirador del Salto de la Novia *", g:[38.1323,-2.5030], w:"Mirador junto a la carretera de Santiago de la Espada; el nombre se repite en los Campos de Hernán Perea. Búscalo."},
+    {e:null, k:"oculto", n:"Nacimiento del Guadalimar *", g:[38.4975,-2.5147], w:"La Fuente del Tejo, sobre Villaverde del Guadalimar: el río por el que se llega a la sierra de Segura desde el norte."},
+    {e:null, k:"nat", n:"Los Chorros del río Mundo (Riópar)", g:[38.4501,-2.4371], w:"Ya en Albacete, a un paso de Siles: el río Mundo sale de una cueva en cascada. Tras grandes lluvias se produce el «reventón»."},
     {e:"quesada", k:"oculto", n:"Pilón Azul", g:[37.7634,-3.0238], w:"Poza y cascada entre Don Pedro y Belerda; solo lleva agua tras las lluvias."}
   ];
+  /* Rutas de la sierra. t: pie, 4x4 o coche. ini: punto de salida. por: paradas para Google Maps (coche). Con * lo no confirmado. */
+  var RUTAS_S=[
+    {t:"pie", n:"Río Borosa hasta la Cerrada de Elías", d:"~8–10 km ida y vuelta · 2–3 h · fácil", w:"Pasarelas de madera sobre el río hasta la cerrada. La más conocida del parque: temprano en finde.", ini:[38.0140,-2.8728]},
+    {t:"pie", n:"Río Borosa completo: túneles y lagunas de Valdeazores", d:"~22 km ida y vuelta · 6–7 h · alta", w:"Pasada la Cerrada: Salto de los Órganos, la central, los túneles y las lagunas. Día entero.", ini:[38.0140,-2.8728]},
+    {t:"pie", n:"Cerrada del Utrero y cascada de Linarejos", d:"Corta · ~1 h · fácil", w:"Para empezar: el Guadalquivir encajado entre paredes y la cascada.", ini:[37.9274,-2.9228]},
+    {t:"pie", n:"Las Acebeas – mirador del Navalperal (PR-A 176)", d:"~3,3 km de ida · fácil-media", w:"Bosque de acebos y mirador a 1.640 m sobre la sierra de Segura.", ini:[38.3337,-2.5849]},
+    {t:"pie", n:"Pontones – nacimiento del Segura por el río", d:"~10 km · ~4 h", w:"Siguiendo el Segura desde Pontones hasta Fuente Segura de Abajo.", ini:[38.1184,-2.6702]},
+    {t:"pie", n:"Pozas del río Zumeta", d:"Paseo circular · ~1 h · muy fácil", w:"Pasarelas por las pozas y cascadas de Santiago de la Espada.", ini:[38.1132,-2.5692]},
+    {t:"pie", n:"Cueva del Agua de Poyotello", d:"Corta · bajada continua (y vuelta en subida)", w:"Cascadas y vegetación en una formación kárstica.", ini:[38.1456,-2.6235]},
+    {t:"pie", n:"Campos de Hernán Perea", d:"Larga · alta montaña · sin cobertura", w:"Por las dolinas hasta el pino Galapán, Banderillas o las Empanadas. Con buen tiempo y acompañado.", ini:[38.0290,-2.6512]},
+    {t:"pie", n:"Villanueva del Arzobispo – Iznatoraf", d:"~10 km · media (Cuesta del Infarto)", w:"Desde casa hasta el pueblo amurallado.", ini:[38.1690,-3.0095]},
+    {t:"pie", n:"Cascada de la Osera *", d:"~4 h · alta", w:"Uno de los saltos de agua más altos de Andalucía, en la sierra de Las Villas. No la he podido ubicar con seguridad: búscala en Wikiloc."},
+    {t:"4x4", n:"Pista a los Campos de Hernán Perea desde Don Domingo", d:"~11 km de pista", w:"Desde la aldea de Don Domingo, hacia Rambla Seca. Comprueba antes el estado de la pista y si hay barrera.", ini:[38.0290,-2.6512]},
+    {t:"4x4", n:"Pista de Nava de San Pedro a Rambla Seca (desde Cazorla)", d:"Pista forestal", w:"La otra entrada a los Campos, por la cara de Cazorla.", ini:[37.8828,-2.8820]},
+    {t:"4x4", n:"Ruta guiada de Siles Natura", d:"Con guía", w:"De Villaverde del Guadalimar al nacimiento del Guadalimar, el refugio del bandolero Pernales y el Poyo de la Víbora (una grieta en la roca), hasta Pontones.", ini:[38.4975,-2.5147], web:"https://silesnatura.es/servicios/rutas_guiadas-4x4/"},
+    {t:"4x4", n:"Rutas guiadas desde Cazorla", d:"Con guía · 85–145 km", w:"Varias empresas entran en zonas cerradas a coches particulares: lagos y nacimiento del Borosa, nacimiento del Guadalquivir y el Chorro, Pico Cabañas…", ini:[37.9110,-3.0030], web:"https://www.turismoencazorla.com/empresas/turisnat/"},
+    {t:"coche", n:"A-319: Cazorla – Puerto de las Palomas – Tranco", d:"Curvas y miradores · asfalto", w:"La carretera del parque: Palomas, Arroyo Frío, Torre del Vinagre, Coto Ríos y el embalse. Ojo con ciclistas y animales.", por:[[37.9110,-3.0030],[37.9427,-2.9396],[38.0140,-2.8728],[38.1763,-2.7949]]},
+    {t:"coche", n:"A-317: Hornos – Santiago de la Espada", d:"~37 km · muy revirada", w:"De las más bonitas de la sierra; con ciervos en la calzada, sobre todo al amanecer y al anochecer.", por:[[38.2164,-2.7185],[38.1126,-2.5515]]},
+    {t:"coche", n:"Santiago de la Espada – La Matea – Don Domingo", d:"Asfalto hasta Don Domingo", w:"El acceso a los Campos de Hernán Perea; a partir de Don Domingo es pista (no para el Z3).", por:[[38.1126,-2.5515],[38.0290,-2.6512]]},
+    {t:"coche", n:"Segura de la Sierra – Orcera – Siles – Las Acebeas *", d:"Pueblos de la sierra · tramo final estrecho", w:"La carretera de Las Acebeas (JF-7020) es estrecha: confirma el firme antes de ir con un coche bajo.", por:[[38.2989,-2.6519],[38.3180,-2.6611],[38.3879,-2.5826],[38.3337,-2.5849]]},
+    {t:"coche", n:"Puerto de Tíscar (Quesada) *", d:"Puerto de montaña", w:"Entre Quesada y Pozo Alcón, junto al santuario de Tíscar y la Cueva del Agua.", por:[[37.8430,-3.0669],[37.7864,-3.0386]]},
+    {t:"coche", n:"La gran vuelta desde Villanueva", d:"Día entero", w:"Villanueva – Cazorla – A-319 por el parque – Tranco – Hornos – Segura de la Sierra – Orcera – y vuelta por Puente de Génave.", por:[[38.1690,-3.0095],[37.9110,-3.0030],[38.1763,-2.7949],[38.2164,-2.7185],[38.2989,-2.6519],[38.3180,-2.6611],[38.1690,-3.0095]]}
+  ];
+  function buildRutasS(){
+    var host=document.getElementById("rsgrid"); if(!host) return;
+    var T=[["pie","A pie"],["4x4","En 4x4"],["coche","En coche · carreteras para disfrutar"]];
+    function link(x){
+      if(x.por){ var p=x.por, ll=function(a){ return a[0]+","+a[1]; };
+        return "https://www.google.com/maps/dir/?api=1&origin="+ll(p[0])+"&destination="+ll(p[p.length-1])+(p.length>2?"&waypoints="+p.slice(1,-1).map(ll).join("|"):"")+"&travelmode=driving"; }
+      return x.ini?"https://www.google.com/maps/dir/?api=1&destination="+x.ini[0]+","+x.ini[1]+"&travelmode=driving":"";
+    }
+    host.innerHTML=T.map(function(tt){
+      return '<h3 class="bartitle">'+tt[1]+'</h3><div class="igrid">'+RUTAS_S.filter(function(x){ return x.t===tt[0]; }).map(function(x){ var u=link(x);
+        return '<article class="ibox"><h3>'+escNote(x.n)+'</h3><p class="esc-meta">'+escNote(x.d)+'</p><p>'+escNote(x.w)+'</p><p class="esc-comer">'+
+          (u?'<a href="'+u+'" target="_blank" rel="noopener">'+(x.por?'Abrir la ruta en Google Maps':'Cómo llegar a la salida')+'</a> · ':'')+
+          '<a href="https://www.google.com/search?q='+encodeURIComponent("wikiloc "+x.n.replace(" *",""))+'" target="_blank" rel="noopener">Buscar en Wikiloc</a>'+(x.web?' · <a href="'+x.web+'" target="_blank" rel="noopener">Web</a>':'')+'</p></article>'; }).join("")+'</div>';
+    }).join("");
+  }
   var LOC_IDX={base:0}, LOC_LL=[[38.168,-3.008]];
   // Zonas del tiempo además de las escapadas
   [["ubeda",[38.0133,-3.3705]],["cazorla",[37.911,-3.003]],["valle",[38.014,-2.873]],["segura",[38.299,-2.652]]].forEach(function(z){ LOC_IDX[z[0]]=LOC_LL.length; LOC_LL.push(z[1]); });
@@ -2145,7 +2281,7 @@
   }
   renderToday();
   netState();
-  (async function(){ await loadVisited(); await loadPlan(); await loadNotes(); await loadBares(); build(); buildEscapadas(); renderBares(); buildRutasT(); buildCopas(); updatePlanBar(); renderFinde(); checkIncomingPlan(); updateBackupMeta(); askPersist(); loadWeather(); })();
+  (async function(){ await loadVisited(); await loadPlan(); await loadNotes(); await loadBares(); build(); buildEscapadas(); buildRutasS(); renderBares(); buildRutasT(); buildCopas(); updatePlanBar(); renderFinde(); checkIncomingPlan(); updateBackupMeta(); askPersist(); loadWeather(); })();
 })();
 </script>
 <script>
