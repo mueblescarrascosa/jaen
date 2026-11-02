@@ -1070,8 +1070,10 @@
   var PRINCIPAL=["salvador","vazquezmolina","santamaria_ub","catedral_bz","populo","murallas_bz","yedra","santamaria_cz","linarejos","nacimiento","borosa","segura","hornos","iznatoraf","campos_hp","acebeas"];
 
   /* Avisos de estado (revisados el 22 oct 2026) */
-  var AVISOS_FECHA="28 oct 2026";
-  var AVISOS={};
+  var AVISOS_FECHA="2 nov 2026";
+  var AVISOS={
+    borosa:"Obras en la Cerrada de Elías: según la Junta (prensa, 9 oct 2026) la ruta sigue abierta con un recorrido alternativo por pista forestal. No se ha publicado la fecha de fin de obras: confírmalo antes de ir."
+  };
   var WEBS={};
   var GENERIC=[];
   function webFor(m){ if(WEBS[m.id]) return WEBS[m.id]; if(!m.web || GENERIC.indexOf(m.web)>=0) return ""; return m.web; }
