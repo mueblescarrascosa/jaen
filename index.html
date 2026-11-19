@@ -1748,7 +1748,7 @@
     return '<p class="bnota">'+p.join(" · ")+pocas+(r.ojo?' · <b>'+escNote(r.ojo)+'</b>':'')+'</p>';
   }
   /* ===== contacto y horario (Google, oct 2026; t=teléfono, h=horario, rv=reserva o cola, web/ig/res/guia=enlaces) ===== */
-  var INFO={};
+  var INFO={"Restaurante Mirasierra":{t:"953 713 044"},"El Bar-Restaurante Los Pinos *":{t:"953 496 205"},"Bar-Restaurante La Piscina *":{t:"664 68 59 28"}};
   function infoHTML(n){
     var r=INFO[n]; if(!r) return "";
     return (r.h?'<p class="bhora">'+escNote(r.h)+'</p>':'')+(r.rv?'<p class="brv">'+escNote(r.rv)+'</p>':'');
@@ -1890,7 +1890,7 @@
 
 
   /* Eventos (los mantiene la revisión automática de los jueves) */
-  var EVENTOS_FUENTE="las agendas de Visitar Provincia de Jaén, EnJaén y los ayuntamientos (revisadas el 12 nov 2026)";
+  var EVENTOS_FUENTE="las agendas de Visitar Provincia de Jaén, EnJaén y los ayuntamientos (revisadas el 19 nov 2026)";
   var EVENTOS=[
     {d1:"2026-10-30",d2:"2026-10-31",t:"Noches de Terror",donde:"Villanueva del Arzobispo",w:"Dentro del Otoño Cultural del pueblo.",url:"https://visitarprovinciajaen.com/villanueva-del-arzobispo/eventos/cultura-religion/otono-cultural-2026-villanueva-del-arzobispo"},
     {d1:"2026-10-30",d2:"2026-10-30",t:"«Yo me bajo en la próxima, ¿y usted?» (teatro)",donde:"Úbeda",w:"32ª Muestra de Teatro de Otoño.",url:"https://visitarprovinciajaen.com/ubeda/eventos/teatro-espectaculos/32-muestra-teatro-otono-ubeda-sep2026"},
@@ -2085,9 +2085,12 @@
       {n:"La Mesa Segureña", dir:"c/ Postigo 2 · Segura de la Sierra", w:"Cordero segureño y chuletón que se termina en la mesa sobre barro caliente; terraza con vistas.", cierra:"", g:[38.2990,-2.6514]},
       {n:"Mirador de Messía de Leiva *", dir:"Segura de la Sierra", w:"Cocina más tradicional, alternativa a La Mesa Segureña.", cierra:""},
       {n:"Restaurante El Candil Tierra de Olivos", dir:"c/ Quijote 4 · Cortijos Nuevos", w:"Cocina andaluza a buen precio, de camino entre Las Villas y Hornos.", cierra:""},
+      {n:"Restaurante Mirasierra", dir:"Hotel Mirásierra · Pontones", w:"Cocina regional andaluza, raciones y tapas en el hotel; con sello Degusta Jaén.", cierra:""},
+      {n:"El Bar-Restaurante Los Pinos *", dir:"c/ Carretera de Hornos 2 · Segura de la Sierra", w:"Desayunos, comidas y platos calientes; la dirección de la ficha oficial no coincide del todo con la pensión de Cortijos Nuevos.", cierra:""},
       {n:"Restaurante Raisa", dir:"c/ Puerta Nueva 35 · Hornos", w:"Horno de leña: cabrito, carne de monte y brasa, en un local rústico.", cierra:"", g:[38.21654,-2.71705]},
       {n:"Restaurante Las Celadillas", dir:"A-6305 · Hornos", w:"Cocina andaluza barata y muy bien valorada, en plena sierra.", cierra:"martes"},
       {n:"Pinar de Amurjo", dir:"Paraje de Amurjo · Orcera", w:"Brasa, platos serranos y pizzas, junto a la piscina del complejo.", cierra:""},
+      {n:"Bar-Restaurante La Piscina *", dir:"Paseo Salvador Motos · Siles", w:"Carne, orejas y pulpo a la brasa; parece de temporada: llama antes.", cierra:""},
       {n:"Palbuche", dir:"Camino de las Acebeas · Siles", w:"El restaurante de Siles camino de Las Acebeas.", cierra:"", g:[38.3754,-2.5804]},
       {n:"Restaurante Cortijo de Ramón *", dir:"Siles", w:"Casa rural con restaurante; pregunta antes si da comidas.", cierra:""} ]}
   ];
@@ -2345,6 +2348,7 @@
     {t:"pie", n:"Pontones – Cañón del Segura, Charco del Humo y Cueva del Agua (circular) *", d:"~15,5 km · ~5 h 20 min · media · 383 m de desnivel", w:"Circular desde Pontones: mirador sobre el salto del Charco del Humo, la Cueva del Agua hacia el km 8 y el cañón del Segura. Parte no está señalizada: lleva track GPS y agua (no hay fuentes). Una sola fuente (crónica de oct 2026) y punto de salida aproximado.", ini:[38.1190,-2.6684]},
     {t:"pie", n:"Pontones – nacimiento del Segura por el río", d:"~10 km · ~4 h", w:"Siguiendo el Segura desde Pontones hasta Fuente Segura de Abajo.", ini:[38.1184,-2.6702]},
     {t:"pie", n:"Pozas del río Zumeta", d:"Paseo circular · ~1 h · muy fácil", w:"Pasarelas por las pozas y cascadas de Santiago de la Espada.", ini:[38.1132,-2.5692]},
+    {t:"pie", n:"Huelga Utrera – Charco del Humo – Cueva del Agua – Poyotello (PR-A 195) *", d:"~6 km solo ida · ~4 h ida y vuelta · media", w:"Lineal por la ribera izquierda del Segura entre paredes verticales y cuevas; desvío al Charco del Humo en el km 4 y Cueva del Agua hacia el km 4,7. Termina en Poyotello (1.440 m); el tramo final es el más duro. Se puede hacer de arriba abajo desde Poyotello. Una sola fuente (Jaén Paraíso Interior) y sin punto de salida verificado: lleva track.", ini:[38.1456,-2.6235]},
     {t:"pie", n:"Cueva del Agua de Poyotello", d:"Corta · bajada continua (y vuelta en subida)", w:"Cascadas y vegetación en una formación kárstica.", ini:[38.1456,-2.6235]},
     {t:"pie", n:"Campos de Hernán Perea", d:"Larga · alta montaña · sin cobertura", w:"Por las dolinas hasta el pino Galapán, Banderillas o las Empanadas. Con buen tiempo y acompañado.", ini:[38.0290,-2.6512]},
     {t:"pie", n:"Villanueva del Arzobispo – Iznatoraf", d:"~10 km · media (Cuesta del Infarto)", w:"Desde casa hasta el pueblo amurallado.", ini:[38.1690,-3.0095]},
